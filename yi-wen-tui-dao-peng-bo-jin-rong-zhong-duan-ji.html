@@ -1,34 +1,96 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Xingjian Pan's Blog : (译文)推倒彭博金融终端机？</title>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="/theme/css/main.css" type="text/css" />
-        <link href="/" type="application/atom+xml" rel="alternate" title="Xingjian Pan's Blog ATOM Feed" />
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
 
-        <!--[if IE]>
-                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
 
-        <!--[if lte IE 7]>
-                <link rel="stylesheet" type="text/css" media="all" href="/css/ie.css"/>
-                <script src="/js/IE8.js" type="text/javascript"></script><![endif]-->
+  <link rel="stylesheet" type="text/css" href="/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/font-awesome.min.css">
 
-        <!--[if lt IE 7]>
-                <link rel="stylesheet" type="text/css" media="all" href="/css/ie6.css"/><![endif]-->
+
+
+    <link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Xingjian Pan's Blog RSS">
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="author" content="Xingjian Pan" />
+<meta name="description" content="[更新]本文已发表在36Kr，链接。 Can the Bloomberg Terminal be “Toppled”? 原著 MATT TURCK 翻译 XINGJIAN PAN 转载请注明出处 在一些企业家和投机资本家（VC）眼里，彭博的金融终端机多少是一个异类， 甚至是属于上个时代的产物。 当今时代，免费信息充斥互联网， 开源的大数据分析工具也不少，然而彭博的终端机业务却可以通过销售数据和数据分析工具，每年获得数十亿美元的收入， 且很多数据是彭博从第三方获得的。偶尔你可能会听到人们嘲讽它的操作界面让人回想起DOS时代的简陋。如今，各个行业都在加速细分和解绑(unbundling)，金融服务业也并非例外，然而，彭博的的金融终端却毫不动摇的继续推进绑定(bundling)策略：一个产品，一个价格，这就意味着全球32万彭博终端用户中，虽然所有人都要支付每年2万美元的使用费，却仅仅会用到其3万多个产品功能中的很小一部分。 创业者们，如果这听起来像是一个“破坏性创新”完美机会，或者你觉得把彭博的终端产品“解绑”是个易如反掌的事情，那么，你不是唯一这么想的 …" />
+<meta name="keywords" content="彭博, 路透">
+<meta property="og:site_name" content="Xingjian Pan's Blog"/>
+<meta property="og:title" content="(译文)推倒彭博金融终端机？"/>
+<meta property="og:description" content="[更新]本文已发表在36Kr，链接。 Can the Bloomberg Terminal be “Toppled”? 原著 MATT TURCK 翻译 XINGJIAN PAN 转载请注明出处 在一些企业家和投机资本家（VC）眼里，彭博的金融终端机多少是一个异类， 甚至是属于上个时代的产物。 当今时代，免费信息充斥互联网， 开源的大数据分析工具也不少，然而彭博的终端机业务却可以通过销售数据和数据分析工具，每年获得数十亿美元的收入， 且很多数据是彭博从第三方获得的。偶尔你可能会听到人们嘲讽它的操作界面让人回想起DOS时代的简陋。如今，各个行业都在加速细分和解绑(unbundling)，金融服务业也并非例外，然而，彭博的的金融终端却毫不动摇的继续推进绑定(bundling)策略：一个产品，一个价格，这就意味着全球32万彭博终端用户中，虽然所有人都要支付每年2万美元的使用费，却仅仅会用到其3万多个产品功能中的很小一部分。 创业者们，如果这听起来像是一个“破坏性创新”完美机会，或者你觉得把彭博的终端产品“解绑”是个易如反掌的事情，那么，你不是唯一这么想的 …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/yi-wen-tui-dao-peng-bo-jin-rong-zhong-duan-ji.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2014-06-21 21:22:30+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/xingjian-pan.html">
+<meta property="article:section" content="金融数据"/>
+<meta property="article:tag" content="彭博"/>
+<meta property="article:tag" content="路透"/>
+<meta property="og:image" content="">
+
+  <title>Xingjian Pan's Blog &ndash; (译文)推倒彭博金融终端机？</title>
 
 </head>
-
 <body>
-	<div id="wrap" style="width:850px">
-	    <div id="container" style="width:560px">
+  <aside>
+    <div>
+      <a href="">
+        <img src="/theme/img/profile.png" alt="Xingjian Pan" title="Xingjian Pan">
+      </a>
+      <h1><a href="">Xingjian Pan</a></h1>
+
+<p>Learning Data with Python</p>
+      <nav>
+        <ul class="list">
+
+          <li><a href="http://xingjian.me/" target="_blank">Xingjian Pan</a></li>
+          <li><a href="" target="_blank">about</a></li>
+          <li><a href="" target="_blank">contact</a></li>
+          <li><a href="" target="_blank">portfoio</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-linkedin" href="" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-rss" href="http://xingjian.me/feeds/all.rss.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
 
 
-            <div class="entry">
-        
-<header>
-<h1><a href="" id="site-title">   <strong>Learning Data with Python</strong></a>         <a href="/yi-wen-tui-dao-peng-bo-jin-rong-zhong-duan-ji.html" id="page-title">(译文)推倒彭博金融终端机？</a></h1>
-<time datetime="2014-06-21T21:22:30+08:00">周六 21 六月 2014</time></header>
-<article>
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="yi-wen-tui-dao-peng-bo-jin-rong-zhong-duan-ji">(译文)推倒彭博金融终端机？</h1>
+    <p>
+          Posted on 周六 21 六月 2014 in <a href="/category/jin-rong-shu-ju.html">金融数据</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
     <p>[更新]本文已发表在36Kr，<a href="http://www.36kr.com/p/213072.html">链接</a>。</p>
 <p><a href="http://mattturck.com/2014/03/19/can-the-bloomberg-terminal-be-toppled/">Can the Bloomberg Terminal be “Toppled”?</a></p>
 <p>原著 MATT TURCK 翻译 <a href="http://xingjian.me">XINGJIAN PAN</a></p>
@@ -71,33 +133,38 @@
 <p>大数据“洞察力”：显然收集数据是为了从中获取可以做决策的信号， 而这也正是创业公司们着力开发的机会。 <a href="http://www.dataminr.com/">Dataminr</a>（针对华尔街的社交数据分析）， <a href="http://www.kensho.com/">Kensho</a>（正在努力“把智能助手革命带到金融领域”）。就市场定位而言，尚不清楚这些技术公司在多大程度上与彭博金融终端存在竞争（比如，彭博也在积极的投入社交数据的研发），或者有多大的潜力成为竞争对手。 在目前的情况下，现有的金融平台已经形成坚固的堡垒，同时占领着利润最丰厚的那部分市场， 所以对于创业者和VC而言，他们最大的问题是如何将这些新业务扩大（scale）成为十亿美元的业务。 总体而言我认为会有越来越多针对金融数据的创业公司出现， 其中一些可能取得重大的成功。 我很期待能够看到这个市场的发展。</p>
 </li>
 </ol>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="/tag/peng-bo.html">彭博</a>
+      <a href="/tag/lu-tou.html">路透</a>
+    </p>
+  </div>
+
+
+
+
 </article>
-            </div>
-        </div>
+
+    <footer>
+<p>&copy; Xingjian Pan </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
 
 
-        <div id="sidebar">
-            <h1><a href=" " title="title">Xingjian Pan's Blog</a></h1>
-            <span class="description"> </span>
-            <!-- <span class="feed"><a href="">RSS</a> | <a href="">Atom</a></span> -->
-        </div>
-
-        <div id="footer">
-            <nav>
-                <ul>
-                    <li>:: <a href="/categories.html">Categories</a></li>
-                    <li>:: <a href="/tags.html">Tags</a></li>
-                </ul>
-            </nav>
-
-            <div id="credits">
-                <span>Adapted from <a href="http://wordpress.org/themes/monospace">Monospace</a> || Created with <a href="">Pelican</a></span>
-            </div>
-                
-        </div>
 
 
-    </div>
 
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Xingjian Pan's Blog ",
+  "url" : "",
+  "image": "",
+  "description": "Xingjian Pan's Thoughts and Writings"
+}
+</script>
 </body>
 </html>

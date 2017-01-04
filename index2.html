@@ -1,193 +1,325 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Xingjian Pan's Blog</title>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="/theme/css/main.css" type="text/css" />
-        <link href="/" type="application/atom+xml" rel="alternate" title="Xingjian Pan's Blog ATOM Feed" />
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
 
-        <!--[if IE]>
-                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
 
-        <!--[if lte IE 7]>
-                <link rel="stylesheet" type="text/css" media="all" href="/css/ie.css"/>
-                <script src="/js/IE8.js" type="text/javascript"></script><![endif]-->
+  <link rel="stylesheet" type="text/css" href="/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/font-awesome.min.css">
 
-        <!--[if lt IE 7]>
-                <link rel="stylesheet" type="text/css" media="all" href="/css/ie6.css"/><![endif]-->
+
+
+    <link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Xingjian Pan's Blog RSS">
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="author" content="Xingjian Pan" />
+    <meta name="description" content="Xingjian Pan's Thoughts and Writings" />
+<meta property="og:site_name" content="Xingjian Pan's Blog"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="Xingjian Pan's Blog"/>
+<meta property="og:description" content="Xingjian Pan's Thoughts and Writings"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content=""/>
+
+  <title>Xingjian Pan's Blog</title>
 
 </head>
-
 <body>
-	<div id="wrap" style="width:850px">
-	    <div id="container" style="width:560px">
+  <aside>
+    <div>
+      <a href="">
+        <img src="/theme/img/profile.png" alt="Xingjian Pan" title="Xingjian Pan">
+      </a>
+      <h1><a href="">Xingjian Pan</a></h1>
 
+<p>Learning Data with Python</p>
+      <nav>
+        <ul class="list">
 
-            <div class="entry">
-        
-        
+          <li><a href="http://xingjian.me/" target="_blank">Xingjian Pan</a></li>
+          <li><a href="" target="_blank">about</a></li>
+          <li><a href="" target="_blank">contact</a></li>
+          <li><a href="" target="_blank">portfoio</a></li>
+        </ul>
+      </nav>
 
-            <header>
-            <h1><a href="" id="site-title">   <strong>Learning Data with Python</strong></a>  <a href="/how-to-fix-value-error-embedded-null-byte-error.html" id="page-title">How to fix Python error: ValueError: embedded null byte</a></h1>
-<time datetime="2017-01-04T16:25:00+08:00">周三 04 一月 2017</time>            </header>
-
-            <article>
-                <p>今天安装了<a href="https://github.com/getpelican/pelican">Pelican</a>，但在运行<code>pelican content</code>时遇到一个非常奇怪的错误。</p>
-<div class="highlight"><pre><span></span>  File <span class="s2">&quot;c:\users\...\workingon\pelican\pelican\utils.py&quot;</span>, line 111, in strftime
-    <span class="k">return</span> super<span class="o">(</span>SafeDatetime, self<span class="o">)</span>.strftime<span class="o">(</span>fmt<span class="o">)</span>
-ValueError: embedded null byte
-</pre></div>
-
-
-<p>根据这个<a href="https://bugs.python.org/issue25023">bug report</a>,这个问题是由于local设定不对导致的。</p>
-<h3>在Python中执行下面代码，如果报错，那么说明locale设置有问题</h3>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">locale</span><span class="o">,</span> <span class="nn">time</span>
-<span class="n">locale</span><span class="o">.</span><span class="n">setlocale</span><span class="p">(</span><span class="n">locale</span><span class="o">.</span><span class="n">LC_ALL</span><span class="p">,</span> <span class="s1">&#39;ko&#39;</span><span class="p">)</span>
-<span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%a&#39;</span><span class="p">)</span>
-</pre></div>
-
-
-<h3>解决方案</h3>
-<p>出错的地方是<code>utils.py</code>,在<code>strftime function</code>是加入如下语句即可解决问题。</p>
-<div class="highlight"><pre><span></span><span class="n">locale</span><span class="o">.</span><span class="n">setlocale</span><span class="p">(</span><span class="n">locale</span><span class="o">.</span><span class="n">LC_ALL</span><span class="p">,</span> <span class="s1">&#39;en&#39;</span><span class="p">)</span>
-</pre></div>
-
-
-<p>加入后：</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">strftime</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">date_format</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Replacement for built-in strftime</span>
-
-<span class="sd">    This is necessary because of the way Py2 handles date format strings.</span>
-<span class="sd">    Specifically, Py2 strftime takes a bytestring. In the case of text output</span>
-<span class="sd">    (e.g. %b, %a, etc), the output is encoded with an encoding defined by</span>
-<span class="sd">    locale.LC_TIME. Things get messy if the formatting string has chars that</span>
-<span class="sd">    are not valid in LC_TIME defined encoding.</span>
-
-<span class="sd">    This works by &#39;grabbing&#39; possible format strings (those starting with %),</span>
-<span class="sd">    formatting them with the date, (if necessary) decoding the output and</span>
-<span class="sd">    replacing formatted output back.</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">locale</span><span class="o">.</span><span class="n">setlocale</span><span class="p">(</span><span class="n">locale</span><span class="o">.</span><span class="n">LC_ALL</span><span class="p">,</span> <span class="s1">&#39;en&#39;</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">strip_zeros</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="s1">&#39;0&#39;</span>
-    <span class="n">c89_directives</span> <span class="o">=</span> <span class="s1">&#39;aAbBcdfHIjmMpSUwWxXyYzZ%&#39;</span>
-</pre></div>
-
-
-<p>另外这个问题也在使用<code>matplotlib</code>时出现过，同样可以通过类似的方法解决。</p>            </article>
-                <section id="article-list">
-                    <h2>All posts</h2>
-                    <ol>
-        
-
- 
-            <li><a href="/2017-1-4-links.html" rel="bookmark" title="Permalink to Reading List">Reading List</a></li>
-        
-
- 
-            <li><a href="/test-for-pelican.html" rel="bookmark" title="Permalink to test for pelican">test for pelican</a></li>
-        
-
- 
-            <li><a href="/test-for-pelican2.html" rel="bookmark" title="Permalink to test for pelican">test for pelican</a></li>
-        
-
- 
-            <li><a href="/2015-7-31-links.html" rel="bookmark" title="Permalink to Reading List">Reading List</a></li>
-        
-
- 
-            <li><a href="/2015-7-29-links.html" rel="bookmark" title="Permalink to Reading List">Reading List</a></li>
-        
-
- 
-            <li><a href="/2015-7-28-links.html" rel="bookmark" title="Permalink to Reading List">Reading List</a></li>
-        
-
- 
-            <li><a href="/2015-7-27-links.html" rel="bookmark" title="Permalink to Reading List">Reading List</a></li>
-        
-
- 
-            <li><a href="/i-do-it-because-i-can.html" rel="bookmark" title="Permalink to I do it because I can">I do it because I can</a></li>
-        
-
- 
-            <li><a href="/the-frence-startups-ecosystem-at-a-tipping-point-chinese.html" rel="bookmark" title="Permalink to (译文)法国初创公司生态系统：处在引爆点上">(译文)法国初创公司生态系统：处在引爆点上</a></li>
-        
-
- 
-            <li><a href="/smart-people-should-create-things-chinese.html" rel="bookmark" title="Permalink to (译文)有能力的人，应当创造">(译文)有能力的人，应当创造</a></li>
-        
-
- 
-            <li><a href="/never-complain-never-explain.html" rel="bookmark" title="Permalink to Never complain, never explain.">Never complain, never explain.</a></li>
-        
-
- 
-            <li><a href="/state-of-big-date-in-2014-a-chart-chinese.html" rel="bookmark" title="Permalink to (译文)大数据行业信息图以及一些思考">(译文)大数据行业信息图以及一些思考</a></li>
-        
-
- 
-            <li><a href="/notes-on-running-lean.html" rel="bookmark" title="Permalink to Notes on Running Lean (精益创业实践)">Notes on Running Lean (精益创业实践)</a></li>
-        
-
- 
-            <li><a href="/chan-ye-lian-shu-ju-ke-neng-shi-jin-rong-shu-ju-de-xia-yi-ge-qian-yan.html" rel="bookmark" title="Permalink to 产业链数据可能是金融数据的下一个前沿">产业链数据可能是金融数据的下一个前沿</a></li>
-        
-
- 
-            <li><a href="/yi-wen-tui-dao-peng-bo-jin-rong-zhong-duan-ji.html" rel="bookmark" title="Permalink to (译文)推倒彭博金融终端机？">(译文)推倒彭博金融终端机？</a></li>
-        
-
- 
-            <li><a href="/cross-culture-communcation.html" rel="bookmark" title="Permalink to 跨文化管理，即使对于成熟的大公司也是难题。">跨文化管理，即使对于成熟的大公司也是难题。</a></li>
-        
-
- 
-            <li><a href="/be-aware-of-broken-career-ladder.html" rel="bookmark" title="Permalink to 有些职业梯子（Career Ladder）看起来在那，其实并不在那">有些职业梯子（Career Ladder）看起来在那，其实并不在那</a></li>
-        
-
- 
-            <li><a href="/notes-on-project-management-lite.html" rel="bookmark" title="Permalink to Note on Project Management Lite">Note on Project Management Lite</a></li>
-        
-
- 
-            <li><a href="/how-to-install-pymssql-on-macosx-mountain-lion.html" rel="bookmark" title="Permalink to How to install pymssql on Mac OS X Mountain Lion?">How to install pymssql on Mac OS X Mountain Lion?</a></li>
-        
-
- 
-            <li><a href="/notes-on-the-power-of-habits.html" rel="bookmark" title="Permalink to Note on the power of habits">Note on the power of habits</a></li>
-    </ol>
-    </section><!-- #article-list -->
-            </div>
-        </div>
-
-
-        <div id="sidebar">
-            <h1><a href=" " title="title">Xingjian Pan's Blog</a></h1>
-            <span class="description"> </span>
-            <!-- <span class="feed"><a href="">RSS</a> | <a href="">Atom</a></span> -->
-        </div>
-
-        <div id="footer">
-            <nav>
-                <ul>
-                    <li>:: <a href="/categories.html">Categories</a></li>
-                    <li>:: <a href="/tags.html">Tags</a></li>
-                </ul>
-            </nav>
-
-            <div id="credits">
-                <span>Adapted from <a href="http://wordpress.org/themes/monospace">Monospace</a> || Created with <a href="">Pelican</a></span>
-            </div>
-                
-        </div>
-
-
+      <ul class="social">
+        <li><a class="sc-linkedin" href="" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-rss" href="http://xingjian.me/feeds/all.rss.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+      </ul>
     </div>
 
+
+  </aside>
+  <main>
+
+
+
+
+<article>
+  <header>
+    <h2><a href="/chan-ye-lian-shu-ju-ke-neng-shi-jin-rong-shu-ju-de-xia-yi-ge-qian-yan.html#chan-ye-lian-shu-ju-ke-neng-shi-jin-rong-shu-ju-de-xia-yi-ge-qian-yan">产业链数据可能是金融数据的下一个前沿</a></h2>
+    <p>
+          Posted on 周四 26 六月 2014 in <a href="/category/jin-rong-shu-ju.html">金融数据</a>
+
+
+
+    </p>
+  </header>
+  <div>
+      <h3>产业链数据，简单的说包含三个维度：</h3>
+<ul>
+<li>有哪些公司是公司A的供应商</li>
+<li>这些供应商供应什么样的产品、服务</li>
+<li>公司A为这些产品、服务每年支付多少钱。</li>
+</ul>
+<p>第一层维度主要是哪些公司和哪些公司有交易关系，关注的是公司之间的关系。第二和第三个维度则更加具体到交易的服务和产品是什么，以及设计金额的大小。</p>
+<h3>为什么产业链数据重要？</h3>
+<ul>
+<li>产业链数据勾勒出一幅公司与公司之间相互联系的全景图像。 投资者越来越多的根据公司的联系，而不光光是公司本身，做出投资判断。</li>
+<li>产业链数据具有广泛的应用前景。比如公司的基本面分析，一些事件对产业链的影响分析等。</li>
+</ul>
+<h3>举个例子</h3>
+<p>如果泰国发生了洪水，而为苹果公司提供某个关键部件的供应商正好在泰国的话，那么就有可能导致某个产品的的生产中断，从而造成产品供给不足，影响销售， 而销售下滑的结果可能导致股价下跌。销售的不足，又会导致苹果减少对其他部件的需求（芯片、屏幕、硬盘等），所以相关公司的销售也会受到影响。</p>
+<p>如果恰好三星公司的供应商不在泰国，不受洪水影响，那么它也许可以利用这次机会占领更多市场，扩大销售份儿，从而提高股价。同时，三星产品的销售也会带动其相关产业链上公司的销售额上升。</p>
+<p>所以，一次发生在泰国的洪水，可能会对某些产业链上的公司产生不同程度的影响。 如果投资者和分析师能够准确的判断出那些产业、公司会受到影响，并定量的分析出这种影响的大小，那么就有可能利用这个事件进行相应的投资，获得收益，规避风险。</p>
+<h3>产业链数据的现状</h3>
+<p>目前据我所知 …</p>
+      <br>
+      <a class="btn" href="/chan-ye-lian-shu-ju-ke-neng-shi-jin-rong-shu-ju-de-xia-yi-ge-qian-yan.html#chan-ye-lian-shu-ju-ke-neng-shi-jin-rong-shu-ju-de-xia-yi-ge-qian-yan">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="/yi-wen-tui-dao-peng-bo-jin-rong-zhong-duan-ji.html#yi-wen-tui-dao-peng-bo-jin-rong-zhong-duan-ji">(译文)推倒彭博金融终端机？</a></h2>
+    <p>
+          Posted on 周六 21 六月 2014 in <a href="/category/jin-rong-shu-ju.html">金融数据</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="/tag/peng-bo.html">彭博</a>,              <a href="/tag/lu-tou.html">路透</a>
+    </p>
+  </header>
+  <div>
+      <p>[更新]本文已发表在36Kr，<a href="http://www.36kr.com/p/213072.html">链接</a>。</p>
+<p><a href="http://mattturck.com/2014/03/19/can-the-bloomberg-terminal-be-toppled/">Can the Bloomberg Terminal be “Toppled”?</a></p>
+<p>原著 MATT TURCK 翻译 <a href="http://xingjian.me">XINGJIAN PAN</a></p>
+<p>转载请注明出处</p>
+<p>在一些企业家和投机资本家（VC）眼里，彭博的金融终端机多少是一个异类， 甚至是属于上个时代的产物。 当今时代，免费信息充斥互联网， 开源的大数据分析工具也不少，然而彭博的终端机业务却可以通过销售数据和数据分析工具，每年获得数十亿美元的收入， 且很多数据是彭博从第三方获得的。偶尔你可能会听到人们嘲讽它的操作界面让人回想起DOS时代的简陋。如今，各个行业都在加速细分和解绑(<strong>unbundling</strong>)，金融服务业也并非例外，然而，彭博的的金融终端却毫不动摇的继续推进绑定(<strong>bundling</strong>)策略：<strong>一个产品，一个价格</strong>，这就意味着全球32万彭博终端用户中，虽然所有人都要支付每年2万美元的使用费，却仅仅会用到其3万多个产品功能中的很小一部分。</p>
+<p>创业者们，如果这听起来像是一个“破坏性创新”完美机会，或者你觉得把彭博的终端产品“解绑”是个易如反掌的事情，那么，你不是唯一这么想的 …</p>
+      <br>
+      <a class="btn" href="/yi-wen-tui-dao-peng-bo-jin-rong-zhong-duan-ji.html#yi-wen-tui-dao-peng-bo-jin-rong-zhong-duan-ji">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="/cross-culture-communcation.html#cross-culture-communcation">跨文化管理，即使对于成熟的大公司也是难题。</a></h2>
+    <p>
+          Posted on 周二 10 六月 2014 in <a href="/category/guan-li.html">管理</a>
+
+
+
+    </p>
+  </header>
+  <div>
+      <p>工作关系，基本上每天都需要和不同国家、不同文化的同事通过邮件和聊天软件进行沟通和合作。遇到过一些波折，也遇到过很多惊喜和感动。总体而言，跨文化的沟通是十分困难的。这一点我深有体会。哈佛商业评论5月份有一篇文章是关于跨文化管理的。我觉的很有帮助。这里简单的摘录一下要点。应该能为跨文化沟通同提供一个框架，在沟通中有针对性的采取一些方法，提高沟通的效果。</p>
+<h3>文化地图</h3>
+<p><img alt="以色列和俄罗斯的管理文化差异" src="https://raw.githubusercontent.com/xingjianpan/my_blog/master/source/_posts/culture.jpg"></p>
+<ol>
+<li>
+<p>沟通</p>
+<ul>
+<li>低语境（Low-context Cultures）中，沟通是明确、简单、直接、准确的，听懂表面意思即可；为垢通通能够清晰，人们喜欢重复表达和书面交流。</li>
+<li>高语境（High-Context Cultures）中，沟通是复杂、微秒、间接的，听话往往需要听音；书面沟通较少，多为口头交流；听者要透过说话者的遣词用句猜测其潜台词。</li>
+</ul>
+</li>
+<li>
+<p>评价。</p>
+<ul>
+<li>直接批评。</li>
+<li>间接批评。</li>
+</ul>
+</li>
+<li>
+<p>说服。</p>
+<ul>
+<li>检测“说服”维度的传统方法是评估人们如何平衡整体与局部的思维模式。</li>
+<li>西方高管偏向于解构内容（局部思维）， 亚洲高管偏向于整合内容（整体思维）</li>
+</ul>
+</li>
+<li>
+<p>领导 …</p></li></ol>
+      <br>
+      <a class="btn" href="/cross-culture-communcation.html#cross-culture-communcation">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="/be-aware-of-broken-career-ladder.html#be-aware-of-broken-career-ladder">有些职业梯子（Career Ladder）看起来在那，其实并不在那</a></h2>
+    <p>
+          Posted on 周四 27 三月 2014 in <a href="/category/zhi-ye-fa-zhan.html">职业发展</a>
+
+
+
+    </p>
+  </header>
+  <div>
+      <p>所谓职业梯子（Career  Ladder <a href="http://en.wikipedia.org/wiki/Career_ladder">wiki</a>）指的是一个人在职场上的上升通道和升值空间。 职业梯子为员工指明了发展道路和前进方向。尤其是大公司，往往会有比较明确的分工，同时对每个工作职位的发展路径也都会有很清晰的规划。即使没有这些，一个公司的组织框架图往往也就是每个职位的发展路线图。 一些职位，可能确实可以按着组织图或路线图前进，一直做到高层（典型的如销售）。</p>
+<p>但可能更普遍的一种情况是，这些梯子只是一种虚构的梯子。就好像三根错开放置的火柴，侧面看仿佛是<strong>同一条</strong>自上而下的长火柴，但正面看，则其实是<strong>三跟不同</strong>的火柴。换到职场上，一个看起来连续的职业梯子，可能是几条错开放置的梯子。当一个人到达其中一个梯子的顶点时，抬起头看到的不是另一个梯子的尾巴，而是__Nothing__.</p>
+<p>为什么会这样，原因可能有很多，比如：</p>
+<ul>
+<li>一些职位（如高管）好像都来自某几个国家，而你的国家不是其中之一。</li>
+<li>一些职位只放在特定的地区，而你正好在另一些地区。</li>
+<li>一些职位需要特殊的教育经历或工作背景，而你没有。</li>
+<li>一些职位就那么多，已经没有空位了。</li>
+<li>。。。</li>
+</ul>
+<p>那么如果遇到这种<strong>断裂</strong>的职业梯子，该怎么做？我个人的观点是</p>
+<ul>
+<li>首先 …</li></ul>
+      <br>
+      <a class="btn" href="/be-aware-of-broken-career-ladder.html#be-aware-of-broken-career-ladder">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="/notes-on-project-management-lite.html#notes-on-project-management-lite">Note on Project Management Lite</a></h2>
+    <p>
+          Posted on 周一 05 八月 2013 in <a href="/category/guan-li.html">管理</a>
+
+
+
+    </p>
+  </header>
+  <div>
+      <p>The book caught my attention when I was looking for a book that can get me started with just enough project management skills. I was working on an internal project at that time. After comparing a few books on project management, I think this one is the best one with …</p>
+      <br>
+      <a class="btn" href="/notes-on-project-management-lite.html#notes-on-project-management-lite">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="/how-to-install-pymssql-on-macosx-mountain-lion.html#how-to-install-pymssql-on-macosx-mountain-lion">How to install pymssql on Mac OS X Mountain Lion?</a></h2>
+    <p>
+          Posted on 周二 23 七月 2013 in <a href="/category/ji-zhu.html">技术</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="/tag/python.html">Python</a>,              <a href="/tag/pymssql.html">pymssql</a>
+    </p>
+  </header>
+  <div>
+      <h2>Problem: When trying to install pymssql using pip, I got below error message</h2>
+<div class="highlight"><pre><span></span>_mssql.c:257:10: fatal error: <span class="s1">&#39;sqlfront.h&#39;</span> file not found
+</pre></div>
+
+
+<h2>Solution</h2>
+<h3>Pre-requeists:</h3>
+<ol>
+<li>Cython (pip install Cython)</li>
+<li>
+<p>FreeTDS</p>
+<ul>
+<li>Download latest stable release from <a href="http://www.freetds.org">here</a></li>
+<li>do the install</li>
+</ul>
+<p><code>command</code></p>
+<div class="highlight"><pre><span></span>./configure --prefix=/usr/local/freetds --enable-msdblib
+make
+make install …</pre></div></li></ol>
+      <br>
+      <a class="btn" href="/how-to-install-pymssql-on-macosx-mountain-lion.html#how-to-install-pymssql-on-macosx-mountain-lion">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="/notes-on-the-power-of-habits.html#notes-on-the-power-of-habits">Note on the power of habits</a></h2>
+    <p>
+          Posted on 周六 20 七月 2013 in <a href="/category/shu-ying-yin.html">书影音</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="/tag/du-shu-bi-ji.html">读书笔记</a>
+    </p>
+  </header>
+  <div>
+      <h2>What this book about?</h2>
+<ol>
+<li>How habit works?</li>
+<li>How to develop a new habit?</li>
+<li>How to get out of a bad habit?</li>
+</ol>
+<h2>The first shock from this book.</h2>
+<ol>
+<li>People now get used to the habits of using toothpaste to brush their teeth, but this habit doesn't exist for majority people in …</li></ol>
+      <br>
+      <a class="btn" href="/notes-on-the-power-of-habits.html#notes-on-the-power-of-habits">    Continue reading
+</a>
+  </div>
+</article>
+
+  <div class="pagination">
+    <a class="btn float-right" href="/index.html">
+          Newer Posts
+ <i class="fa fa-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+    <footer>
+<p>&copy; Xingjian Pan </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Xingjian Pan's Blog ",
+  "url" : "",
+  "image": "",
+  "description": "Xingjian Pan's Thoughts and Writings"
+}
+</script>
 </body>
 </html>
