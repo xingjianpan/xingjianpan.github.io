@@ -40,6 +40,7 @@
   <title>Xingjian Pan's Blog</title>
 
 
+
   <script>
 var _hmt = _hmt || [];
 (function() {
@@ -49,6 +50,7 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
+
 
 </head>
 <body>
@@ -88,7 +90,7 @@ var _hmt = _hmt || [];
   <header>
     <h2><a href="/quant-understand-industry-classification-data.html#quant-understand-industry-classification-data">量化数据 - 行业分类</a></h2>
     <p>
-          Posted on Thu 05 January 2017 in <a href="/category/quant.html">quant</a>
+          Posted on 周四 05 一月 2017 in <a href="/category/quant.html">quant</a>
 
 
           &#8226;     Tagged with
@@ -150,7 +152,7 @@ var _hmt = _hmt || [];
   <header>
     <h2><a href="/intro-to-backtesting-for-multi-factor-strategy-bt.html#intro-to-backtesting-for-multi-factor-strategy-bt">多因子模型回测框架bt简介</a></h2>
     <p>
-          Posted on Thu 05 January 2017 in <a href="/category/quant.html">quant</a>
+          Posted on 周四 05 一月 2017 in <a href="/category/quant.html">quant</a>
 
 
           &#8226;     Tagged with
@@ -187,7 +189,7 @@ bt的目标：免去<strong>quant</strong>重新造轮子的时间，使他们�
   <header>
     <h2><a href="/intro-to-financial-functions-package-ffn.html#intro-to-financial-functions-package-ffn">金融分析包FFN简介</a></h2>
     <p>
-          Posted on Thu 05 January 2017 in <a href="/category/quant.html">quant</a>
+          Posted on 周四 05 一月 2017 in <a href="/category/quant.html">quant</a>
 
 
           &#8226;     Tagged with
@@ -222,7 +224,7 @@ bt的目标：免去<strong>quant</strong>重新造轮子的时间，使他们�
   <header>
     <h2><a href="/pelican-and-jupyter-notebook-for-data-science.html#pelican-and-jupyter-notebook-for-data-science">使用Pelican发布Jupyter Notebook</a></h2>
     <p>
-          Posted on Thu 05 January 2017 in <a href="/category/jupyternotebook.html">jupyternotebook</a>
+          Posted on 周四 05 一月 2017 in <a href="/category/jupyternotebook.html">jupyternotebook</a>
 
 
           &#8226;     Tagged with
@@ -253,7 +255,7 @@ bt的目标：免去<strong>quant</strong>重新造轮子的时间，使他们�
   <header>
     <h2><a href="/how-to-fix-value-error-embedded-null-byte-error.html#how-to-fix-value-error-embedded-null-byte-error">How to fix Python error: ValueError: embedded null byte</a></h2>
     <p>
-          Posted on Wed 04 January 2017 in <a href="/category/python.html">python</a>
+          Posted on 周三 04 一月 2017 in <a href="/category/python.html">python</a>
 
 
           &#8226;     Tagged with
@@ -289,7 +291,7 @@ ValueError: embedded null byte
   <header>
     <h2><a href="/2017-1-4-links.html#2017-1-4-links">Reading List</a></h2>
     <p>
-          Posted on Wed 04 January 2017 in <a href="/category/links.html">links</a>
+          Posted on 周三 04 一月 2017 in <a href="/category/links.html">links</a>
 
 
           &#8226;     Tagged with
@@ -321,7 +323,7 @@ ValueError: embedded null byte
   <header>
     <h2><a href="/news-on-xin-wei-ji-tuan-600485.html#news-on-xin-wei-ji-tuan-600485">信威集团媒体报道跟踪</a></h2>
     <p>
-          Posted on Thu 15 December 2016 in <a href="/category/tou-zi.html">投资</a>
+          Posted on 周四 15 十二月 2016 in <a href="/category/tou-zi.html">投资</a>
 
 
           &#8226;     Tagged with
@@ -368,9 +370,50 @@ ValueError: embedded null byte
 </article>
 <article>
   <header>
+    <h2><a href="/how-to-create-isolated-jupyter-kernel-for-virtualenv-windows.html#how-to-create-isolated-jupyter-kernel-for-virtualenv-windows">针对每个Virtualenv，创建独立的Jupyter Kernel (Windows 10)</a></h2>
+    <p>
+          Posted on 周日 06 十一月 2016 in <a href="/category/python.html">python</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="/tag/jupyter.html">jupyter</a>,              <a href="/tag/virtualenv.html">virtualenv</a>
+    </p>
+  </header>
+  <div>
+      <h3>首先创建独立的运行环境</h3>
+<div class="highlight"><pre><span></span>mkvirtualenv scrapy
+</pre></div>
+
+
+<h3>在这个环境中安装jupyter和ipykernel</h3>
+<div class="highlight"><pre><span></span>pip install jupyter
+pip install ipykernel
+</pre></div>
+
+
+<h3><code>jupyter --path</code> 查询jupyter的路径</h3>
+<div class="highlight"><pre><span></span><span class="n">config</span><span class="o">:</span>
+    <span class="n">C</span><span class="o">:\</span><span class="n">Users</span><span class="o">\</span><span class="n">your_user_name</span><span class="o">\.</span><span class="n">jupyter</span>
+    <span class="n">c</span><span class="o">:\</span><span class="n">users</span><span class="o">\</span><span class="n">your_user_name</span><span class="o">\</span><span class="n">envs</span><span class="o">\</span><span class="n">scrapy</span><span class="o">\</span><span class="n">etc</span><span class="o">\</span><span class="n">jupyter</span>
+    <span class="n">C</span><span class="o">:\</span><span class="n">ProgramData</span><span class="o">\</span><span class="n">jupyter</span>
+<span class="n">data</span><span class="o">:</span>
+    <span class="n">C</span><span class="o">:\</span><span class="n">Users</span><span class="o">\</span><span class="n">your_user_name</span><span class="o">\</span><span class="n">AppData</span><span class="o">\</span><span class="n">Roaming</span><span class="o">\</span><span class="n">jupyter</span>
+    <span class="n">c</span><span class="o">:\</span><span class="n">users</span><span class="o">\</span><span class="n">your_user_name</span><span class="o">\</span><span class="n">envs</span><span class="o">\</span><span class="n">scrapy</span><span class="o">\</span><span class="n">share</span><span class="o">\</span><span class="n">jupyter</span>
+    <span class="n">C</span><span class="o">:\</span><span class="n">ProgramData</span><span class="o">\</span><span class="n">jupyter</span>
+<span class="n">runtime</span><span class="o">:</span>
+    <span class="n">C</span><span class="o">:\</span><span class="n">Users</span><span class="o">\</span><span class="n">your_user_name</span><span class="o">\</span><span class="n">AppData …</span></pre></div>
+      <br>
+      <a class="btn" href="/how-to-create-isolated-jupyter-kernel-for-virtualenv-windows.html#how-to-create-isolated-jupyter-kernel-for-virtualenv-windows">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="/2015-7-28-links.html#2015-7-28-links">Reading List</a></h2>
     <p>
-          Posted on Tue 28 July 2015 in <a href="/category/links.html">links</a>
+          Posted on 周二 28 七月 2015 in <a href="/category/links.html">links</a>
 
 
           &#8226;     Tagged with
@@ -403,7 +446,7 @@ ValueError: embedded null byte
   <header>
     <h2><a href="/2015-7-27-links.html#2015-7-27-links">Reading List</a></h2>
     <p>
-          Posted on Mon 27 July 2015 in <a href="/category/links.html">links</a>
+          Posted on 周一 27 七月 2015 in <a href="/category/links.html">links</a>
 
 
           &#8226;     Tagged with
@@ -433,30 +476,6 @@ ValueError: embedded null byte
 <li><a href="http://blog.templatemonster.com/2014/10/24/bootstrap-3-grid-system-guide/">Bootstrap 3: The Grid …</a></li></ul>
       <br>
       <a class="btn" href="/2015-7-27-links.html#2015-7-27-links">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="/i-do-it-because-i-can.html#i-do-it-because-i-can">I do it because I can</a></h2>
-    <p>
-          Posted on Sun 26 July 2015 in <a href="/category/qi-ta.html">其他</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="/tag/quotes.html">[quotes]</a>
-    </p>
-  </header>
-  <div>
-      <p>I was delighted to find another backtesting framework wrote in Python，which is called <a href="http://www.backtrader.com/">backtrader</a>.</p>
-<p>I have tried a few backtesting frameworkds wrote in Python, but this project looks really impressive.</p>
-<p>Author of the project has explained the reasons why he'd started this project -</p>
-<blockquote>
-<p>One of the questions often asked …</p></blockquote>
-      <br>
-      <a class="btn" href="/i-do-it-because-i-can.html#i-do-it-because-i-can">    Continue reading
 </a>
   </div>
 </article>

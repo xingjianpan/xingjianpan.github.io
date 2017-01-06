@@ -3,9 +3,9 @@
 .err { color: #960050; background-color: #1e0010 } /* Error */
 .k { color: #66d9ef } /* Keyword */
 .l { color: #ae81ff } /* Literal */
-.n { color: #000000 } /* Name */
+.n { color: #f8f8f2 } /* Name */
 .o { color: #f92672 } /* Operator */
-.p { color: #000000 } /* Punctuation */
+.p { color: #f8f8f2 } /* Punctuation */
 .ch { color: #75715e } /* Comment.Hashbang */
 .cm { color: #75715e } /* Comment.Multiline */
 .cp { color: #75715e } /* Comment.Preproc */

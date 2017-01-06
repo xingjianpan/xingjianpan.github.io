@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Xingjian Pan's Blog</title><link>/</link><description>Learning Data with Python</description><lastBuildDate>Thu, 05 Jan 2017 22:23:00 +0800</lastBuildDate><item><title>量化数据 - 行业分类</title><link>/quant-understand-industry-classification-data.html</link><description>&lt;h1&gt;什么是行业分类数据&lt;/h1&gt;
+<rss version="2.0"><channel><title>Xingjian Pan's Blog</title><link>/</link><description>Learning Data with Python</description><lastBuildDate>Fri, 06 Jan 2017 22:54:00 +0800</lastBuildDate><item><title>量化数据 - 行业分类</title><link>/quant-understand-industry-classification-data.html</link><description>&lt;h1&gt;什么是行业分类数据&lt;/h1&gt;
 &lt;p&gt;行业分类数据(&lt;code&gt;industry classification&lt;/code&gt;)是对公司所属行业的描述性数据，是金融行业的基础数据(&lt;code&gt;meta-data&lt;/code&gt;)。行业分类数据应用在投资研究的各个领域, 比如：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;筛选同类型的公司（微软和甲骨文同属软件公司，但是苹果是硬件公司）。&lt;/li&gt;
@@ -141,7 +141,28 @@ ValueError: embedded null byte
 &lt;li&gt;&lt;strong&gt;新华网&lt;/strong&gt;转载北京青年报:&lt;a href="http://news.xinhuanet.com/fortune/2017-01/02/c_1120229527.htm"&gt;"隐匿巨额债务,神秘人套现离场" 信威为何能入围上证50&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;根据官网介绍，信威集团此前分别是上证180、上证50、沪深300 …&lt;/p&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Thu, 15 Dec 2016 22:23:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-12-15:/news-on-xin-wei-ji-tuan-600485.html</guid><category>信威集团</category></item><item><title>Reading List</title><link>/2015-7-28-links.html</link><description>&lt;p&gt;&lt;strong&gt;D3&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;根据官网介绍，信威集团此前分别是上证180、上证50、沪深300 …&lt;/p&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Thu, 15 Dec 2016 22:23:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-12-15:/news-on-xin-wei-ji-tuan-600485.html</guid><category>信威集团</category></item><item><title>针对每个Virtualenv，创建独立的Jupyter Kernel (Windows 10)</title><link>/how-to-create-isolated-jupyter-kernel-for-virtualenv-windows.html</link><description>&lt;h3&gt;首先创建独立的运行环境&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkvirtualenv scrapy
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;在这个环境中安装jupyter和ipykernel&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install jupyter
+pip install ipykernel
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;&lt;code&gt;jupyter --path&lt;/code&gt; 查询jupyter的路径&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;:\&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;your_user_name&lt;/span&gt;&lt;span class="o"&gt;\.&lt;/span&gt;&lt;span class="n"&gt;jupyter&lt;/span&gt;
+    &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;:\&lt;/span&gt;&lt;span class="n"&gt;users&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;your_user_name&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;envs&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;scrapy&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;jupyter&lt;/span&gt;
+    &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;:\&lt;/span&gt;&lt;span class="n"&gt;ProgramData&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;jupyter&lt;/span&gt;
+&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;:\&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;your_user_name&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;AppData&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;Roaming&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;jupyter&lt;/span&gt;
+    &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;:\&lt;/span&gt;&lt;span class="n"&gt;users&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;your_user_name&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;envs&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;scrapy&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;share&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;jupyter&lt;/span&gt;
+    &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;:\&lt;/span&gt;&lt;span class="n"&gt;ProgramData&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;jupyter&lt;/span&gt;
+&lt;span class="n"&gt;runtime&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;:\&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;your_user_name&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;AppData …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Sun, 06 Nov 2016 22:35:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-11-06:/how-to-create-isolated-jupyter-kernel-for-virtualenv-windows.html</guid><category>jupyter</category><category>virtualenv</category></item><item><title>Reading List</title><link>/2015-7-28-links.html</link><description>&lt;p&gt;&lt;strong&gt;D3&lt;/strong&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/"&gt;A Visual Introduction to Machine Learning by R2D3&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://learnjsdata.com/read_data.html"&gt;Reading in Data&lt;/a&gt;&lt;/li&gt;

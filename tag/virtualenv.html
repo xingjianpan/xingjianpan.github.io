@@ -37,7 +37,7 @@
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content=""/>
 
-  <title>Xingjian Pan's Blog &ndash;     Category 其他
+  <title>Xingjian Pan's Blog &ndash;     Tag virtualenv
 </title>
 
 
@@ -89,50 +89,41 @@ var _hmt = _hmt || [];
 
 <article>
   <header>
-    <h2><a href="/i-do-it-because-i-can.html#i-do-it-because-i-can">I do it because I can</a></h2>
+    <h2><a href="/how-to-create-isolated-jupyter-kernel-for-virtualenv-windows.html#how-to-create-isolated-jupyter-kernel-for-virtualenv-windows">针对每个Virtualenv，创建独立的Jupyter Kernel (Windows 10)</a></h2>
     <p>
-          Posted on 周日 26 七月 2015 in <a href="/category/qi-ta.html">其他</a>
+          Posted on 周日 06 十一月 2016 in <a href="/category/python.html">python</a>
 
 
           &#8226;     Tagged with
 
-              <a href="/tag/quotes.html">[quotes]</a>
+              <a href="/tag/jupyter.html">jupyter</a>,              <a href="/tag/virtualenv.html">virtualenv</a>
     </p>
   </header>
   <div>
-      <p>I was delighted to find another backtesting framework wrote in Python，which is called <a href="http://www.backtrader.com/">backtrader</a>.</p>
-<p>I have tried a few backtesting frameworkds wrote in Python, but this project looks really impressive.</p>
-<p>Author of the project has explained the reasons why he'd started this project -</p>
-<blockquote>
-<p>One of the questions often asked …</p></blockquote>
+      <h3>首先创建独立的运行环境</h3>
+<div class="highlight"><pre><span></span>mkvirtualenv scrapy
+</pre></div>
+
+
+<h3>在这个环境中安装jupyter和ipykernel</h3>
+<div class="highlight"><pre><span></span>pip install jupyter
+pip install ipykernel
+</pre></div>
+
+
+<h3><code>jupyter --path</code> 查询jupyter的路径</h3>
+<div class="highlight"><pre><span></span><span class="n">config</span><span class="o">:</span>
+    <span class="n">C</span><span class="o">:\</span><span class="n">Users</span><span class="o">\</span><span class="n">your_user_name</span><span class="o">\.</span><span class="n">jupyter</span>
+    <span class="n">c</span><span class="o">:\</span><span class="n">users</span><span class="o">\</span><span class="n">your_user_name</span><span class="o">\</span><span class="n">envs</span><span class="o">\</span><span class="n">scrapy</span><span class="o">\</span><span class="n">etc</span><span class="o">\</span><span class="n">jupyter</span>
+    <span class="n">C</span><span class="o">:\</span><span class="n">ProgramData</span><span class="o">\</span><span class="n">jupyter</span>
+<span class="n">data</span><span class="o">:</span>
+    <span class="n">C</span><span class="o">:\</span><span class="n">Users</span><span class="o">\</span><span class="n">your_user_name</span><span class="o">\</span><span class="n">AppData</span><span class="o">\</span><span class="n">Roaming</span><span class="o">\</span><span class="n">jupyter</span>
+    <span class="n">c</span><span class="o">:\</span><span class="n">users</span><span class="o">\</span><span class="n">your_user_name</span><span class="o">\</span><span class="n">envs</span><span class="o">\</span><span class="n">scrapy</span><span class="o">\</span><span class="n">share</span><span class="o">\</span><span class="n">jupyter</span>
+    <span class="n">C</span><span class="o">:\</span><span class="n">ProgramData</span><span class="o">\</span><span class="n">jupyter</span>
+<span class="n">runtime</span><span class="o">:</span>
+    <span class="n">C</span><span class="o">:\</span><span class="n">Users</span><span class="o">\</span><span class="n">your_user_name</span><span class="o">\</span><span class="n">AppData …</span></pre></div>
       <br>
-      <a class="btn" href="/i-do-it-because-i-can.html#i-do-it-because-i-can">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="/never-complain-never-explain.html#never-complain-never-explain">Never complain, never explain.</a></h2>
-    <p>
-          Posted on 周三 02 七月 2014 in <a href="/category/qi-ta.html">其他</a>
-
-
-
-    </p>
-  </header>
-  <div>
-      <blockquote>
-<p>Never complain, never explain. Resist the temptation to defend yourself or make excuses. ― Brian Tracy</p>
-</blockquote>
-<p>翻译成中文大概是这个意思：</p>
-<blockquote>
-<p>不抱怨，不解释。抵制一切为自己辩解和找借口的诱惑和理由。</p>
-</blockquote>
-<p>今天偶然看到的，深以为然。回想之前工作中自己对一些琐碎事情的抱怨，真的是很惭愧。</p>
-<p>同时为自己设一个挑战，接下来的30天里，争取每天做到<strong>零抱怨</strong>。</p>
-      <br>
-      <a class="btn" href="/never-complain-never-explain.html#never-complain-never-explain">    Continue reading
+      <a class="btn" href="/how-to-create-isolated-jupyter-kernel-for-virtualenv-windows.html#how-to-create-isolated-jupyter-kernel-for-virtualenv-windows">    Continue reading
 </a>
   </div>
 </article>
