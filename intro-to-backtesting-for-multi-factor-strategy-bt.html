@@ -30,7 +30,7 @@
 
 <meta name="author" content="xingjian" />
 <meta name="description" content="Intro to Backtesting Framework for Python - bt¶ 项目地址 文档 bt简介: bt是一个量化交易测回测框架，基于Python。 这个框架使用户能够方便的创建基于不同Alogs的回测策略。 用户可以用bt创造灵活的、可测试的、可重用的策略块。 bt的目标：免去quant重新造轮子的时间，使他们能够专注于策略的开发。bt的作者，也是ffn的作者。bt是目前我看到的唯一一个可以用于因子测试的开源项目。" />
-<meta name="keywords" content="quant">
+<meta name="keywords" content="bt, backtesting">
 <meta property="og:site_name" content="Xingjian Pan's Blog"/>
 <meta property="og:title" content="多因子模型回测框架bt简介"/>
 <meta property="og:description" content="Intro to Backtesting Framework for Python - bt¶ 项目地址 文档 bt简介: bt是一个量化交易测回测框架，基于Python。 这个框架使用户能够方便的创建基于不同Alogs的回测策略。 用户可以用bt创造灵活的、可测试的、可重用的策略块。 bt的目标：免去quant重新造轮子的时间，使他们能够专注于策略的开发。bt的作者，也是ffn的作者。bt是目前我看到的唯一一个可以用于因子测试的开源项目。"/>
@@ -40,8 +40,9 @@
 <meta property="article:published_time" content="2017-01-05 17:43:00+08:00"/>
 <meta property="article:modified_time" content="2017-01-05 17:43:00+08:00"/>
 <meta property="article:author" content="/author/xingjian.html">
-<meta property="article:section" content="jupyternotebook"/>
-<meta property="article:tag" content="quant"/>
+<meta property="article:section" content="quant"/>
+<meta property="article:tag" content="bt"/>
+<meta property="article:tag" content="backtesting"/>
 <meta property="og:image" content="">
 
   <title>Xingjian Pan's Blog &ndash; 多因子模型回测框架bt简介</title>
@@ -82,7 +83,7 @@
   <header>
     <h1 id="intro-to-backtesting-for-multi-factor-strategy-bt">多因子模型回测框架bt简介</h1>
     <p>
-          Posted on Thu 05 January 2017 in <a href="/category/jupyternotebook.html">jupyternotebook</a>
+          Posted on Thu 05 January 2017 in <a href="/category/quant.html">quant</a>
 
 
     </p>
@@ -1139,7 +1140,7 @@ bt的目标：免去<strong>quant</strong>重新造轮子的时间，使他们�
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 获取两只etf的价格数据</span>
-<span class="c1"># spy是标普500指数etf的代买, agg是美国全债市etf</span>
+<span class="c1"># spy是标普500指数etf的代码, agg是美国全债市etf的代码</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;spy, agg&#39;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="s1">&#39;2010-01-01&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </pre></div>
@@ -1223,7 +1224,7 @@ Total time elapsed: 00:00:00
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 激动人心的时刻到了，来看下我们的投资业绩吧</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 激动人心的时刻到了，来看下我们的回测结果吧</span>
 <span class="n">res</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 
@@ -1955,7 +1956,7 @@ AAAAAJdF+AUAAAAAAACX9f8BmXoGHUmhB/UAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 来看下具体的指标， 过去5年年华收益率8.33%,不错呦</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 来看下具体的指标， 过去5年年化收益率8.33%,还不错</span>
 <span class="n">res</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 </pre></div>
 
@@ -4114,7 +4115,8 @@ Win 12m %            95.95%      94.59%
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="/tag/quant.html">quant</a>
+      <a href="/tag/bt.html">bt</a>
+      <a href="/tag/backtesting.html">backtesting</a>
     </p>
   </div>
 
