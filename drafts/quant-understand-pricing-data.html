@@ -38,14 +38,13 @@
 <meta property="og:url" content="/drafts/quant-understand-pricing-data.html"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2017-01-06 11:43:00+08:00"/>
-<meta property="article:modified_time" content=""/>
+<meta property="article:modified_time" content="2017-01-10 15:35:00+08:00"/>
 <meta property="article:author" content="/author/xingjian.html">
 <meta property="article:section" content="quant"/>
 <meta property="article:tag" content="data"/>
 <meta property="og:image" content="">
 
   <title>Xingjian Pan's Blog &ndash; 量化数据 - 行情数据</title>
-
 
 
   <script>
@@ -57,7 +56,6 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-
 
 </head>
 <body>
@@ -95,7 +93,7 @@ var _hmt = _hmt || [];
   <header>
     <h1 id="quant-understand-pricing-data">量化数据 - 行情数据</h1>
     <p>
-          Posted on 周五 06 一月 2017 in <a href="/category/quant.html">quant</a>
+          Posted on Fri 06 January 2017 in <a href="/category/quant.html">quant</a>
 
 
     </p>
@@ -254,7 +252,7 @@ var _hmt = _hmt || [];
 </tbody>
 </table>
 <h2>指数扩展行情</h2>
-<p>基本行情的信息比较简单，一些很常用的指标无法提供，比如:
+<p>基本的指数行情的信息比较简单，一些很常用的指标无法提供，比如:
 - 指数的总收益指数
 - 指数级别的市值，市盈率等。
 - 指数成分数据和权重</p>
@@ -264,71 +262,72 @@ var _hmt = _hmt || [];
 <thead>
 <tr>
 <th>覆盖区域</th>
+<th>公司</th>
 <th>名称</th>
 <th>代表指数</th>
-<th>x</th>
-<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>全球</td>
 <td>MSCI</td>
-<td></td>
-<td></td>
-<td></td>
+<td>MSCI</td>
+<td>MSCI ACWI, MSCI EM, MSCI DM</td>
 </tr>
 <tr>
 <td>全球</td>
+<td>S&amp;P Dow Jones Indices</td>
 <td>S&amp;P</td>
-<td></td>
-<td></td>
-<td></td>
+<td>S&amp;P 500</td>
 </tr>
 <tr>
 <td>全球</td>
+<td>S&amp;P Dow Jones Indices</td>
 <td>Dow Jones</td>
-<td></td>
-<td></td>
-<td></td>
+<td>Dow Jones Industrial Average</td>
 </tr>
 <tr>
 <td>全球</td>
+<td>FTSE Russell</td>
 <td>FTSE</td>
-<td></td>
-<td></td>
-<td></td>
+<td>FTSE 100/250</td>
 </tr>
 <tr>
 <td>北美</td>
+<td>FTSE Russel</td>
 <td>Russell</td>
-<td></td>
-<td></td>
-<td></td>
+<td>Russell 1000/2000/3000</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>全球</td>
+<td>STOXX</td>
+<td>STOXX</td>
+<td>STOXX 50, STOXX Europe 600</td>
 </tr>
 </tbody>
 </table>
+<p>指数提供商基本上都能够提供指数行情数据、指数成分数据和很多指数级别的衍生数据。其中尤以MSCI的指数体系最为完善，数据种类最为丰富(上千种数据项目)。根据MSCI官网:</p>
+<ul>
+<li>超过10万亿美元的资产以 MSCI 指数做业绩标准</li>
+<li>全球最大的100家资产管理公司中有97家使用MSCI。</li>
+<li>超过850支ETF基于MSCI指数。</li>
+</ul>
+<p>有兴趣的可以参考一下文档：
+- <a href="https://www.msci.com/eqb/methodology/meth_docs/MSCI_Nov13_Fundamental_Data.pdf">MSCI Fundamental Data Methodology</a>
+- MSCI Global Equity Index Products Technical Documentation - Oct2015</p>
+<p>指数的发展呈现多样化的趋势，除了传统的跟踪国家、行业、风格的指数外，越来越多的指数公司推出创新的指数品种，一些新的类型包括:</p>
+<ul>
+<li>Smart Beta</li>
+<li>Factor Exposure</li>
+<li>Fundamentals Based</li>
+<li>Minimum Variance</li>
+<li>Volatility</li>
+</ul>
+<p>MSCI的指数发展:</p>
+<p><img alt="MSCI Index" src="https://www.msci.com/documents/1296102/1362201/870px-MCSI-IndexTimeline-2016.png/c3f551cf-d03d-4856-ade9-214f6d40b61c?t=1454692713748"></p>
+<h4>更新历史</h4>
+<p>2017-1-6 创建
+2017-01-10 修改，发布</p>
   </div>
   <div class="tag-cloud">
     <p>

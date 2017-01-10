@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/font-awesome.min.css">
+
+
+
+    <link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Xingjian Pan's Blog RSS">
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="author" content="xingjian" />
+<meta name="description" content="URL How Django processes a request A request comes in to /hello/. Django determines the root URLconf by looking at the ROOT_URLCONF setting. Django looks at all of the URLpatterns in the URLconf for the first one that matches /hello/. If it finds a match, it calls the associated view …" />
+<meta name="keywords" content="django">
+<meta property="og:site_name" content="Xingjian Pan's Blog"/>
+<meta property="og:title" content="My notes on learning django."/>
+<meta property="og:description" content="URL How Django processes a request A request comes in to /hello/. Django determines the root URLconf by looking at the ROOT_URLCONF setting. Django looks at all of the URLpatterns in the URLconf for the first one that matches /hello/. If it finds a match, it calls the associated view …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/my-notes-on-learning-django.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-01-10 14:43:00+08:00"/>
+<meta property="article:modified_time" content="2017-01-10 14:43:00+08:00"/>
+<meta property="article:author" content="/author/xingjian.html">
+<meta property="article:section" content="python"/>
+<meta property="article:tag" content="django"/>
+<meta property="og:image" content="">
+
+  <title>Xingjian Pan's Blog &ndash; My notes on learning django.</title>
+
+
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f13420a5837d5f1c8d710446e33281ed";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="">
+        <img src="/theme/img/profile.png" alt="Xingjian Pan" title="Xingjian Pan">
+      </a>
+      <h1><a href="">Xingjian Pan</a></h1>
+
+<p>Learning Data with Python</p>
+      <nav>
+        <ul class="list">
+
+          <li><a href="http://xingjian.me/" target="_blank">Xingjian Pan</a></li>
+          <li><a href="http://xingjian.me/about.html" target="_blank">about</a></li>
+          <li><a href="http://xingjian.me/contact.html" target="_blank">contact</a></li>
+          <li><a href="http://xingjian.me/portfolio.html" target="_blank">portfolio</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-linkedin" href="https://cn.linkedin.com/in/xingjian-pan-26635517" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-rss" href="http://xingjian.me/feeds/all.rss.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="my-notes-on-learning-django">My notes on learning django.</h1>
+    <p>
+          Posted on Tue 10 January 2017 in <a href="/category/python.html">python</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <h3>URL</h3>
+<h4>How Django processes a request</h4>
+<ul>
+<li>A request comes in to <code>/hello/</code>.</li>
+<li>Django determines the root URLconf by looking at the <code>ROOT_URLCONF</code> setting.</li>
+<li>Django looks at all of the URLpatterns in the URLconf for the first one that matches <code>/hello/</code>.</li>
+<li>If it finds a match, it calls the associated view function.</li>
+<li>The view function returns an <code>HttpResponse</code>.</li>
+<li>Django converts the <code>HttpResponse</code> to the proper HTTP response, which results in a web page.</li>
+</ul>
+<h4>Common Regular expressions for URLconf</h4>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Matches</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>. (dot)</td>
+<td>Any single character</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>any single digit</td>
+</tr>
+<tr>
+<td>[A-Z]</td>
+<td>Any character between <code>A</code> and <code>Z</code> (upper case)</td>
+</tr>
+<tr>
+<td>[a-z]</td>
+<td>Any character between a and z(lowercase)</td>
+</tr>
+<tr>
+<td>[A-Za-z]</td>
+<td>Any character between a and z (case-insensitive)</td>
+</tr>
+<tr>
+<td>+</td>
+<td>One or more of the previous expression (for example, \d+ matches one or more digits)</td>
+</tr>
+<tr>
+<td>[^/]+</td>
+<td>One or more characters until (and not including) a forward slash</td>
+</tr>
+<tr>
+<td>?</td>
+<td>Zero or one of the previous expression (for example, \d? matches zero or one digits)</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Zero or more of the previous expression (for example, \d* matches zero, one or more than one digit)</td>
+</tr>
+<tr>
+<td 1_3="1,3"></td>
+<td 1_3="1,3">Between one and three (inclusive) of the previous expression (for example, \d</td>
+</tr>
+</tbody>
+</table>
+<h3>Templates</h3>
+<h4>Dictionaries and contexts</h4>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">django.template</span> <span class="kn">import</span> <span class="n">Template</span><span class="p">,</span> <span class="n">Context</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">raw_template</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;&lt;p&gt;Dear {{ person_name }},&lt;/p&gt; </span>
+<span class="s2">... </span>
+<span class="s2">... &lt;p&gt;Thanks for placing an order from {{ company }}. It&#39;s scheduled to </span>
+<span class="s2">... ship on {{ ship_date|date:&quot;F j, Y&quot; }}.&lt;/p&gt; </span>
+<span class="s2">... </span>
+<span class="s2">... {</span><span class="si">% i</span><span class="s2">f ordered_warranty %} </span>
+<span class="s2">... &lt;p&gt;Your warranty information will be included in the packaging.&lt;/p&gt; </span>
+<span class="s2">... {</span><span class="si">% e</span><span class="s2">lse %} </span>
+<span class="s2">... &lt;p&gt;You didn&#39;t order a warranty, so you&#39;re on your own when </span>
+<span class="s2">... the products inevitably stop working.&lt;/p&gt; </span>
+<span class="s2">... {</span><span class="si">% e</span><span class="s2">ndif %} </span>
+<span class="s2">... </span>
+<span class="s2">... &lt;p&gt;Sincerely,&lt;br /&gt;{{ company }}&lt;/p&gt;&quot;&quot;&quot;</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="n">raw_template</span><span class="p">)</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">datetime</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Context</span><span class="p">({</span><span class="s1">&#39;person_name&#39;</span><span class="p">:</span> <span class="s1">&#39;John Smith&#39;</span><span class="p">,</span> 
+<span class="o">...</span>     <span class="s1">&#39;company&#39;</span><span class="p">:</span> <span class="s1">&#39;Outdoor Equipment&#39;</span><span class="p">,</span> 
+<span class="o">...</span>     <span class="s1">&#39;ship_date&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> 
+<span class="o">...</span>     <span class="s1">&#39;ordered_warranty&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">})</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> 
+<span class="s2">u&quot;&lt;p&gt;Dear John Smith,&lt;/p&gt;</span><span class="se">\n\n</span><span class="s2">&lt;p&gt;Thanks for placing an order from Outdoor </span>
+<span class="n">Equipment</span><span class="o">.</span> <span class="n">It</span><span class="s1">&#39;s scheduled to</span><span class="se">\n</span><span class="s1">ship on July 2, 2015.&lt;/p&gt;</span><span class="se">\n\n\n</span><span class="s1">&lt;p&gt;You </span>
+<span class="n">didn</span><span class="s1">&#39;t order a warranty, so you&#39;</span><span class="n">re</span> <span class="n">on</span> <span class="n">your</span> <span class="n">own</span> <span class="n">when</span>\<span class="n">nthe</span> <span class="n">products</span> 
+<span class="n">inevitably</span> <span class="n">stop</span> <span class="n">working</span><span class="o">.&lt;/</span><span class="n">p</span><span class="o">&gt;</span>\<span class="n">n</span>\<span class="n">n</span>\<span class="n">n</span><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Sincerely</span><span class="p">,</span><span class="o">&lt;</span><span class="n">br</span> <span class="o">/&gt;</span><span class="n">Outdoor</span> <span class="n">Equipment</span> 
+<span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span><span class="s2">&quot; </span>
+</pre></div>
+
+
+<h4>Context variable lookup</h4>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">django.template</span> <span class="kn">import</span> <span class="n">Template</span><span class="p">,</span> <span class="n">Context</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Sally&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="s1">&#39;43&#39;</span><span class="p">}</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="s1">&#39;{{ person.name }} is {{ person.age }} years old.&#39;</span><span class="p">)</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Context</span><span class="p">({</span><span class="s1">&#39;person&#39;</span><span class="p">:</span> <span class="n">person</span><span class="p">})</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> 
+<span class="s1">&#39;Sally is 43 years old.&#39;</span> 
+</pre></div>
+
+
+<h4>variables in templates</h4>
+<h5>Conditional statements</h5>
+<div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">span</span><span class="o">&gt;</span>
+  <span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">years</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="o">%</span><span class="p">}</span>
+    <span class="n">You</span> <span class="n">are</span> <span class="n">a</span> <span class="n">child</span>
+  <span class="p">{</span><span class="o">%</span> <span class="k">elif</span> <span class="n">years</span> <span class="o">&lt;</span> <span class="mi">18</span> <span class="o">%</span><span class="p">}</span>
+    <span class="n">You</span> <span class="n">are</span> <span class="n">a</span> <span class="n">teenager</span>
+  <span class="p">{</span><span class="o">%</span> <span class="k">else</span> <span class="o">%</span><span class="p">}</span>
+    <span class="n">You</span> <span class="n">are</span> <span class="n">an</span> <span class="n">adult</span><span class="err">!</span>
+  <span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
+<span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
+</pre></div>
+
+
+<h5>looping in a template</h5>
+<div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+  <span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">city</span> <span class="ow">in</span> <span class="n">array_city</span> <span class="o">%</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span>
+      <span class="p">{{</span> <span class="n">city</span> <span class="p">}}</span>
+    <span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+  <span class="p">{</span><span class="o">%</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span>
+<span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</pre></div>
+
+
+<h4>filters in templates</h4>
+<div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">span</span><span class="o">&gt;</span> <span class="p">{{</span> <span class="n">my_hello</span> <span class="o">|</span> <span class="n">lower</span> <span class="o">|</span> <span class="n">capfirst</span><span class="p">}}</span> <span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
+</pre></div>
+
+
+<p>Dot lookups can be summarized like this: when the template system encounters a dot in a variable name, it tries the following lookups, in this order:</p>
+<ul>
+<li>Dictionary lookup (for example, <code>foo["bar"]</code>)</li>
+<li>Attribute lookup (for example, <code>foo.bar</code>)</li>
+<li>Method call (for example, <code>foo.bar()</code>)</li>
+<li>List-index lookup (for example, <code>foo[2]</code>)</li>
+</ul>
+<h3>These philosophies remain core to Django today.</h3>
+<ul>
+<li>Separate logic from presentation</li>
+<li>Discourage redundancy</li>
+<li>Be decoupled from HTML</li>
+<li>XML is bad</li>
+<li>Assume designer competence</li>
+<li>Treat whitespace obviously</li>
+<li>Don't invent a programming language</li>
+<li>Ensure safety and security</li>
+<li>Extensible</li>
+</ul>
+<h3>Use management command</h3>
+<p>Below is a sample command that load csv file into a model. </p>
+<div class="highlight"><pre><span></span><span class="c1"># movies/management/commands/import_movies_from_csv.py</span>
+<span class="c1"># -*- coding: UTF-8 -*-</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">from</span> <span class="nn">django.core.management.base</span> <span class="kn">import</span> <span class="n">BaseCommand</span>
+<span class="kn">from</span> <span class="nn">movies.models</span> <span class="kn">import</span> <span class="n">Movie</span>
+
+<span class="n">SILENT</span><span class="p">,</span> <span class="n">NORMAL</span><span class="p">,</span> <span class="n">VERBOSE</span><span class="p">,</span> <span class="n">VERY_VERBOSE</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
+
+<span class="k">class</span> <span class="nc">Command</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
+    <span class="n">help</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;Imports movies from a local CSV file. &quot;</span>
+        <span class="s2">&quot;Expects title, URL, and release year.&quot;</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_arguments</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parser</span><span class="p">):</span>
+        <span class="c1"># Positional arguments</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+            <span class="s2">&quot;file_path&quot;</span><span class="p">,</span>
+            <span class="n">nargs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="nb">type</span><span class="o">=</span><span class="nb">unicode</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
+        <span class="n">verbosity</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;verbosity&quot;</span><span class="p">,</span> <span class="n">NORMAL</span><span class="p">)</span>
+        <span class="n">file_path</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="s2">&quot;file_path&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">verbosity</span> <span class="o">&gt;=</span> <span class="n">NORMAL</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;=== Movies imported ===&quot;</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">rownum</span><span class="p">,</span> <span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">release_year</span><span class="p">)</span> <span class="ow">in</span> \
+            <span class="nb">enumerate</span><span class="p">(</span><span class="n">reader</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">rownum</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="c1"># let&#39;s skip the column captions</span>
+                    <span class="k">continue</span>
+                <span class="n">movie</span><span class="p">,</span> <span class="n">created</span> <span class="o">=</span> \
+                <span class="n">Movie</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_or_create</span><span class="p">(</span>
+                    <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
+                    <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+                    <span class="n">release_year</span><span class="o">=</span><span class="n">release_year</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="k">if</span> <span class="n">verbosity</span> <span class="o">&gt;=</span> <span class="n">NORMAL</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;{}. {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">rownum</span><span class="p">,</span> <span class="n">movie</span><span class="o">.</span><span class="n">title</span>
+                    <span class="p">))</span>
+</pre></div>
+
+
+<p>To run the command:</p>
+<div class="highlight"><pre><span></span><span class="o">(</span>myproject_env<span class="o">)</span>$ python manage.py import_movies_from_csv <span class="se">\</span>
+data/movies.csv
+</pre></div>
+
+
+<h3>Model</h3>
+<h4>Work with Queryset</h4>
+<p>Create</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">blog.models</span> <span class="kn">import</span> <span class="n">Post</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s1">&#39;admin&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;One more post&#39;</span><span class="p">,</span>
+                    <span class="n">slug</span><span class="o">=</span><span class="s1">&#39;one-more-post&#39;</span><span class="p">,</span>
+                    <span class="n">body</span><span class="o">=</span><span class="s1">&#39;Post body.&#39;</span><span class="p">,</span>
+                    <span class="n">author</span><span class="o">=</span><span class="n">user</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">post</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Retrieve</p>
+<div class="highlight"><pre><span></span><span class="n">all_posts</span> <span class="o">=</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Filter</p>
+<div class="highlight"><pre><span></span><span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">publish__year</span><span class="o">=</span><span class="mi">2015</span><span class="p">,</span> <span class="n">author__username</span><span class="o">=</span><span class="s1">&#39;admin&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Delete</p>
+<div class="highlight"><pre><span></span><span class="n">post</span> <span class="o">=</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">post</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+</pre></div>
+
+
+<h4>Use model mixins to extract common files and methods into various reusable model mixins.</h4>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TimeStampedModel</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">created</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">modified</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now</span> <span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">abstract</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="k">class</span> <span class="nc">Postable</span><span class="p">(</span><span class="n">TimeStampedModel</span><span class="p">):</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+    <span class="o">...</span> 
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">abstract</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="k">class</span> <span class="nc">Post</span><span class="p">(</span><span class="n">Postable</span><span class="p">):</span>
+    <span class="o">...</span>
+
+<span class="k">class</span> <span class="nc">Comment</span><span class="p">(</span><span class="n">Postable</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+
+
+<h4>Use signals to to create user profile when new user is created.</h4>
+<div class="highlight"><pre><span></span><span class="c1"># signals.py</span>
+<span class="kn">from</span> <span class="nn">django.db.models.signals</span> <span class="kn">import</span> <span class="n">post_save</span>
+<span class="kn">from</span> <span class="nn">django.dispatch</span> <span class="kn">import</span> <span class="n">receiver</span>
+<span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span> 
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">models</span>
+
+<span class="nd">@receiver</span><span class="p">(</span><span class="n">post_save</span><span class="p">,</span> <span class="n">sender</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">AUTH_USER_MODEL</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">create_profile_handler</span><span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">created</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">created</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="c1"># Create the profile object, only if it is newly created</span>
+    <span class="n">profile</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Profile</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">instance</span><span class="p">)</span>
+    <span class="n">profile</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="/tag/django.html">django</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Xingjian Pan </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Xingjian Pan's Blog ",
+  "url" : "",
+  "image": "",
+  "description": "Xingjian Pan's Thoughts and Writings"
+}
+</script>
+</body>
+</html>
