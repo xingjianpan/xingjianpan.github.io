@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/font-awesome.min.css">
+
+
+
+    <link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Xingjian Pan's Blog RSS">
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="author" content="xingjian" />
+<meta name="description" content="股票行情数据 股票行情数据（或者叫做价格数据）通常是时间序列数据，包含股票的价格信息，基本的行情数据通常比较简单，一般包括: 股票代码 日期 开盘价 最高价 最低价 收盘价 成交量 行情数据样例，来源：雪球 symbol date open high low close volume SH601857 2017-1-5 7.99 8.22 7.97 8.16 78,716,533 SH601857 2017-1-4 7.96 8.04 7.92 8 39,556,853 SH601857 …" />
+<meta name="keywords" content="data">
+<meta property="og:site_name" content="Xingjian Pan's Blog"/>
+<meta property="og:title" content="量化数据 - 行情数据"/>
+<meta property="og:description" content="股票行情数据 股票行情数据（或者叫做价格数据）通常是时间序列数据，包含股票的价格信息，基本的行情数据通常比较简单，一般包括: 股票代码 日期 开盘价 最高价 最低价 收盘价 成交量 行情数据样例，来源：雪球 symbol date open high low close volume SH601857 2017-1-5 7.99 8.22 7.97 8.16 78,716,533 SH601857 2017-1-4 7.96 8.04 7.92 8 39,556,853 SH601857 …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/quant-understand-pricing-data.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-01-06 11:43:00+08:00"/>
+<meta property="article:modified_time" content="2017-01-10 15:35:00+08:00"/>
+<meta property="article:author" content="/author/xingjian.html">
+<meta property="article:section" content="quant"/>
+<meta property="article:tag" content="data"/>
+<meta property="og:image" content="">
+
+  <title>Xingjian Pan's Blog &ndash; 量化数据 - 行情数据</title>
+
+
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f13420a5837d5f1c8d710446e33281ed";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="">
+        <img src="/theme/img/profile.png" alt="Xingjian Pan" title="Xingjian Pan">
+      </a>
+      <h1><a href="">Xingjian Pan</a></h1>
+
+<p>Learning Data with Python</p>
+      <nav>
+        <ul class="list">
+
+          <li><a href="http://xingjian.me/" target="_blank">Xingjian Pan</a></li>
+          <li><a href="http://xingjian.me/about.html" target="_blank">about</a></li>
+          <li><a href="http://xingjian.me/contact.html" target="_blank">contact</a></li>
+          <li><a href="http://xingjian.me/portfolio.html" target="_blank">portfolio</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-linkedin" href="https://cn.linkedin.com/in/xingjian-pan-26635517" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-rss" href="http://xingjian.me/feeds/all.rss.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="quant-understand-pricing-data">量化数据 - 行情数据</h1>
+    <p>
+          Posted on Fri 06 January 2017 in <a href="/category/quant.html">quant</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <h1>股票行情数据</h1>
+<p>股票行情数据（或者叫做价格数据）通常是时间序列数据，包含股票的价格信息，基本的行情数据通常比较简单，一般包括:</p>
+<ol>
+<li>股票代码</li>
+<li>日期</li>
+<li>开盘价</li>
+<li>最高价</li>
+<li>最低价</li>
+<li>收盘价</li>
+<li>成交量</li>
+</ol>
+<p>行情数据样例，来源：<a href="http://xueqiu.com/S/SH601857/historical.csv">雪球</a></p>
+<table>
+<thead>
+<tr>
+<th>symbol</th>
+<th>date</th>
+<th>open</th>
+<th>high</th>
+<th>low</th>
+<th>close</th>
+<th>volume</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SH601857</td>
+<td>2017-1-5</td>
+<td>7.99</td>
+<td>8.22</td>
+<td>7.97</td>
+<td>8.16</td>
+<td>78,716,533</td>
+</tr>
+<tr>
+<td>SH601857</td>
+<td>2017-1-4</td>
+<td>7.96</td>
+<td>8.04</td>
+<td>7.92</td>
+<td>8</td>
+<td>39,556,853</td>
+</tr>
+<tr>
+<td>SH601857</td>
+<td>2017-1-3</td>
+<td>7.95</td>
+<td>8.01</td>
+<td>7.91</td>
+<td>7.97</td>
+<td>44,793,060</td>
+</tr>
+<tr>
+<td>SH601857</td>
+<td>2016-12-30</td>
+<td>7.95</td>
+<td>7.98</td>
+<td>7.9</td>
+<td>7.95</td>
+<td>24,348,142</td>
+</tr>
+<tr>
+<td>SH601857</td>
+<td>2016-12-29</td>
+<td>7.98</td>
+<td>8.02</td>
+<td>7.93</td>
+<td>7.95</td>
+<td>38,574,755</td>
+</tr>
+<tr>
+<td>SH601857</td>
+<td>2016-12-28</td>
+<td>8.05</td>
+<td>8.19</td>
+<td>8</td>
+<td>8.03</td>
+<td>66,614,894</td>
+</tr>
+</tbody>
+</table>
+<p>如果将基本的行情数据用于回测，会有两个非常大的问题：</p>
+<ol>
+<li>无法准确计算收益率。比如：没有考虑到分红的影响。</li>
+<li>一些基于价格的信号可能会失效，比如：历史价格数据经过多次复权调整后变得很小。</li>
+</ol>
+<p>对于回测而言，一套高质量的价格数据源是必要的，以Datastream价格数据为例，可以提供：</p>
+<ol>
+<li>基本的行情信息（原始的未经复权调成的价格数据和经过复权调整的价格数据）。</li>
+<li>公司的公司行为历史（比如拆股、配股），以及相应的股本变化历史。</li>
+<li>公司的分红信息。</li>
+<li>复权因子信息（基于公司行为计算得出）。</li>
+<li>总收益指数，方便直接计算收益率。</li>
+<li>各个币种间的汇率信息。</li>
+<li>以及上千种基于价格数据衍生的数据，如市值、股息率、市盈率、成交额等。</li>
+</ol>
+<h1>指数行情数据</h1>
+<p>指数价格数据通常是时间序列数据，下面是沪深300指数的例子:</p>
+<p>来源：<a href="http://xueqiu.com/S/SH000300/historical.csv">雪球</a></p>
+<table>
+<thead>
+<tr>
+<th>symbol</th>
+<th>date</th>
+<th>open</th>
+<th>high</th>
+<th>low</th>
+<th>close</th>
+<th>volume</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SH000300</td>
+<td>2017-1-5</td>
+<td>3368.34</td>
+<td>3373.41</td>
+<td>3361.46</td>
+<td>3367.79</td>
+<td>8833635700</td>
+</tr>
+<tr>
+<td>SH000300</td>
+<td>2017-1-4</td>
+<td>3340.56</td>
+<td>3369.57</td>
+<td>3338.15</td>
+<td>3368.31</td>
+<td>9005082700</td>
+</tr>
+<tr>
+<td>SH000300</td>
+<td>2017-1-3</td>
+<td>3313.95</td>
+<td>3345.26</td>
+<td>3313.95</td>
+<td>3342.23</td>
+<td>8656789600</td>
+</tr>
+<tr>
+<td>SH000300</td>
+<td>2016-12-30</td>
+<td>3302.6</td>
+<td>3313.55</td>
+<td>3295.75</td>
+<td>3310.08</td>
+<td>7174411600</td>
+</tr>
+</tbody>
+</table>
+<h2>指数扩展行情</h2>
+<p>基本的指数行情的信息比较简单，一些很常用的指标无法提供，比如:
+- 指数的总收益指数
+- 指数级别的市值，市盈率等。
+- 指数成分数据和权重</p>
+<p>对于这些数据，则需要通过相应的数据提供商获得。</p>
+<h2>主要指数行情数据提供商</h2>
+<table>
+<thead>
+<tr>
+<th>覆盖区域</th>
+<th>公司</th>
+<th>名称</th>
+<th>代表指数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全球</td>
+<td>MSCI</td>
+<td>MSCI</td>
+<td>MSCI ACWI, MSCI EM, MSCI DM</td>
+</tr>
+<tr>
+<td>全球</td>
+<td>S&amp;P Dow Jones Indices</td>
+<td>S&amp;P</td>
+<td>S&amp;P 500</td>
+</tr>
+<tr>
+<td>全球</td>
+<td>S&amp;P Dow Jones Indices</td>
+<td>Dow Jones</td>
+<td>Dow Jones Industrial Average</td>
+</tr>
+<tr>
+<td>全球</td>
+<td>FTSE Russell</td>
+<td>FTSE</td>
+<td>FTSE 100/250</td>
+</tr>
+<tr>
+<td>北美</td>
+<td>FTSE Russel</td>
+<td>Russell</td>
+<td>Russell 1000/2000/3000</td>
+</tr>
+<tr>
+<td>全球</td>
+<td>STOXX</td>
+<td>STOXX</td>
+<td>STOXX 50, STOXX Europe 600</td>
+</tr>
+</tbody>
+</table>
+<p>指数提供商基本上都能够提供指数行情数据、指数成分数据和很多指数级别的衍生数据。其中尤以MSCI的指数体系最为完善，数据种类最为丰富(上千种数据项目)。根据MSCI官网:</p>
+<ul>
+<li>超过10万亿美元的资产以 MSCI 指数做业绩标准</li>
+<li>全球最大的100家资产管理公司中有97家使用MSCI。</li>
+<li>超过850支ETF基于MSCI指数。</li>
+</ul>
+<p>有兴趣的可以参考一下文档：
+- <a href="https://www.msci.com/eqb/methodology/meth_docs/MSCI_Nov13_Fundamental_Data.pdf">MSCI Fundamental Data Methodology</a>
+- MSCI Global Equity Index Products Technical Documentation - Oct2015</p>
+<p>指数的发展呈现多样化的趋势，除了传统的跟踪国家、行业、风格的指数外，越来越多的指数公司推出创新的指数品种，一些新的类型包括:</p>
+<ul>
+<li>Smart Beta</li>
+<li>Factor Exposure</li>
+<li>Fundamentals Based</li>
+<li>Minimum Variance</li>
+<li>Volatility</li>
+</ul>
+<p>MSCI的指数发展:</p>
+<p><img alt="MSCI Index" src="https://www.msci.com/documents/1296102/1362201/870px-MCSI-IndexTimeline-2016.png/c3f551cf-d03d-4856-ade9-214f6d40b61c?t=1454692713748"></p>
+<h4>更新历史</h4>
+<p>2017-1-6 创建
+2017-01-10 修改，发布</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="/tag/data.html">data</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Xingjian Pan </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Xingjian Pan's Blog ",
+  "url" : "",
+  "image": "",
+  "description": "Xingjian Pan's Thoughts and Writings"
+}
+</script>
+</body>
+</html>
