@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Xingjian Pan's Blog - quant</title><link href="xingjian.me/" rel="alternate"></link><link href="xingjian.me/feeds/quant.atom.xml" rel="self"></link><id>xingjian.me/</id><updated>2017-01-10T15:35:00+08:00</updated><entry><title>量化数据 - 行情数据</title><link href="xingjian.me/quant-understand-pricing-data.html" rel="alternate"></link><published>2017-01-06T11:43:00+08:00</published><updated>2017-01-10T15:35:00+08:00</updated><author><name>xingjian</name></author><id>tag:None,2017-01-06:xingjian.me/quant-understand-pricing-data.html</id><summary type="html">&lt;h1&gt;股票行情数据&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Xingjian Pan's Blog - quant</title><link href="http://xingjian.me/" rel="alternate"></link><link href="http://xingjian.me/feeds/quant.atom.xml" rel="self"></link><id>http://xingjian.me/</id><updated>2017-01-10T15:35:00+08:00</updated><entry><title>量化数据 - 行情数据</title><link href="http://xingjian.me/quant-understand-pricing-data.html" rel="alternate"></link><published>2017-01-06T11:43:00+08:00</published><updated>2017-01-10T15:35:00+08:00</updated><author><name>xingjian</name></author><id>tag:xingjian.me,2017-01-06:/quant-understand-pricing-data.html</id><summary type="html">&lt;h1&gt;股票行情数据&lt;/h1&gt;
 &lt;p&gt;股票行情数据（或者叫做价格数据）通常是时间序列数据，包含股票的价格信息，基本的行情数据通常比较简单，一般包括:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;股票代码&lt;/li&gt;
@@ -271,7 +271,7 @@
 &lt;ul&gt;
 &lt;li&gt;2017-1-6 创建&lt;/li&gt;
 &lt;li&gt;2017-01-10 修改，发布&lt;/li&gt;
-&lt;/ul&gt;</content><category term="data"></category></entry><entry><title>量化数据 - 行业分类</title><link href="xingjian.me/quant-understand-industry-classification-data.html" rel="alternate"></link><published>2017-01-05T22:23:00+08:00</published><updated>2017-01-05T22:23:00+08:00</updated><author><name>xingjian</name></author><id>tag:None,2017-01-05:xingjian.me/quant-understand-industry-classification-data.html</id><summary type="html">&lt;h1&gt;什么是行业分类数据&lt;/h1&gt;
+&lt;/ul&gt;</content><category term="data"></category></entry><entry><title>量化数据 - 行业分类</title><link href="http://xingjian.me/quant-understand-industry-classification-data.html" rel="alternate"></link><published>2017-01-05T22:23:00+08:00</published><updated>2017-01-05T22:23:00+08:00</updated><author><name>xingjian</name></author><id>tag:xingjian.me,2017-01-05:/quant-understand-industry-classification-data.html</id><summary type="html">&lt;h1&gt;什么是行业分类数据&lt;/h1&gt;
 &lt;p&gt;行业分类数据(&lt;code&gt;industry classification&lt;/code&gt;)是对公司所属行业的描述性数据，是金融行业的基础数据(&lt;code&gt;meta-data&lt;/code&gt;)。行业分类数据应用在投资研究的各个领域, 比如：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;筛选同类型的公司（微软和甲骨文同属软件公司，但是苹果是硬件公司）。&lt;/li&gt;
@@ -474,7 +474,7 @@
 &lt;li&gt;&lt;a href="http://financial.thomsonreuters.com/content/dam/openweb/documents/pdf/financial/selecting-sector-benchmarks.pdf"&gt;SELECTING SECTOR BENCHMARKS&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.investopedia.com/articles/stocks/08/global-industry-classification-industrial-classification-benchmark.asp"&gt;GICS Vs. ICB: Competing Systems For Classifying Stocks&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.fidelity.com/learning-center/trading-investing/markets-sectors/know-your-sectors-and-industries"&gt;Know your sectors and industries&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><category term="data"></category></entry><entry><title>多因子模型回测框架bt简介</title><link href="xingjian.me/intro-to-backtesting-for-multi-factor-strategy-bt.html" rel="alternate"></link><published>2017-01-05T17:43:00+08:00</published><updated>2017-01-05T17:43:00+08:00</updated><author><name>xingjian</name></author><id>tag:None,2017-01-05:xingjian.me/intro-to-backtesting-for-multi-factor-strategy-bt.html</id><summary type="html">
+&lt;/ol&gt;</content><category term="data"></category></entry><entry><title>多因子模型回测框架bt简介</title><link href="http://xingjian.me/intro-to-backtesting-for-multi-factor-strategy-bt.html" rel="alternate"></link><published>2017-01-05T17:43:00+08:00</published><updated>2017-01-05T17:43:00+08:00</updated><author><name>xingjian</name></author><id>tag:xingjian.me,2017-01-05:/intro-to-backtesting-for-multi-factor-strategy-bt.html</id><summary type="html">
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -4448,7 +4448,7 @@ Win 12m %            95.95%      94.59%
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="bt"></category><category term="backtesting"></category></entry><entry><title>金融分析包FFN简介</title><link href="xingjian.me/intro-to-financial-functions-package-ffn.html" rel="alternate"></link><published>2017-01-05T17:09:00+08:00</published><updated>2017-01-05T17:09:00+08:00</updated><author><name>xingjian</name></author><id>tag:None,2017-01-05:xingjian.me/intro-to-financial-functions-package-ffn.html</id><summary type="html">
+</content><category term="bt"></category><category term="backtesting"></category></entry><entry><title>金融分析包FFN简介</title><link href="http://xingjian.me/intro-to-financial-functions-package-ffn.html" rel="alternate"></link><published>2017-01-05T17:09:00+08:00</published><updated>2017-01-05T17:09:00+08:00</updated><author><name>xingjian</name></author><id>tag:xingjian.me,2017-01-05:/intro-to-financial-functions-package-ffn.html</id><summary type="html">
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
