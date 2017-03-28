@@ -1079,91 +1079,79 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Intro-to-Backtesting-Framework-for-Python---bt">Intro to Backtesting Framework for Python - bt<a class="anchor-link" href="#Intro-to-Backtesting-Framework-for-Python---bt">&#182;</a></h2><ul>
+<h2 id="Intro-to-Backtesting-Framework-for-Python---bt">Intro to Backtesting Framework for Python - bt<a class="anchor-link" href="#Intro-to-Backtesting-Framework-for-Python---bt">¶</a></h2><ul>
 <li><a href="https://github.com/pmorissette/ffn">项目地址</a></li>
 <li><a href="http://pmorissette.github.io/ffn/">文档</a></li>
 <li><code>bt</code>简介: bt是一个量化交易测回测框架，基于<code>Python</code>。 这个框架使用户能够方便的创建基于不同<code>Alogs</code>的回测策略。 用户可以用bt创造灵活的、可测试的、可重用的<code>策略块</code>。 
 bt的目标：免去<strong>quant</strong>重新造轮子的时间，使他们能够专注于策略的开发。bt的作者，也是<code>ffn</code>的作者。bt是目前我看到的<em>唯一</em>一个可以用于因子测试的开源项目。</li>
 </ul>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">bt</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">color_codes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="创建一个简单的回测策略">&#21019;&#24314;&#19968;&#20010;&#31616;&#21333;&#30340;&#22238;&#27979;&#31574;&#30053;<a class="anchor-link" href="#创建一个简单的回测策略">&#182;</a></h2><ul>
+<h2 id="创建一个简单的回测策略">创建一个简单的回测策略<a class="anchor-link" href="#创建一个简单的回测策略">¶</a></h2><ul>
 <li>每月调仓(monthly rebalanced）</li>
 <li>只能做多(long-only)</li>
 <li>等权重 (equal weight)</li>
 </ul>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 获取两只etf的价格数据</span>
 <span class="c1"># spy是标普500指数etf的代码, agg是美国全债市etf的代码</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;spy, agg&#39;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="s1">&#39;2010-01-01&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'spy, agg'</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="s1">'2010-01-01'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>                  spy        agg
@@ -1176,46 +1164,38 @@ Date
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 创建策略</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">(</span><span class="s1">&#39;s1&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">bt</span><span class="o">.</span><span class="n">algos</span><span class="o">.</span><span class="n">RunMonthly</span><span class="p">(),</span> <span class="c1">#每月调仓</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">(</span><span class="s1">'s1'</span><span class="p">,</span> <span class="p">[</span><span class="n">bt</span><span class="o">.</span><span class="n">algos</span><span class="o">.</span><span class="n">RunMonthly</span><span class="p">(),</span> <span class="c1">#每月调仓</span>
                        <span class="n">bt</span><span class="o">.</span><span class="n">algos</span><span class="o">.</span><span class="n">SelectAll</span><span class="p">(),</span>  <span class="c1">#选择所有股票</span>
                        <span class="n">bt</span><span class="o">.</span><span class="n">algos</span><span class="o">.</span><span class="n">WeighEqually</span><span class="p">(),</span> <span class="c1">#等权重构建组合</span>
                        <span class="n">bt</span><span class="o">.</span><span class="n">algos</span><span class="o">.</span><span class="n">Rebalance</span><span class="p">()])</span> <span class="c1">#执行调仓</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 创建回测并执行</span>
 <span class="n">test</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Backtest</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>s1
@@ -1225,31 +1205,23 @@ Total time elapsed: 00:00:00
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 激动人心的时刻到了，来看下我们的回测结果吧</span>
 <span class="n">res</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
-
-
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABL8AAAHXCAYAAABd4/gHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAPYQAAD2EBqD+naQAAIABJREFUeJzs3Xd4VGX+/vH3zKT3QBokpJAACS1BAlKFgIUiRcEVFFl1
@@ -1954,31 +1926,24 @@ XwAAAAAAAHBZPPYIAAAAAAAAl0X4BQAAAAAAAJdF+AUAAAAAAACXRfgFAAAAAAAAl0X4BQAAAAAA
 AJdF+AUAAAAAAACXRfgFAAAAAAAAl0X4BQAAAAAAAJdF+AUAAAAAAACXRfgFAAAAAAAAl0X4BQAA
 AAAAAJdF+AUAAAAAAACX9f8BmXoGHUmhB/UAAAAASUVORK5CYII=
 ">
-</div>
-
-</div>
-
+</img></div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 来看下具体的指标， 过去5年年化收益率8.33%,还不错</span>
 <span class="n">res</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Stat                 s1
@@ -2035,31 +2000,23 @@ Win 12m %            95.95%
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 来看下股票的持仓情况，因为我们只选了两只股票(spy, etf)而且等权分布，所以基本上是50%/50%</span>
 <span class="n">res</span><span class="o">.</span><span class="n">plot_security_weights</span><span class="p">()</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
-
-
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABLsAAAGzCAYAAADHbRUxAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAPYQAAD2EBqD+naQAAIABJREFUeJzs3XdgU+e9//G3hjW898TGgAEDZkOABLJK0maPJmmatE0z
@@ -2993,43 +2950,36 @@ iV588UVNmzbNrOkCAACYhrILAAAAAAAAQYPTGAEAAAAAABA0KLsAAAAAAAAQNCi7AAAAAAAAEDQo
 uwAAAAAAABA0KLsAAAAAAAAQNCi7AAAAAAAAEDQouwAAAAAAABA0KLsAAAAAAAAQNCi7AAAAAAAA
 EDQouwAAAAAAABA0KLsAAAAAAAAQNCi7AAAAAAAAEDT+D0JBsOMT/dY7AAAAAElFTkSuQmCC
 ">
-</div>
-
-</div>
-
+</img></div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 下面这个策略不再使用简单的等权重方法，而是基于股票的波动率确定持仓的大小</span>
 <span class="c1"># 如果波动率高，那么持仓就低些，反之，如果波动率底，就提高持仓</span>
 
 <span class="c1"># 创建策略</span>
-<span class="n">s2</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">(</span><span class="s1">&#39;s2&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">bt</span><span class="o">.</span><span class="n">algos</span><span class="o">.</span><span class="n">RunWeekly</span><span class="p">(),</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Strategy</span><span class="p">(</span><span class="s1">'s2'</span><span class="p">,</span> <span class="p">[</span><span class="n">bt</span><span class="o">.</span><span class="n">algos</span><span class="o">.</span><span class="n">RunWeekly</span><span class="p">(),</span>
                         <span class="n">bt</span><span class="o">.</span><span class="n">algos</span><span class="o">.</span><span class="n">SelectAll</span><span class="p">(),</span>
-                        <span class="n">bt</span><span class="o">.</span><span class="n">algos</span><span class="o">.</span><span class="n">WeighInvVol</span><span class="p">(),</span> <span class="c1"># &lt;- 关键！</span>
+                        <span class="n">bt</span><span class="o">.</span><span class="n">algos</span><span class="o">.</span><span class="n">WeighInvVol</span><span class="p">(),</span> <span class="c1"># <- 关键！</span>
                         <span class="n">bt</span><span class="o">.</span><span class="n">algos</span><span class="o">.</span><span class="n">Rebalance</span><span class="p">()])</span>
 
-<span class="c1"># now let&#39;s test it with the same data set. We will also compare it with our first backtest.</span>
+<span class="c1"># now let's test it with the same data set. We will also compare it with our first backtest.</span>
 <span class="n">test2</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Backtest</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 <span class="n">res2</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">test2</span><span class="p">)</span>
 
 <span class="n">res2</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>s1
@@ -3043,10 +2993,7 @@ Total time elapsed: 00:00:03
 </pre>
 </div>
 </div>
-
 <div class="output_area"><div class="prompt"></div>
-
-
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABL8AAAHXCAYAAABd4/gHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAPYQAAD2EBqD+naQAAIABJREFUeJzs3Xd4VHXe/vH3THpPgBRI6AmEmgABgdACiiJFFBUVYWFX
@@ -4004,19 +3951,16 @@ devWTc8995zq6uqUnJys9PR0zZkzR9OmTdOePXv00ksvyWq1ysfHRyNGjNBTTz2l4ODg5goXAACg
 AAAAgMui+AUAAAAAAACXRfELAAAAAAAALoviFwAAAAAAAFwWxS8AAAAAAAC4LIpfAAAAAAAAcFkU
 vwAAAAAAAOCyKH4BAAAAAADAZf0fMLC80w0+tYIAAAAASUVORK5CYII=
 ">
-</div>
-
-</div>
-
+</img></div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In [34]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+<div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 可以看到， 第二个组合的波动率显著降低了(2.98% vs. 6.12%), 而且sharpe比率提高了(1.61 vs 1.37)</span>
 <span class="c1"># Stat                 s1          s2</span>
 <span class="c1">#Monthly Sharpe       1.37        1.61</span>
@@ -4025,15 +3969,11 @@ vwAAAAAAAOCyKH4BAAAAAADAZf0fMLC80w0+tYIAAAAASUVORK5CYII=
 
 <span class="n">res2</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 </pre></div>
-
 </div>
 </div>
 </div>
-
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Stat                 s1          s2
@@ -4090,10 +4030,8 @@ Win 12m %            95.95%      94.59%
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');

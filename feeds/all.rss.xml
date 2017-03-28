@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Xingjian Pan's Blog</title><link>/</link><description>Learning Data with Python</description><lastBuildDate>Tue, 10 Jan 2017 15:35:00 +0800</lastBuildDate><item><title>My notes on learning django.</title><link>/my-notes-on-learning-django.html</link><description>&lt;h3&gt;URL&lt;/h3&gt;
+<rss version="2.0"><channel><title>Xingjian Pan's Blog</title><link>/</link><description>Learning Data with Python</description><lastBuildDate>Mon, 27 Mar 2017 20:04:00 +0800</lastBuildDate><item><title>My journey with React and React Native so far</title><link>/my-journey-with-react-so-far.html</link><description>&lt;h1&gt;第一回合: Javascript in 2013&lt;/h1&gt;
+&lt;p&gt;2013年的时候曾经心血来潮的学了一阵JavaScript， 特意买了两本大书： &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.cn/O-Reilly%E7%B2%BE%E5%93%81%E5%9B%BE%E4%B9%A6%E7%B3%BB%E5%88%97-JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97-%E5%BC%97%E5%85%B0%E7%BA%B3%E6%A0%B9/dp/B007VISQ1Y/ref=sr_1_1?ie=UTF8&amp;amp;qid=1490667460&amp;amp;sr=8-1&amp;amp;keywords=JavaScript%3A+The+Definitive+Guide"&gt;Javascript权威指南 第六版&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.cn/Professional-JavaScript-for-Web-Developers-Zakas-Nicholas-C/dp/1118026691/ref=sr_1_1?ie=UTF8&amp;amp;qid=1490667514&amp;amp;sr=8-1&amp;amp;keywords=professional+javascript+for+web+developers"&gt;Professional JavaScript for Web Developers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;然后跟着&lt;a href="http://javascriptissexy.com/how-to-learn-javascript-properly/"&gt;how to learn javascript properly&lt;/a&gt;的在线教教程自学。&lt;/p&gt;
+&lt;p&gt;但是习惯了python简单明快的语法， 对于JavaScript总是觉得哪里不对。然后囫囵吞枣的看了一遍，算是对于JavaScript有了一个感性的认识。&lt;/p&gt;
+&lt;p&gt;接下来很自然的问题就是如何学以致用。因为之前有&lt;code&gt;Django&lt;/code&gt;的经验，所以很自然的想到了JavaScript的web framework。一番搜索之后，找到了&lt;code&gt;MEAN&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;M&lt;/strong&gt;ongoDB&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;E&lt;/strong&gt;xpress&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A&lt;/strong&gt;nuglar&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;N&lt;/strong&gt;ode.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;MEAN&lt;/code&gt;的教程很多，我比较推荐这本&lt;a href="https://www.safaribooksonline.com/library/view/mean-web-development/9781783983285/"&gt;MEAN Web Development&lt;/a&gt;。&lt;br&gt;
+跟着教程实现了一个CRUD的网站，然后就放下了 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Mon, 27 Mar 2017 20:04:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-03-27:/my-journey-with-react-so-far.html</guid><category>react</category><category>react-native</category></item><item><title>My notes on learning django.</title><link>/my-notes-on-learning-django.html</link><description>&lt;h3&gt;URL&lt;/h3&gt;
 &lt;h4&gt;How Django processes a request&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;A request comes in to &lt;code&gt;/hello/&lt;/code&gt;.&lt;/li&gt;
@@ -97,13 +113,12 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Intro-to-Backtesting-Framework-for-Python---bt"&gt;Intro to Backtesting Framework for Python - bt&lt;a class="anchor-link" href="#Intro-to-Backtesting-Framework-for-Python---bt"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id="Intro-to-Backtesting-Framework-for-Python---bt"&gt;Intro to Backtesting Framework for Python - bt&lt;a class="anchor-link" href="#Intro-to-Backtesting-Framework-for-Python---bt"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/pmorissette/ffn"&gt;项目地址&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://pmorissette.github.io/ffn/"&gt;文档&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;bt&lt;/code&gt;简介: bt是一个量化交易测回测框架，基于&lt;code&gt;Python&lt;/code&gt;。 这个框架使用户能够方便的创建基于不同&lt;code&gt;Alogs&lt;/code&gt;的回测策略。 用户可以用bt创造灵活的、可测试的、可重用的&lt;code&gt;策略块&lt;/code&gt;。 
 bt的目标：免去&lt;strong&gt;quant&lt;/strong&gt;重新造轮子的时间，使他们能够专注于策略的开发。bt的作者，也是&lt;code&gt;ffn&lt;/code&gt;的作者。bt是目前我看到的&lt;em&gt;唯一&lt;/em&gt;一个可以用于因子测试的开源项目。&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -114,11 +129,10 @@ bt的目标：免去&lt;strong&gt;quant&lt;/strong&gt;重新造轮子的时间�
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="金融分析包FFN简介"&gt;&amp;#37329;&amp;#34701;&amp;#20998;&amp;#26512;&amp;#21253;FFN&amp;#31616;&amp;#20171;&lt;a class="anchor-link" href="#金融分析包FFN简介"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id="金融分析包FFN简介"&gt;金融分析包FFN简介&lt;a class="anchor-link" href="#金融分析包FFN简介"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/pmorissette/ffn"&gt;项目地址&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://pmorissette.github.io/ffn/index.html"&gt;文档&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -129,7 +143,7 @@ bt的目标：免去&lt;strong&gt;quant&lt;/strong&gt;重新造轮子的时间�
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="这是一个Markdown标题"&gt;&amp;#36825;&amp;#26159;&amp;#19968;&amp;#20010;Markdown&amp;#26631;&amp;#39064;&lt;a class="anchor-link" href="#这是一个Markdown标题"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="这是一个Markdown标题"&gt;这是一个Markdown标题&lt;a class="anchor-link" href="#这是一个Markdown标题"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
