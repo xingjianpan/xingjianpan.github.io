@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Xingjian Pan's Blog - javascript</title><link href="xingjian.me/" rel="alternate"></link><link href="xingjian.me/feeds/javascript.atom.xml" rel="self"></link><id>xingjian.me/</id><updated>2017-03-27T20:04:00+08:00</updated><entry><title>My journey with React and React Native so far</title><link href="xingjian.me/my-journey-with-react-so-far.html" rel="alternate"></link><published>2017-03-27T20:04:00+08:00</published><updated>2017-03-27T20:04:00+08:00</updated><author><name>xingjian</name></author><id>tag:None,2017-03-27:xingjian.me/my-journey-with-react-so-far.html</id><summary type="html">&lt;h1&gt;第一回合: Javascript in 2013&lt;/h1&gt;
+&lt;p&gt;2013年的时候曾经心血来潮的学了一阵JavaScript， 特意买了两本大书： &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.cn/O-Reilly%E7%B2%BE%E5%93%81%E5%9B%BE%E4%B9%A6%E7%B3%BB%E5%88%97-JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97-%E5%BC%97%E5%85%B0%E7%BA%B3%E6%A0%B9/dp/B007VISQ1Y/ref=sr_1_1?ie=UTF8&amp;amp;qid=1490667460&amp;amp;sr=8-1&amp;amp;keywords=JavaScript%3A+The+Definitive+Guide"&gt;Javascript权威指南 第六版&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.cn/Professional-JavaScript-for-Web-Developers-Zakas-Nicholas-C/dp/1118026691/ref=sr_1_1?ie=UTF8&amp;amp;qid=1490667514&amp;amp;sr=8-1&amp;amp;keywords=professional+javascript+for+web+developers"&gt;Professional JavaScript for Web Developers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;然后跟着&lt;a href="http://javascriptissexy.com/how-to-learn-javascript-properly/"&gt;how to learn javascript properly&lt;/a&gt;的在线教教程自学。&lt;/p&gt;
+&lt;p&gt;但是习惯了python简单明快的语法， 对于JavaScript总是觉得哪里不对。然后囫囵吞枣的看了一遍，算是对于JavaScript有了一个感性的认识。&lt;/p&gt;
+&lt;p&gt;接下来很自然的问题就是如何学以致用。因为之前有&lt;code&gt;Django&lt;/code&gt;的经验，所以很自然的想到了JavaScript的web framework。一番搜索之后，找到了&lt;code&gt;MEAN&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;M&lt;/strong&gt;ongoDB&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;E&lt;/strong&gt;xpress&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A&lt;/strong&gt;nuglar&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;N&lt;/strong&gt;ode.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;MEAN&lt;/code&gt;的教程很多，我比较推荐这本&lt;a href="https://www.safaribooksonline.com/library/view/mean-web-development/9781783983285/"&gt;MEAN Web Development&lt;/a&gt;。&lt;br&gt;
+跟着教程实现了一个CRUD的网站，然后就放下了 …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;第一回合: Javascript in 2013&lt;/h1&gt;
+&lt;p&gt;2013年的时候曾经心血来潮的学了一阵JavaScript， 特意买了两本大书： &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.cn/O-Reilly%E7%B2%BE%E5%93%81%E5%9B%BE%E4%B9%A6%E7%B3%BB%E5%88%97-JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97-%E5%BC%97%E5%85%B0%E7%BA%B3%E6%A0%B9/dp/B007VISQ1Y/ref=sr_1_1?ie=UTF8&amp;amp;qid=1490667460&amp;amp;sr=8-1&amp;amp;keywords=JavaScript%3A+The+Definitive+Guide"&gt;Javascript权威指南 第六版&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.cn/Professional-JavaScript-for-Web-Developers-Zakas-Nicholas-C/dp/1118026691/ref=sr_1_1?ie=UTF8&amp;amp;qid=1490667514&amp;amp;sr=8-1&amp;amp;keywords=professional+javascript+for+web+developers"&gt;Professional JavaScript for Web Developers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;然后跟着&lt;a href="http://javascriptissexy.com/how-to-learn-javascript-properly/"&gt;how to learn javascript properly&lt;/a&gt;的在线教教程自学。&lt;/p&gt;
+&lt;p&gt;但是习惯了python简单明快的语法， 对于JavaScript总是觉得哪里不对。然后囫囵吞枣的看了一遍，算是对于JavaScript有了一个感性的认识。&lt;/p&gt;
+&lt;p&gt;接下来很自然的问题就是如何学以致用。因为之前有&lt;code&gt;Django&lt;/code&gt;的经验，所以很自然的想到了JavaScript的web framework。一番搜索之后，找到了&lt;code&gt;MEAN&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;M&lt;/strong&gt;ongoDB&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;E&lt;/strong&gt;xpress&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A&lt;/strong&gt;nuglar&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;N&lt;/strong&gt;ode.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;MEAN&lt;/code&gt;的教程很多，我比较推荐这本&lt;a href="https://www.safaribooksonline.com/library/view/mean-web-development/9781783983285/"&gt;MEAN Web Development&lt;/a&gt;。&lt;br&gt;
+跟着教程实现了一个CRUD的网站，然后就放下了。当时的感想是：
+&lt;em&gt; &lt;code&gt;MEAN&lt;/code&gt;框架的最大优势是前后端使用同一个语言。 
+&lt;/em&gt; 数据以JSON的方式传递，相当便利。&lt;/p&gt;
+&lt;h1&gt;第二回合：JavaScript in 2016&lt;/h1&gt;
+&lt;p&gt;一晃几年，基本没怎么碰过JavaScript。2017年1月，看到一篇文章&lt;a href="https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f"&gt;How it feels to learn JavaScript in 2016&lt;/a&gt;。不禁惊讶于JavaScript世界(或者叫&lt;code&gt;前端&lt;/code&gt;)翻天覆地的变化，正好春节有些时间，又一次的心血来潮想要学习JavaScript. &lt;/p&gt;
+&lt;p&gt;因为看了这篇文章，所以对于前端的复杂有些心理准备， 然后就是撸起袖子干了。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;打开ReactJs的官网，跟着&lt;a href="https://facebook.github.io/react/tutorial/tutorial.html"&gt;Tutorial&lt;/a&gt;走了一下。不明觉厉，用component的方式构建网页的概念很独特，也很有吸引力。并且那个&lt;code&gt;class&lt;/code&gt;的语法好像python，很熟悉，感觉不是在写JavaScript。&lt;/li&gt;
+&lt;li&gt;如果要使用JavaScript最新的语法，需要安装一个叫&lt;a href="https://babeljs.io/"&gt;Babel&lt;/a&gt;的东西。&lt;/li&gt;
+&lt;li&gt;还要用&lt;a href="https://webpack.js.org/"&gt;webpack&lt;/a&gt;打包文件&lt;/li&gt;
+&lt;li&gt;用&lt;a href="https://www.npmjs.com/"&gt;npm&lt;/a&gt;管理各种依赖，这个见过&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://nodejs.org/en/"&gt;nodejs&lt;/a&gt;，这个也用过。&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;既有新面孔，也有老朋友。在经历一番摸索之后，我发现自己终于可以用ES6的JavaScript写一段&lt;code&gt;Hello Wolrd&lt;/code&gt;,打包成一个&lt;code&gt;bundle.js&lt;/code&gt;文件, 然后在&lt;code&gt;html.index&lt;/code&gt;中引用了。 虽然作者在&lt;a href="http://javascriptissexy.com/how-to-learn-javascript-properly/"&gt;how to learn javascript properly&lt;/a&gt;这篇文章中表达了对于前端过于复杂的不满，但是作为一个初学者，我觉得似乎并没有那么夸张。这其中最大的因素，可能是JavaScript长得越来越像Python了。&lt;/p&gt;
+&lt;h1&gt;第三回合：Hello Redux&lt;/h1&gt;
+&lt;p&gt;Redux是神器。如果说这次重拾JavaScript的最大收获，那就是接触了Redux的设计思想。
+可以用一个公式描述Redux的逻辑：
+&lt;code&gt;newState = currentState(action)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;比如说一个Todo list应用：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;curreneState: 当前的状态，比如显示状态(全部、未来一周、已完成)， 某个todo是否完成。&lt;/li&gt;
+&lt;li&gt;action: 某种行为，比如&lt;code&gt;切换显示状态&lt;/code&gt;，或者标记项目为&lt;code&gt;已经完成&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;newState: 对于当前状态施加某种行为后的新的状态。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一下子，APP内的世界不再那么乱糟糟了。你可以看到App历史上的每个行为以及相应的状态，甚至可以轻松的回到过去的某个时点。这种感觉，有点像是Neo突然看到了Matrix的本质。&lt;/p&gt;
+&lt;p&gt;难能可贵的是，Redux的作者&lt;a href="https://twitter.com/dan_abramov?lang=en"&gt;Dan Abramov&lt;/a&gt;亲自制作了免费的视频教程:&lt;a href="https://egghead.io/courses/getting-started-with-redux"&gt;Getting started with Redux&lt;/a&gt;, 这也是目前最好的Redux教程了。&lt;/p&gt;
+&lt;p&gt;有了React, Redux两样利器，我终于有点精神想要做点什么了。一直以来我都觉得现在的新闻客户端都不好用，然后就用React搞了一个自己的&lt;a href="http://news.quantnote.cn/"&gt;新闻应用&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;第四回合： React Native&lt;/h1&gt;
+&lt;p&gt;话说，谁不想写个App玩玩呢？当初选择React，最主要原因就是有&lt;a href="https://facebook.github.io/react-native/"&gt;React Native&lt;/a&gt;这个神奇的东西。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Learn once, write anywhere: Build mobile apps with React&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;简直就是黑魔法。&lt;/p&gt;
+&lt;p&gt;未完待续。。&lt;/p&gt;</content><category term="react"></category><category term="react-native"></category></entry></feed>
