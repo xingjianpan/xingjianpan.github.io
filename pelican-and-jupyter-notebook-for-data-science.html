@@ -4,15 +4,14 @@
 <head>
   <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" type="text/css" href="http://xingjian.me/theme/stylesheet/style.min.css">
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
 
-  <link rel="stylesheet" type="text/css" href="http://xingjian.me/theme/pygments/monokai.min.css">
-  <link rel="stylesheet" type="text/css" href="http://xingjian.me/theme/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/font-awesome.min.css">
 
 
-    <link href="http://xingjian.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Xingjian Pan's Blog Atom">
 
-    <link href="http://xingjian.me/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Xingjian Pan's Blog RSS">
+    <link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Xingjian Pan's Blog RSS">
 
 
   <meta charset="utf-8" />
@@ -36,36 +35,25 @@
 <meta property="og:title" content="使用Pelican发布Jupyter Notebook"/>
 <meta property="og:description" content="这是一个Markdown标题¶"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="http://xingjian.me/pelican-and-jupyter-notebook-for-data-science.html"/>
+<meta property="og:url" content="/pelican-and-jupyter-notebook-for-data-science.html"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2017-01-05 15:31:00+08:00"/>
 <meta property="article:modified_time" content="2017-01-05 15:31:00+08:00"/>
-<meta property="article:author" content="http://xingjian.me/author/xingjian.html">
+<meta property="article:author" content="/author/xingjian.html">
 <meta property="article:section" content="jupyternotebook"/>
 <meta property="article:tag" content="quant"/>
 <meta property="og:image" content="">
 
   <title>Xingjian Pan's Blog &ndash; 使用Pelican发布Jupyter Notebook</title>
 
-
-  <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?f13420a5837d5f1c8d710446e33281ed";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
 </head>
 <body>
   <aside>
     <div>
-      <a href="http://xingjian.me">
-        <img src="http://xingjian.me/theme/img/profile.png" alt="Xingjian Pan" title="Xingjian Pan">
+      <a href="">
+        <img src="/theme/img/profile.png" alt="Xingjian Pan" title="Xingjian Pan">
       </a>
-      <h1><a href="http://xingjian.me">Xingjian Pan</a></h1>
+      <h1><a href="">Xingjian Pan</a></h1>
 
 <p>Learning Data with Python</p>
       <nav>
@@ -94,7 +82,7 @@ var _hmt = _hmt || [];
   <header>
     <h1 id="pelican-and-jupyter-notebook-for-data-science">使用Pelican发布Jupyter Notebook</h1>
     <p>
-          Posted on Thu 05 January 2017 in <a href="http://xingjian.me/category/jupyternotebook.html">jupyternotebook</a>
+          Posted on 周四 05 一月 2017 in <a href="/category/jupyternotebook.html">jupyternotebook</a>
 
 
     </p>
@@ -259,6 +247,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -279,11 +268,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -1021,8 +1005,10 @@ h6:hover .anchor-link {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -1033,9 +1019,11 @@ h6:hover .anchor-link {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
 <style type="text/css">
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
@@ -1074,83 +1062,103 @@ h6:hover .anchor-link {
 
 .ansi-bold { font-weight: bold; }
 </style>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="这是一个Markdown标题">这是一个Markdown标题<a class="anchor-link" href="#这是一个Markdown标题">¶</a></h2>
+<h2 id="这是一个Markdown标题">&#36825;&#26159;&#19968;&#20010;Markdown&#26631;&#39064;<a class="anchor-link" href="#这是一个Markdown标题">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [2]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
+
 </div>
 </div>
 </div>
+
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="下面是数学公式">下面是数学公式<a class="anchor-link" href="#下面是数学公式">¶</a></h2>
+<h2 id="下面是数学公式">&#19979;&#38754;&#26159;&#25968;&#23398;&#20844;&#24335;<a class="anchor-link" href="#下面是数学公式">&#182;</a></h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>$S_T = S_0 \ exp((r-0.5 \sigma^2)T + \sigma \sqrt{T} z$</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [13]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
 <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
 <span class="n">x</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [14]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">211</span><span class="p">)</span> <span class="c1">#first subplot , 2 rows, 1 colums, first one</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'1st'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;1st&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">212</span><span class="p">)</span> <span class="c1"># r rows, 1 columns, second one</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'2nd'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;2nd&#39;</span><span class="p">)</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
 <div class="output_text output_subarea output_execute_result">
-<pre>[<matplotlib.lines.line2d at 0xa46c550>]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0xa46c550&gt;]</pre>
 </div>
+
 </div>
-<div class="output_area"><div class="prompt"></div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+oAAAGyCAYAAABz3D5hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAPYQAAD2EBqD+naQAAIABJREFUeJzs3XmcjWUbB/DfbZB97LsiJF5ZBqEFlUKLLFHToij0ai/Z
@@ -1851,37 +1859,58 @@ kiRpElioS5IkSZLUIxbqkiRJkiT1iIW6JEmSJEk9YqEuSZIkSVKPWKhLkiRJktQjFuqSJEmSJPWI
 hbokSZIkST1ioS5JkiRJUo9YqEuSJEmS1CMW6pIkSZIk9YiFuiRJkiRJPfI/ujNycpVRqNcAAAAA
 SUVORK5CYII=
 ">
-</img></div>
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [16]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">((</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'o'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'1st'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'2nd'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Scatter Plot'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;1st&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;2nd&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Scatter Plot&#39;</span><span class="p">)</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[16]:</div>
+
+
+
+
 <div class="output_text output_subarea output_execute_result">
-<pre><matplotlib.text.text at 0xa8d3630></pre>
+<pre>&lt;matplotlib.text.Text at 0xa8d3630&gt;</pre>
 </div>
+
 </div>
-<div class="output_area"><div class="prompt"></div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjEAAAHUCAYAAADLDnlYAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAPYQAAD2EBqD+naQAAIABJREFUeJzs3Xd8FMX/x/HX3F0SCAmhVwkt9NASQECqFKmx0jui6Fc6
@@ -3717,37 +3746,50 @@ iQ6xVkpdkog0Ab7k4jliZgBTgWHA9UAE8BMw1Bgz33vfvwDTgRu9P9ch1kopv9EiRimllFJW0j4x
 SimllLKSFjFKKaWUspIWMUoppZSykhYxSimllLKSFjFKKaWUspIWMUoppZSykhYxSimllLKSFjFK
 KaWUspIWMUoppZSykhYxSimllLKSFjFKKaWUstL/A/9rnF2lzIrgAAAAAElFTkSuQmCC
 ">
-</img></div>
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [17]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vs</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'data/h_vstoxx.txt'</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">','</span><span class="p">,</span> <span class="n">dayfirst</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vs</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/h_vstoxx.txt&#39;</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">dayfirst</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [18]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">vs</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><class &#x27;pandas.core.frame.dataframe&#x27;>
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 DatetimeIndex: 4101 entries, 1999-01-04 to 2015-02-09
 Data columns (total 9 columns):
 V2TX    4101 non-null float64
@@ -3764,60 +3806,76 @@ memory usage: 320.4 KB
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [19]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [21]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">es_url</span> <span class="o">=</span> <span class="s1">'http://www.stoxx.com/download/historical_values/hbrbcpe.txt'</span>
-<span class="n">vs_url</span> <span class="o">=</span> <span class="s1">'http://www.stoxx.com/download/historical_values/h_vstoxx.txt'</span>
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">es_url</span> <span class="o">=</span> <span class="s1">&#39;http://www.stoxx.com/download/historical_values/hbrbcpe.txt&#39;</span>
+<span class="n">vs_url</span> <span class="o">=</span> <span class="s1">&#39;http://www.stoxx.com/download/historical_values/h_vstoxx.txt&#39;</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [22]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="s1">'SX5P'</span><span class="p">,</span><span class="s1">'SX5E'</span><span class="p">,</span><span class="s1">'SXXP'</span><span class="p">,</span><span class="s1">'SXXE'</span><span class="p">,</span><span class="s1">'SXXF'</span><span class="p">,</span><span class="s1">'SXXA'</span><span class="p">,</span><span class="s1">'DK5F'</span><span class="p">,</span><span class="s1">'DKXF'</span><span class="p">]</span>
-<span class="n">es</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">es_url</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">';'</span><span class="p">,</span> <span class="n">dayfirst</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
-<span class="n">vs</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">vs_url</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">','</span><span class="p">,</span> <span class="n">dayfirst</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;SX5P&#39;</span><span class="p">,</span><span class="s1">&#39;SX5E&#39;</span><span class="p">,</span><span class="s1">&#39;SXXP&#39;</span><span class="p">,</span><span class="s1">&#39;SXXE&#39;</span><span class="p">,</span><span class="s1">&#39;SXXF&#39;</span><span class="p">,</span><span class="s1">&#39;SXXA&#39;</span><span class="p">,</span><span class="s1">&#39;DK5F&#39;</span><span class="p">,</span><span class="s1">&#39;DKXF&#39;</span><span class="p">]</span>
+<span class="n">es</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">es_url</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">dayfirst</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
+<span class="n">vs</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">vs_url</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">dayfirst</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [23]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">vs</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><class &#x27;pandas.core.frame.dataframe&#x27;>
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 DatetimeIndex: 4357 entries, 1999-01-04 to 2016-02-12
 Data columns (total 9 columns):
 V2TX    4357 non-null float64
@@ -3834,109 +3892,145 @@ memory usage: 340.4 KB
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [24]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
-<span class="n">data</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'EUROSTOXX'</span><span class="p">:</span><span class="n">es</span><span class="p">[</span><span class="s1">'SX5E'</span><span class="p">][</span><span class="n">es</span><span class="o">.</span><span class="n">index</span> <span class="o">></span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1999</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)]})</span>
-<span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'VSTOXX'</span><span class="p">:</span> <span class="n">vs</span><span class="p">[</span><span class="s1">'V2TX'</span><span class="p">][</span><span class="n">vs</span><span class="o">.</span><span class="n">index</span><span class="o">></span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1999</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)]}))</span>
+<span class="n">data</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;EUROSTOXX&#39;</span><span class="p">:</span><span class="n">es</span><span class="p">[</span><span class="s1">&#39;SX5E&#39;</span><span class="p">][</span><span class="n">es</span><span class="o">.</span><span class="n">index</span> <span class="o">&gt;</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1999</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)]})</span>
+<span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;VSTOXX&#39;</span><span class="p">:</span> <span class="n">vs</span><span class="p">[</span><span class="s1">&#39;V2TX&#39;</span><span class="p">][</span><span class="n">vs</span><span class="o">.</span><span class="n">index</span><span class="o">&gt;</span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1999</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)]}))</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [25]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[25]:</div>
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[25]:</div>
+
+
+
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
 <table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>EUROSTOXX</th>
-<th>VSTOXX</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>1999-01-04</th>
-<td>3543.10</td>
-<td>18.2033</td>
-</tr>
-<tr>
-<th>1999-01-05</th>
-<td>3604.67</td>
-<td>29.6912</td>
-</tr>
-<tr>
-<th>1999-01-06</th>
-<td>3685.36</td>
-<td>25.1670</td>
-</tr>
-<tr>
-<th>1999-01-07</th>
-<td>3627.87</td>
-<td>32.5205</td>
-</tr>
-<tr>
-<th>1999-01-08</th>
-<td>3616.57</td>
-<td>33.2296</td>
-</tr>
-</tbody>
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>EUROSTOXX</th>
+      <th>VSTOXX</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1999-01-04</th>
+      <td>3543.10</td>
+      <td>18.2033</td>
+    </tr>
+    <tr>
+      <th>1999-01-05</th>
+      <td>3604.67</td>
+      <td>29.6912</td>
+    </tr>
+    <tr>
+      <th>1999-01-06</th>
+      <td>3685.36</td>
+      <td>25.1670</td>
+    </tr>
+    <tr>
+      <th>1999-01-07</th>
+      <td>3627.87</td>
+      <td>32.5205</td>
+    </tr>
+    <tr>
+      <th>1999-01-08</th>
+      <td>3616.57</td>
+      <td>33.2296</td>
+    </tr>
+  </tbody>
 </table>
 </div>
 </div>
+
+</div>
+
 </div>
 </div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [26]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">'ffill'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [27]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;ffill&#39;</span><span class="p">)</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[27]:</div>
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[27]:</div>
+
+
+
+
 <div class="output_text output_subarea output_execute_result">
-<pre>array([<matplotlib.axes._subplots.axessubplot object at 0x000000000a5ee978>,
-       <matplotlib.axes._subplots.axessubplot object at 0x000000000aa15cc0>], dtype=object)</pre>
+<pre>array([&lt;matplotlib.axes._subplots.AxesSubplot object at 0x000000000A5EE978&gt;,
+       &lt;matplotlib.axes._subplots.AxesSubplot object at 0x000000000AA15CC0&gt;], dtype=object)</pre>
 </div>
+
 </div>
-<div class="output_area"><div class="prompt"></div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAqgAAAHiCAYAAAAkkz7LAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAPYQAAD2EBqD+naQAAIABJREFUeJzsnXd4FUX3x78TeoBQpEkNNkCqgBTLK0pTlKA/K0VfQEWa
@@ -4900,16 +4994,22 @@ fkVRFEVRFCWnUAVVURRFURRFySlUQVUURVEURVFyClVQFUVRFEVRlJxCFVRFURRFURQlp1AFVVEU
 RVEURckpVEFVFEVRFEVRcgpVUBVFURRFUZScQhVURVEURVEUJadQBVVRFEVRFEXJKf4fptSh853i
 zWUAAAAASUVORK5CYII=
 ">
-</img></div>
+</div>
+
+</div>
+
 </div>
 </div>
+
 </div>
-</div>
+ 
+
+
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
     mathjaxscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
@@ -4926,6 +5026,7 @@ zWUAAAAASUVORK5CYII=
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
         "    } " +
         "}); ";
@@ -4936,7 +5037,7 @@ zWUAAAAASUVORK5CYII=
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="http://xingjian.me/tag/quant.html">quant</a>
+      <a href="/tag/quant.html">quant</a>
     </p>
   </div>
 
@@ -4951,17 +5052,7 @@ zWUAAAAASUVORK5CYII=
 </p>    </footer>
   </main>
 
-<!-- Google Analytics -->
-<script type="text/javascript">
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-20407449-4', 'auto');
-  ga('send', 'pageview');
-</script>
-<!-- End Google Analytics -->
 
 
 
@@ -4970,7 +5061,7 @@ zWUAAAAASUVORK5CYII=
   "@context" : "http://schema.org",
   "@type" : "Blog",
   "name": " Xingjian Pan's Blog ",
-  "url" : "http://xingjian.me",
+  "url" : "",
   "image": "",
   "description": "Xingjian Pan's Thoughts and Writings"
 }

@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/font-awesome.min.css">
+
+
+
+    <link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Xingjian Pan's Blog RSS">
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="author" content="xingjian" />
+<meta name="description" content="什么是协整(cointegration ) 一种情况，假设有两个醉鬼走在路上(two random walks)且这两个人彼此互不认识(Independent variable)， 那么这两个人的路径之间不存在有意义的关系。 另一种情况，假设一个醉鬼和他的狗走在路上，那么这次狗和醉鬼之间存在着某种关系。虽然醉鬼和狗各自走的是不可预测的随机路线，但是根据其中一个的位置（醉鬼或者狗),我们能够推测出另一个的位置，换句话说：醉鬼和狗之间的距离是可以预测的。如果狗离开主人的距离过远，就会倾向于朝着主人的方向移动，以免跟丢。醉鬼和狗之组成了一个协整对。 协整性的例子： 个人收入和消费支出 城市的警察数量和犯罪活动的数量 进入一个商场的人数和走出商场的人数 协整性的应用： 协整性的一个重要应用是用于配对交易。 为什么不简单的使用相关性？ 对于平稳(stationary)的X和Y，通常我们用R方表示X和Y之间的相关性。 然而对于不平稳(non-stationary)的X和Y， 利用通常的回归分析(standard regression analysis)可能导致伪回归(spurious regressions)结论：即认为实际上不存在相关性的X和Y存在相关性。 协整性检测 import statsmodels …" />
+<meta name="keywords" content="trading">
+<meta property="og:site_name" content="Xingjian Pan's Blog"/>
+<meta property="og:title" content="理解协整性"/>
+<meta property="og:description" content="什么是协整(cointegration ) 一种情况，假设有两个醉鬼走在路上(two random walks)且这两个人彼此互不认识(Independent variable)， 那么这两个人的路径之间不存在有意义的关系。 另一种情况，假设一个醉鬼和他的狗走在路上，那么这次狗和醉鬼之间存在着某种关系。虽然醉鬼和狗各自走的是不可预测的随机路线，但是根据其中一个的位置（醉鬼或者狗),我们能够推测出另一个的位置，换句话说：醉鬼和狗之间的距离是可以预测的。如果狗离开主人的距离过远，就会倾向于朝着主人的方向移动，以免跟丢。醉鬼和狗之组成了一个协整对。 协整性的例子： 个人收入和消费支出 城市的警察数量和犯罪活动的数量 进入一个商场的人数和走出商场的人数 协整性的应用： 协整性的一个重要应用是用于配对交易。 为什么不简单的使用相关性？ 对于平稳(stationary)的X和Y，通常我们用R方表示X和Y之间的相关性。 然而对于不平稳(non-stationary)的X和Y， 利用通常的回归分析(standard regression analysis)可能导致伪回归(spurious regressions)结论：即认为实际上不存在相关性的X和Y存在相关性。 协整性检测 import statsmodels …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/understand-cointegration.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-04-11 11:17:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/xingjian.html">
+<meta property="article:section" content="quant"/>
+<meta property="article:tag" content="trading"/>
+<meta property="og:image" content="">
+
+  <title>Xingjian Pan's Blog &ndash; 理解协整性</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="">
+        <img src="/theme/img/profile.png" alt="Xingjian Pan" title="Xingjian Pan">
+      </a>
+      <h1><a href="">Xingjian Pan</a></h1>
+
+<p>Learning Data with Python</p>
+      <nav>
+        <ul class="list">
+
+          <li><a href="http://xingjian.me/" target="_blank">Xingjian Pan</a></li>
+          <li><a href="http://xingjian.me/about.html" target="_blank">about</a></li>
+          <li><a href="http://xingjian.me/contact.html" target="_blank">contact</a></li>
+          <li><a href="http://xingjian.me/portfolio.html" target="_blank">portfolio</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-linkedin" href="https://cn.linkedin.com/in/xingjian-pan-26635517" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-rss" href="http://xingjian.me/feeds/all.rss.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="understand-cointegration">理解协整性</h1>
+    <p>
+          Posted on 周二 11 四月 2017 in <a href="/category/quant.html">quant</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <h3>什么是协整(cointegration )</h3>
+<p>一种情况，假设有两个醉鬼走在路上(two random walks)且这两个人彼此互不认识(Independent variable)， 那么这两个人的路径之间不存在有意义的关系。</p>
+<p>另一种情况，假设一个醉鬼和他的狗走在路上，那么这次狗和醉鬼之间存在着某种关系。虽然醉鬼和狗各自走的是不可预测的随机路线，但是根据其中一个的位置（醉鬼或者狗),我们能够推测出另一个的位置，换句话说：醉鬼和狗之间的距离是可以预测的。如果狗离开主人的距离过远，就会倾向于朝着主人的方向移动，以免跟丢。<strong>醉鬼和狗之组成了一个协整对</strong>。</p>
+<p><img alt="cointegration" src="http://www.eco.uc3m.es/~jgonzalo/teaching/EconometriaII/archivos_cointegration/oldman_dog.gif"></p>
+<h3>协整性的例子：</h3>
+<ul>
+<li>个人收入和消费支出</li>
+<li>城市的警察数量和犯罪活动的数量</li>
+<li>进入一个商场的人数和走出商场的人数</li>
+</ul>
+<h3>协整性的应用：</h3>
+<p>协整性的一个重要应用是用于配对交易。</p>
+<h3>为什么不简单的使用相关性？</h3>
+<p>对于平稳(stationary)的X和Y，通常我们用R方表示X和Y之间的相关性。 </p>
+<p>然而对于不平稳(non-stationary)的X和Y， 利用通常的回归分析(standard regression analysis)可能导致伪回归(spurious regressions)结论：即认为实际上不存在相关性的X和Y存在相关性。</p>
+<h3>协整性检测</h3>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels</span>
+<span class="kn">from</span> <span class="nn">statsmodels.tsa.stattools</span> <span class="kn">import</span> <span class="n">coint</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">coint</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+<span class="n">score</span><span class="p">,</span> <span class="n">pvalue</span><span class="p">,</span><span class="n">_</span> <span class="o">=</span> <span class="n">result</span>
+<span class="k">print</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="n">pvalue</span><span class="p">)</span>
+</pre></div>
+
+
+<h3>总结</h3>
+<p>醉鬼和狗各自的路线是随机漫步的（不平稳的），但他们之间的距离是平稳的。所以醉鬼和狗之间存在协整。 对于股票A和股票B，虽然各自的价格序列是随机的(不平稳的), 但是如果两者的差值存在协整关系，就可以作为配对交易的候选。</p>
+<p>参考:
+- <a href="https://www.quora.com/What-is-cointegration-of-time-series-data-in-statistics">Edwin Chen's answer</a>
+- <a href="http://www.eco.uc3m.es/~jgonzalo/teaching/EconometriaII/cointegration.htm">Cointegration and Error Correction</a></p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="/tag/trading.html">trading</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Xingjian Pan </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Xingjian Pan's Blog ",
+  "url" : "",
+  "image": "",
+  "description": "Xingjian Pan's Thoughts and Writings"
+}
+</script>
+</body>
+</html>

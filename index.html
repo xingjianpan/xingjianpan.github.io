@@ -4,15 +4,14 @@
 <head>
   <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" type="text/css" href="http://xingjian.me/theme/stylesheet/style.min.css">
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
 
-  <link rel="stylesheet" type="text/css" href="http://xingjian.me/theme/pygments/monokai.min.css">
-  <link rel="stylesheet" type="text/css" href="http://xingjian.me/theme/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/font-awesome.min.css">
 
 
-    <link href="http://xingjian.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Xingjian Pan's Blog Atom">
 
-    <link href="http://xingjian.me/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Xingjian Pan's Blog RSS">
+    <link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Xingjian Pan's Blog RSS">
 
 
   <meta charset="utf-8" />
@@ -36,29 +35,18 @@
 <meta property="og:title" content="Xingjian Pan's Blog"/>
 <meta property="og:description" content="Xingjian Pan's Thoughts and Writings"/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="http://xingjian.me"/>
+<meta property="og:url" content=""/>
 
   <title>Xingjian Pan's Blog</title>
-
-
-  <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?f13420a5837d5f1c8d710446e33281ed";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
 
 </head>
 <body>
   <aside>
     <div>
-      <a href="http://xingjian.me">
-        <img src="http://xingjian.me/theme/img/profile.png" alt="Xingjian Pan" title="Xingjian Pan">
+      <a href="">
+        <img src="/theme/img/profile.png" alt="Xingjian Pan" title="Xingjian Pan">
       </a>
-      <h1><a href="http://xingjian.me">Xingjian Pan</a></h1>
+      <h1><a href="">Xingjian Pan</a></h1>
 
 <p>Learning Data with Python</p>
       <nav>
@@ -87,14 +75,86 @@ var _hmt = _hmt || [];
 
 <article>
   <header>
-    <h2><a href="http://xingjian.me/my-journey-with-react-so-far.html#my-journey-with-react-so-far">My journey with React and React Native so far</a></h2>
+    <h2><a href="/understand-stationary.html#understand-stationary">理解稳态随机过程</a></h2>
     <p>
-          Posted on Mon 27 March 2017 in <a href="http://xingjian.me/category/javascript.html">javascript</a>
+          Posted on 周二 11 四月 2017 in <a href="/category/quant.html">quant</a>
 
 
           &#8226;     Tagged with
 
-              <a href="http://xingjian.me/tag/react.html">react</a>,              <a href="http://xingjian.me/tag/react-native.html">react-native</a>
+              <a href="/tag/trading.html">trading</a>
+    </p>
+  </header>
+  <div>
+      <h3>不要被数据欺骗</h3>
+<p>时间序列数据通常是非稳态的，即其均值、方差、协方差会随着时间而变化。非稳态的过程包括趋势(trend), 季节性(cycles)，随机游走(random walks)或者这三者的结合。</p>
+<p>非稳态的过程，从根本上是无法预测的。对非稳态序列数据进行回归检测可能得到虚假(spurious)的结果：即结果显示两个序列存在相关性，但实际上根本没有任何关系。</p>
+<p>要得到可靠的结果，需要把数据从非稳态过程转换成稳态过程。 稳态过程(stationary process) 的均值和方差不因时间变化而变化。
+<img alt="Non-stationary behavior" src="http://i.investopedia.com/inv/articles/site/AT-Stationary1.gif"></p>
+<h3>几种非稳态过程的介绍</h3>
+<p><img alt="non-statinoary process" src="http://i.investopedia.com/inv/articles/site/AT-Stationary2.gif"></p>
+<h4>纯粹的随机游走(Pure Random Walk), 蓝线</h4>
+<p>随机游走过程中时间t对应的值y(t)等于上一时点的值y(t-1)加上一个随机值(白噪音)。</p>
+<ul>
+<li>随机游走过程不会均值回归，均值可能超某个方向发展。</li>
+<li>随机游走过程的方差随着时间而增加直到无穷大。</li>
+<li>随机游走过程是无法预测的。</li>
+</ul>
+<h4>带漂移的随机游走过程(Random Walk with Drift), 绿线</h4>
+<ul>
+<li>在纯粹随机游走的基础上，加入一个常量 …</li></ul>
+      <br>
+      <a class="btn" href="/understand-stationary.html#understand-stationary">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="/understand-cointegration.html#understand-cointegration">理解协整性</a></h2>
+    <p>
+          Posted on 周二 11 四月 2017 in <a href="/category/quant.html">quant</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="/tag/trading.html">trading</a>
+    </p>
+  </header>
+  <div>
+      <h3>什么是协整(cointegration )</h3>
+<p>一种情况，假设有两个醉鬼走在路上(two random walks)且这两个人彼此互不认识(Independent variable)， 那么这两个人的路径之间不存在有意义的关系。</p>
+<p>另一种情况，假设一个醉鬼和他的狗走在路上，那么这次狗和醉鬼之间存在着某种关系。虽然醉鬼和狗各自走的是不可预测的随机路线，但是根据其中一个的位置（醉鬼或者狗),我们能够推测出另一个的位置，换句话说：醉鬼和狗之间的距离是可以预测的。如果狗离开主人的距离过远，就会倾向于朝着主人的方向移动，以免跟丢。<strong>醉鬼和狗之组成了一个协整对</strong>。</p>
+<p><img alt="cointegration" src="http://www.eco.uc3m.es/~jgonzalo/teaching/EconometriaII/archivos_cointegration/oldman_dog.gif"></p>
+<h3>协整性的例子：</h3>
+<ul>
+<li>个人收入和消费支出</li>
+<li>城市的警察数量和犯罪活动的数量</li>
+<li>进入一个商场的人数和走出商场的人数</li>
+</ul>
+<h3>协整性的应用：</h3>
+<p>协整性的一个重要应用是用于配对交易。</p>
+<h3>为什么不简单的使用相关性？</h3>
+<p>对于平稳(stationary)的X和Y，通常我们用R方表示X和Y之间的相关性。 </p>
+<p>然而对于不平稳(non-stationary)的X和Y， 利用通常的回归分析(standard regression analysis)可能导致伪回归(spurious regressions)结论：即认为实际上不存在相关性的X和Y存在相关性。</p>
+<h3>协整性检测</h3>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels …</span></pre></div>
+      <br>
+      <a class="btn" href="/understand-cointegration.html#understand-cointegration">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="/my-journey-with-react-so-far.html#my-journey-with-react-so-far">My journey with React and React Native so far</a></h2>
+    <p>
+          Posted on 周一 27 三月 2017 in <a href="/category/javascript.html">javascript</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="/tag/react.html">react</a>,              <a href="/tag/react-native.html">react-native</a>
     </p>
   </header>
   <div>
@@ -116,21 +176,21 @@ var _hmt = _hmt || [];
 <p><code>MEAN</code>的教程很多，我比较推荐这本<a href="https://www.safaribooksonline.com/library/view/mean-web-development/9781783983285/">MEAN Web Development</a>。<br>
 跟着教程实现了一个CRUD的网站，然后就放下了 …</p>
       <br>
-      <a class="btn" href="http://xingjian.me/my-journey-with-react-so-far.html#my-journey-with-react-so-far">    Continue reading
+      <a class="btn" href="/my-journey-with-react-so-far.html#my-journey-with-react-so-far">    Continue reading
 </a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="http://xingjian.me/my-notes-on-learning-django.html#my-notes-on-learning-django">My notes on learning django.</a></h2>
+    <h2><a href="/my-notes-on-learning-django.html#my-notes-on-learning-django">My notes on learning django.</a></h2>
     <p>
-          Posted on Tue 10 January 2017 in <a href="http://xingjian.me/category/python.html">python</a>
+          Posted on 周二 10 一月 2017 in <a href="/category/python.html">python</a>
 
 
           &#8226;     Tagged with
 
-              <a href="http://xingjian.me/tag/django.html">django</a>
+              <a href="/tag/django.html">django</a>
     </p>
   </header>
   <div>
@@ -142,21 +202,21 @@ var _hmt = _hmt || [];
 <li>Django looks at all of the URLpatterns in the URLconf for the first one that matches <code>/hello/</code>.</li>
 <li>If it finds a match, it calls the associated view …</li></ul>
       <br>
-      <a class="btn" href="http://xingjian.me/my-notes-on-learning-django.html#my-notes-on-learning-django">    Continue reading
+      <a class="btn" href="/my-notes-on-learning-django.html#my-notes-on-learning-django">    Continue reading
 </a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="http://xingjian.me/quant-understand-pricing-data.html#quant-understand-pricing-data">量化数据 - 行情数据</a></h2>
+    <h2><a href="/quant-understand-pricing-data.html#quant-understand-pricing-data">量化数据 - 行情数据</a></h2>
     <p>
-          Posted on Fri 06 January 2017 in <a href="http://xingjian.me/category/quant.html">quant</a>
+          Posted on 周五 06 一月 2017 in <a href="/category/quant.html">quant</a>
 
 
           &#8226;     Tagged with
 
-              <a href="http://xingjian.me/tag/data.html">data</a>
+              <a href="/tag/data.html">data</a>
     </p>
   </header>
   <div>
@@ -206,21 +266,21 @@ var _hmt = _hmt || [];
 <tr>
 <td>SH601857 …</td></tr></tbody></table>
       <br>
-      <a class="btn" href="http://xingjian.me/quant-understand-pricing-data.html#quant-understand-pricing-data">    Continue reading
+      <a class="btn" href="/quant-understand-pricing-data.html#quant-understand-pricing-data">    Continue reading
 </a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="http://xingjian.me/quant-understand-industry-classification-data.html#quant-understand-industry-classification-data">量化数据 - 行业分类</a></h2>
+    <h2><a href="/quant-understand-industry-classification-data.html#quant-understand-industry-classification-data">量化数据 - 行业分类</a></h2>
     <p>
-          Posted on Thu 05 January 2017 in <a href="http://xingjian.me/category/quant.html">quant</a>
+          Posted on 周四 05 一月 2017 in <a href="/category/quant.html">quant</a>
 
 
           &#8226;     Tagged with
 
-              <a href="http://xingjian.me/tag/data.html">data</a>
+              <a href="/tag/data.html">data</a>
     </p>
   </header>
   <div>
@@ -268,127 +328,126 @@ var _hmt = _hmt || [];
 <td>行业分类基准</td>
 <td>道琼斯指数 …</td></tr></tbody></table>
       <br>
-      <a class="btn" href="http://xingjian.me/quant-understand-industry-classification-data.html#quant-understand-industry-classification-data">    Continue reading
+      <a class="btn" href="/quant-understand-industry-classification-data.html#quant-understand-industry-classification-data">    Continue reading
 </a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="http://xingjian.me/intro-to-backtesting-for-multi-factor-strategy-bt.html#intro-to-backtesting-for-multi-factor-strategy-bt">多因子模型回测框架bt简介</a></h2>
+    <h2><a href="/intro-to-backtesting-for-multi-factor-strategy-bt.html#intro-to-backtesting-for-multi-factor-strategy-bt">多因子模型回测框架bt简介</a></h2>
     <p>
-          Posted on Thu 05 January 2017 in <a href="http://xingjian.me/category/quant.html">quant</a>
+          Posted on 周四 05 一月 2017 in <a href="/category/quant.html">quant</a>
 
 
           &#8226;     Tagged with
 
-              <a href="http://xingjian.me/tag/bt.html">bt</a>,              <a href="http://xingjian.me/tag/backtesting.html">backtesting</a>
+              <a href="/tag/bt.html">bt</a>,              <a href="/tag/backtesting.html">backtesting</a>
     </p>
   </header>
   <div>
       
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Intro-to-Backtesting-Framework-for-Python---bt">Intro to Backtesting Framework for Python - bt<a class="anchor-link" href="#Intro-to-Backtesting-Framework-for-Python---bt">¶</a></h2><ul>
+<h2 id="Intro-to-Backtesting-Framework-for-Python---bt">Intro to Backtesting Framework for Python - bt<a class="anchor-link" href="#Intro-to-Backtesting-Framework-for-Python---bt">&#182;</a></h2><ul>
 <li><a href="https://github.com/pmorissette/ffn">项目地址</a></li>
 <li><a href="http://pmorissette.github.io/ffn/">文档</a></li>
 <li><code>bt</code>简介: bt是一个量化交易测回测框架，基于<code>Python</code>。 这个框架使用户能够方便的创建基于不同<code>Alogs</code>的回测策略。 用户可以用bt创造灵活的、可测试的、可重用的<code>策略块</code>。 
 bt的目标：免去<strong>quant</strong>重新造轮子的时间，使他们能够专注于策略的开发。bt的作者，也是<code>ffn</code>的作者。bt是目前我看到的<em>唯一</em>一个可以用于因子测试的开源项目。</li>
 </ul>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
       <br>
-      <a class="btn" href="http://xingjian.me/intro-to-backtesting-for-multi-factor-strategy-bt.html#intro-to-backtesting-for-multi-factor-strategy-bt">    Continue reading
+      <a class="btn" href="/intro-to-backtesting-for-multi-factor-strategy-bt.html#intro-to-backtesting-for-multi-factor-strategy-bt">    Continue reading
 </a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="http://xingjian.me/intro-to-financial-functions-package-ffn.html#intro-to-financial-functions-package-ffn">金融分析包FFN简介</a></h2>
+    <h2><a href="/intro-to-financial-functions-package-ffn.html#intro-to-financial-functions-package-ffn">金融分析包FFN简介</a></h2>
     <p>
-          Posted on Thu 05 January 2017 in <a href="http://xingjian.me/category/quant.html">quant</a>
+          Posted on 周四 05 一月 2017 in <a href="/category/quant.html">quant</a>
 
 
           &#8226;     Tagged with
 
-              <a href="http://xingjian.me/tag/ffn.html">ffn</a>
+              <a href="/tag/ffn.html">ffn</a>
     </p>
   </header>
   <div>
       
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="金融分析包FFN简介">金融分析包FFN简介<a class="anchor-link" href="#金融分析包FFN简介">¶</a></h2><ul>
+<h2 id="金融分析包FFN简介">&#37329;&#34701;&#20998;&#26512;&#21253;FFN&#31616;&#20171;<a class="anchor-link" href="#金融分析包FFN简介">&#182;</a></h2><ul>
 <li><a href="https://github.com/pmorissette/ffn">项目地址</a></li>
 <li><a href="http://pmorissette.github.io/ffn/index.html">文档</a></li>
 </ul>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
       <br>
-      <a class="btn" href="http://xingjian.me/intro-to-financial-functions-package-ffn.html#intro-to-financial-functions-package-ffn">    Continue reading
+      <a class="btn" href="/intro-to-financial-functions-package-ffn.html#intro-to-financial-functions-package-ffn">    Continue reading
 </a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="http://xingjian.me/pelican-and-jupyter-notebook-for-data-science.html#pelican-and-jupyter-notebook-for-data-science">使用Pelican发布Jupyter Notebook</a></h2>
+    <h2><a href="/pelican-and-jupyter-notebook-for-data-science.html#pelican-and-jupyter-notebook-for-data-science">使用Pelican发布Jupyter Notebook</a></h2>
     <p>
-          Posted on Thu 05 January 2017 in <a href="http://xingjian.me/category/jupyternotebook.html">jupyternotebook</a>
+          Posted on 周四 05 一月 2017 in <a href="/category/jupyternotebook.html">jupyternotebook</a>
 
 
           &#8226;     Tagged with
 
-              <a href="http://xingjian.me/tag/quant.html">quant</a>
+              <a href="/tag/quant.html">quant</a>
     </p>
   </header>
   <div>
       
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="这是一个Markdown标题">这是一个Markdown标题<a class="anchor-link" href="#这是一个Markdown标题">¶</a></h2>
+<h2 id="这是一个Markdown标题">&#36825;&#26159;&#19968;&#20010;Markdown&#26631;&#39064;<a class="anchor-link" href="#这是一个Markdown标题">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
       <br>
-      <a class="btn" href="http://xingjian.me/pelican-and-jupyter-notebook-for-data-science.html#pelican-and-jupyter-notebook-for-data-science">    Continue reading
+      <a class="btn" href="/pelican-and-jupyter-notebook-for-data-science.html#pelican-and-jupyter-notebook-for-data-science">    Continue reading
 </a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="http://xingjian.me/how-to-fix-value-error-embedded-null-byte-error.html#how-to-fix-value-error-embedded-null-byte-error">How to fix Python error: ValueError: embedded null byte</a></h2>
+    <h2><a href="/how-to-fix-value-error-embedded-null-byte-error.html#how-to-fix-value-error-embedded-null-byte-error">How to fix Python error: ValueError: embedded null byte</a></h2>
     <p>
-          Posted on Wed 04 January 2017 in <a href="http://xingjian.me/category/python.html">python</a>
+          Posted on 周三 04 一月 2017 in <a href="/category/python.html">python</a>
 
 
           &#8226;     Tagged with
 
-              <a href="http://xingjian.me/tag/bugs.html">bugs</a>
+              <a href="/tag/bugs.html">bugs</a>
     </p>
   </header>
   <div>
       <p>今天安装了<a href="https://github.com/getpelican/pelican">Pelican</a>，但在运行<code>pelican content</code>时遇到一个非常奇怪的错误。</p>
-<div class="highlight"><pre><span></span>  File <span class="s2">&quot;c:\users\...\workingon\pelican\pelican\utils.py&quot;</span>, line 111, in strftime
+<div class="highlight"><pre><span></span>  File <span class="s2">&quot;c:\users\...\workingon\pelican\pelican\utils.py&quot;</span>, line <span class="m">111</span>, in strftime
     <span class="k">return</span> super<span class="o">(</span>SafeDatetime, self<span class="o">)</span>.strftime<span class="o">(</span>fmt<span class="o">)</span>
 ValueError: embedded null byte
 </pre></div>
@@ -405,94 +464,13 @@ ValueError: embedded null byte
 <h3>解决方案</h3>
 <p>出错的地方是<code>utils.py …</code></p>
       <br>
-      <a class="btn" href="http://xingjian.me/how-to-fix-value-error-embedded-null-byte-error.html#how-to-fix-value-error-embedded-null-byte-error">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://xingjian.me/2017-1-4-links.html#2017-1-4-links">Reading List</a></h2>
-    <p>
-          Posted on Wed 04 January 2017 in <a href="http://xingjian.me/category/links.html">links</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="http://xingjian.me/tag/lian-jie.html">链接</a>
-    </p>
-  </header>
-  <div>
-      <p><strong>Data Science</strong></p>
-<ul>
-<li><a href="http://chrisalbon.com/">Notes on Data Science, Machine Learning, &amp; Artificial Intelligence</a></li>
-<li><a href="http://blog.udacity.com/2016/02/how-to-build-a-data-analysis-portfolio-that-will-get-you-hired.html">How To Build A Data Analysis Portfolio That Will Get You Hired</a></li>
-<li><a href="https://www.dataquest.io/blog/how-to-setup-a-data-science-blog/">Building a data science portfolio: Making a data science blog</a></li>
-<li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown Cheatsheet</a></li>
-<li><a href="https://en.support.wordpress.com/markdown-quick-reference/">Markdown quick reference</a></li>
-<li><a href="http://blog.insightdatalabs.com/advanced-functionality-in-seaborn/">Data Visualization in Python: Advanced Functionality in Seaborn</a></li>
-</ul>
-<p><strong>写作</strong></p>
-<ul>
-<li><a href="http://www.cnfeat.com/">读立写生 - 陈素封</a></li>
-<li><a href="http://www.cnfeat.com/blog/2016/11/20/NabokovWriteStyle/">像纳博科夫一样写作：卡片创作法 …</a></li></ul>
-      <br>
-      <a class="btn" href="http://xingjian.me/2017-1-4-links.html#2017-1-4-links">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://xingjian.me/news-on-xin-wei-ji-tuan-600485.html#news-on-xin-wei-ji-tuan-600485">信威集团媒体报道跟踪</a></h2>
-    <p>
-          Posted on Thu 15 December 2016 in <a href="http://xingjian.me/category/tou-zi.html">投资</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="http://xingjian.me/tag/xin-wei-ji-tuan.html">信威集团</a>
-    </p>
-  </header>
-  <div>
-      <h1>最新进展</h1>
-<ul>
-<li>停牌开始日: 2016-12-26</li>
-<li>停牌结束日: [未定]</li>
-</ul>
-<h4>2017-01-05</h4>
-<ul>
-<li><strong>人民网</strong>: <a href="http://finance.people.com.cn/n1/2017/0105/c153179-29001359.html">信威集团：正在配合各方进行国内外核查</a></li>
-</ul>
-<blockquote>
-<p>公司已协调海外客户配合履行核查，相关中介机构办理出国签证，并于近日开始执行国内访谈及海外走访访谈计划，收集相关证明材料等核查工作。</p>
-</blockquote>
-<h4>2017-01-04</h4>
-<ul>
-<li><strong>第一财经</strong>:<a href="http://www.yicai.com/news/5197588.html">信威集团：中介机构已开始海外走访 核查相关报道</a></li>
-</ul>
-<h4>2017-01-03</h4>
-<ul>
-<li><strong>金融界</strong>: <a href="http://stock.jrj.com.cn/invest/2017/01/03154821919267.shtml">信威集团：奇迹还是皇帝新装？</a></li>
-</ul>
-<blockquote>
-<p>疯狂担保做业绩
-　　截至2016年11月29日，信威集团及其控股子公司实际对外担保总额已经达到142亿元，占其最近一期经审计净资产的111.15%。2015年信威集团的营业收入35.74亿元，这一担保额相当于2015年营业收入的4倍。2012年1月至2016年9月，信威集团累计实现的营业收入也不过是120.85亿元。2016年9月末，信威集团负债总额高达90.28亿元，净资产119.51亿元。而主要被担保对象基本上都经营情况极其糟糕，还款能力差得离谱。</p>
-</blockquote>
-<h4>2017-01-02</h4>
-<ul>
-<li><strong>新华网</strong>转载北京青年报:<a href="http://news.xinhuanet.com/fortune/2017-01/02/c_1120229527.htm">"隐匿巨额债务,神秘人套现离场" 信威为何能入围上证50</a></li>
-</ul>
-<blockquote>
-<p>根据官网介绍，信威集团此前分别是上证180、上证50、沪深300 …</p></blockquote>
-      <br>
-      <a class="btn" href="http://xingjian.me/news-on-xin-wei-ji-tuan-600485.html#news-on-xin-wei-ji-tuan-600485">    Continue reading
+      <a class="btn" href="/how-to-fix-value-error-embedded-null-byte-error.html#how-to-fix-value-error-embedded-null-byte-error">    Continue reading
 </a>
   </div>
 </article>
 
   <div class="pagination">
-    <a class="btn" href="http://xingjian.me/index2.html">
+    <a class="btn" href="/index2.html">
       <i class="fa fa-angle-left"></i>     Older Posts
 
     </a>
@@ -507,17 +485,7 @@ ValueError: embedded null byte
 </p>    </footer>
   </main>
 
-<!-- Google Analytics -->
-<script type="text/javascript">
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-20407449-4', 'auto');
-  ga('send', 'pageview');
-</script>
-<!-- End Google Analytics -->
 
 
 
@@ -526,7 +494,7 @@ ValueError: embedded null byte
   "@context" : "http://schema.org",
   "@type" : "Blog",
   "name": " Xingjian Pan's Blog ",
-  "url" : "http://xingjian.me",
+  "url" : "",
   "image": "",
   "description": "Xingjian Pan's Thoughts and Writings"
 }

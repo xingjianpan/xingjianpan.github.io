@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Xingjian Pan's Blog</title><link>http://xingjian.me/</link><description>Learning Data with Python</description><lastBuildDate>Mon, 27 Mar 2017 20:04:00 +0800</lastBuildDate><item><title>My journey with React and React Native so far</title><link>http://xingjian.me/my-journey-with-react-so-far.html</link><description>&lt;h1&gt;第一回合: Javascript in 2013&lt;/h1&gt;
+<rss version="2.0"><channel><title>Xingjian Pan's Blog</title><link>/</link><description>Learning Data with Python</description><lastBuildDate>Tue, 11 Apr 2017 13:46:00 +0800</lastBuildDate><item><title>理解稳态随机过程</title><link>/understand-stationary.html</link><description>&lt;h3&gt;不要被数据欺骗&lt;/h3&gt;
+&lt;p&gt;时间序列数据通常是非稳态的，即其均值、方差、协方差会随着时间而变化。非稳态的过程包括趋势(trend), 季节性(cycles)，随机游走(random walks)或者这三者的结合。&lt;/p&gt;
+&lt;p&gt;非稳态的过程，从根本上是无法预测的。对非稳态序列数据进行回归检测可能得到虚假(spurious)的结果：即结果显示两个序列存在相关性，但实际上根本没有任何关系。&lt;/p&gt;
+&lt;p&gt;要得到可靠的结果，需要把数据从非稳态过程转换成稳态过程。 稳态过程(stationary process) 的均值和方差不因时间变化而变化。
+&lt;img alt="Non-stationary behavior" src="http://i.investopedia.com/inv/articles/site/AT-Stationary1.gif"&gt;&lt;/p&gt;
+&lt;h3&gt;几种非稳态过程的介绍&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="non-statinoary process" src="http://i.investopedia.com/inv/articles/site/AT-Stationary2.gif"&gt;&lt;/p&gt;
+&lt;h4&gt;纯粹的随机游走(Pure Random Walk), 蓝线&lt;/h4&gt;
+&lt;p&gt;随机游走过程中时间t对应的值y(t)等于上一时点的值y(t-1)加上一个随机值(白噪音)。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;随机游走过程不会均值回归，均值可能超某个方向发展。&lt;/li&gt;
+&lt;li&gt;随机游走过程的方差随着时间而增加直到无穷大。&lt;/li&gt;
+&lt;li&gt;随机游走过程是无法预测的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;带漂移的随机游走过程(Random Walk with Drift), 绿线&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;在纯粹随机游走的基础上，加入一个常量 …&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Tue, 11 Apr 2017 13:46:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-04-11:/understand-stationary.html</guid><category>trading</category></item><item><title>理解协整性</title><link>/understand-cointegration.html</link><description>&lt;h3&gt;什么是协整(cointegration )&lt;/h3&gt;
+&lt;p&gt;一种情况，假设有两个醉鬼走在路上(two random walks)且这两个人彼此互不认识(Independent variable)， 那么这两个人的路径之间不存在有意义的关系。&lt;/p&gt;
+&lt;p&gt;另一种情况，假设一个醉鬼和他的狗走在路上，那么这次狗和醉鬼之间存在着某种关系。虽然醉鬼和狗各自走的是不可预测的随机路线，但是根据其中一个的位置（醉鬼或者狗),我们能够推测出另一个的位置，换句话说：醉鬼和狗之间的距离是可以预测的。如果狗离开主人的距离过远，就会倾向于朝着主人的方向移动，以免跟丢。&lt;strong&gt;醉鬼和狗之组成了一个协整对&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="cointegration" src="http://www.eco.uc3m.es/~jgonzalo/teaching/EconometriaII/archivos_cointegration/oldman_dog.gif"&gt;&lt;/p&gt;
+&lt;h3&gt;协整性的例子：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;个人收入和消费支出&lt;/li&gt;
+&lt;li&gt;城市的警察数量和犯罪活动的数量&lt;/li&gt;
+&lt;li&gt;进入一个商场的人数和走出商场的人数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;协整性的应用：&lt;/h3&gt;
+&lt;p&gt;协整性的一个重要应用是用于配对交易。&lt;/p&gt;
+&lt;h3&gt;为什么不简单的使用相关性？&lt;/h3&gt;
+&lt;p&gt;对于平稳(stationary)的X和Y，通常我们用R方表示X和Y之间的相关性。 &lt;/p&gt;
+&lt;p&gt;然而对于不平稳(non-stationary)的X和Y， 利用通常的回归分析(standard regression analysis)可能导致伪回归(spurious regressions)结论：即认为实际上不存在相关性的X和Y存在相关性。&lt;/p&gt;
+&lt;h3&gt;协整性检测&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;statsmodels …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Tue, 11 Apr 2017 11:17:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-04-11:/understand-cointegration.html</guid><category>trading</category></item><item><title>My journey with React and React Native so far</title><link>/my-journey-with-react-so-far.html</link><description>&lt;h1&gt;第一回合: Javascript in 2013&lt;/h1&gt;
 &lt;p&gt;2013年的时候曾经心血来潮的学了一阵JavaScript， 特意买了两本大书： &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.amazon.cn/O-Reilly%E7%B2%BE%E5%93%81%E5%9B%BE%E4%B9%A6%E7%B3%BB%E5%88%97-JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97-%E5%BC%97%E5%85%B0%E7%BA%B3%E6%A0%B9/dp/B007VISQ1Y/ref=sr_1_1?ie=UTF8&amp;amp;qid=1490667460&amp;amp;sr=8-1&amp;amp;keywords=JavaScript%3A+The+Definitive+Guide"&gt;Javascript权威指南 第六版&lt;/a&gt;&lt;/li&gt;
@@ -15,13 +47,13 @@
 &lt;li&gt;&lt;strong&gt;N&lt;/strong&gt;ode.js&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;code&gt;MEAN&lt;/code&gt;的教程很多，我比较推荐这本&lt;a href="https://www.safaribooksonline.com/library/view/mean-web-development/9781783983285/"&gt;MEAN Web Development&lt;/a&gt;。&lt;br&gt;
-跟着教程实现了一个CRUD的网站，然后就放下了 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Mon, 27 Mar 2017 20:04:00 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2017-03-27:/my-journey-with-react-so-far.html</guid><category>react</category><category>react-native</category></item><item><title>My notes on learning django.</title><link>http://xingjian.me/my-notes-on-learning-django.html</link><description>&lt;h3&gt;URL&lt;/h3&gt;
+跟着教程实现了一个CRUD的网站，然后就放下了 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Mon, 27 Mar 2017 20:04:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-03-27:/my-journey-with-react-so-far.html</guid><category>react</category><category>react-native</category></item><item><title>My notes on learning django.</title><link>/my-notes-on-learning-django.html</link><description>&lt;h3&gt;URL&lt;/h3&gt;
 &lt;h4&gt;How Django processes a request&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;A request comes in to &lt;code&gt;/hello/&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Django determines the root URLconf by looking at the &lt;code&gt;ROOT_URLCONF&lt;/code&gt; setting.&lt;/li&gt;
 &lt;li&gt;Django looks at all of the URLpatterns in the URLconf for the first one that matches &lt;code&gt;/hello/&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;If it finds a match, it calls the associated view …&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Tue, 10 Jan 2017 14:43:00 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2017-01-10:/my-notes-on-learning-django.html</guid><category>django</category></item><item><title>量化数据 - 行情数据</title><link>http://xingjian.me/quant-understand-pricing-data.html</link><description>&lt;h1&gt;股票行情数据&lt;/h1&gt;
+&lt;li&gt;If it finds a match, it calls the associated view …&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Tue, 10 Jan 2017 14:43:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-01-10:/my-notes-on-learning-django.html</guid><category>django</category></item><item><title>量化数据 - 行情数据</title><link>/quant-understand-pricing-data.html</link><description>&lt;h1&gt;股票行情数据&lt;/h1&gt;
 &lt;p&gt;股票行情数据（或者叫做价格数据）通常是时间序列数据，包含股票的价格信息，基本的行情数据通常比较简单，一般包括:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;股票代码&lt;/li&gt;
@@ -65,7 +97,7 @@
 &lt;td&gt;39,556,853&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;SH601857 …&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Fri, 06 Jan 2017 11:43:00 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2017-01-06:/quant-understand-pricing-data.html</guid><category>data</category></item><item><title>量化数据 - 行业分类</title><link>http://xingjian.me/quant-understand-industry-classification-data.html</link><description>&lt;h1&gt;什么是行业分类数据&lt;/h1&gt;
+&lt;td&gt;SH601857 …&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Fri, 06 Jan 2017 11:43:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-01-06:/quant-understand-pricing-data.html</guid><category>data</category></item><item><title>量化数据 - 行业分类</title><link>/quant-understand-industry-classification-data.html</link><description>&lt;h1&gt;什么是行业分类数据&lt;/h1&gt;
 &lt;p&gt;行业分类数据(&lt;code&gt;industry classification&lt;/code&gt;)是对公司所属行业的描述性数据，是金融行业的基础数据(&lt;code&gt;meta-data&lt;/code&gt;)。行业分类数据应用在投资研究的各个领域, 比如：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;筛选同类型的公司（微软和甲骨文同属软件公司，但是苹果是硬件公司）。&lt;/li&gt;
@@ -107,49 +139,48 @@
 &lt;td&gt;Industry Classification Benchmark&lt;/td&gt;
 &lt;td&gt;ICB&lt;/td&gt;
 &lt;td&gt;行业分类基准&lt;/td&gt;
-&lt;td&gt;道琼斯指数 …&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Thu, 05 Jan 2017 22:23:00 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2017-01-05:/quant-understand-industry-classification-data.html</guid><category>data</category></item><item><title>多因子模型回测框架bt简介</title><link>http://xingjian.me/intro-to-backtesting-for-multi-factor-strategy-bt.html</link><description>
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;td&gt;道琼斯指数 …&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Thu, 05 Jan 2017 22:23:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-01-05:/quant-understand-industry-classification-data.html</guid><category>data</category></item><item><title>多因子模型回测框架bt简介</title><link>/intro-to-backtesting-for-multi-factor-strategy-bt.html</link><description>
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Intro-to-Backtesting-Framework-for-Python---bt"&gt;Intro to Backtesting Framework for Python - bt&lt;a class="anchor-link" href="#Intro-to-Backtesting-Framework-for-Python---bt"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id="Intro-to-Backtesting-Framework-for-Python---bt"&gt;Intro to Backtesting Framework for Python - bt&lt;a class="anchor-link" href="#Intro-to-Backtesting-Framework-for-Python---bt"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/pmorissette/ffn"&gt;项目地址&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://pmorissette.github.io/ffn/"&gt;文档&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;bt&lt;/code&gt;简介: bt是一个量化交易测回测框架，基于&lt;code&gt;Python&lt;/code&gt;。 这个框架使用户能够方便的创建基于不同&lt;code&gt;Alogs&lt;/code&gt;的回测策略。 用户可以用bt创造灵活的、可测试的、可重用的&lt;code&gt;策略块&lt;/code&gt;。 
 bt的目标：免去&lt;strong&gt;quant&lt;/strong&gt;重新造轮子的时间，使他们能够专注于策略的开发。bt的作者，也是&lt;code&gt;ffn&lt;/code&gt;的作者。bt是目前我看到的&lt;em&gt;唯一&lt;/em&gt;一个可以用于因子测试的开源项目。&lt;/li&gt;
 &lt;/ul&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Thu, 05 Jan 2017 17:43:00 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2017-01-05:/intro-to-backtesting-for-multi-factor-strategy-bt.html</guid><category>bt</category><category>backtesting</category></item><item><title>金融分析包FFN简介</title><link>http://xingjian.me/intro-to-financial-functions-package-ffn.html</link><description>
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="input"&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Thu, 05 Jan 2017 17:43:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-01-05:/intro-to-backtesting-for-multi-factor-strategy-bt.html</guid><category>bt</category><category>backtesting</category></item><item><title>金融分析包FFN简介</title><link>/intro-to-financial-functions-package-ffn.html</link><description>
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="金融分析包FFN简介"&gt;金融分析包FFN简介&lt;a class="anchor-link" href="#金融分析包FFN简介"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id="金融分析包FFN简介"&gt;&amp;#37329;&amp;#34701;&amp;#20998;&amp;#26512;&amp;#21253;FFN&amp;#31616;&amp;#20171;&lt;a class="anchor-link" href="#金融分析包FFN简介"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/pmorissette/ffn"&gt;项目地址&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://pmorissette.github.io/ffn/index.html"&gt;文档&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Thu, 05 Jan 2017 17:09:00 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2017-01-05:/intro-to-financial-functions-package-ffn.html</guid><category>ffn</category></item><item><title>使用Pelican发布Jupyter Notebook</title><link>http://xingjian.me/pelican-and-jupyter-notebook-for-data-science.html</link><description>
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="input"&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Thu, 05 Jan 2017 17:09:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-01-05:/intro-to-financial-functions-package-ffn.html</guid><category>ffn</category></item><item><title>使用Pelican发布Jupyter Notebook</title><link>/pelican-and-jupyter-notebook-for-data-science.html</link><description>
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="这是一个Markdown标题"&gt;这是一个Markdown标题&lt;a class="anchor-link" href="#这是一个Markdown标题"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="这是一个Markdown标题"&gt;&amp;#36825;&amp;#26159;&amp;#19968;&amp;#20010;Markdown&amp;#26631;&amp;#39064;&lt;a class="anchor-link" href="#这是一个Markdown标题"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Thu, 05 Jan 2017 15:31:00 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2017-01-05:/pelican-and-jupyter-notebook-for-data-science.html</guid><category>quant</category></item><item><title>How to fix Python error: ValueError: embedded null byte</title><link>http://xingjian.me/how-to-fix-value-error-embedded-null-byte-error.html</link><description>&lt;p&gt;今天安装了&lt;a href="https://github.com/getpelican/pelican"&gt;Pelican&lt;/a&gt;，但在运行&lt;code&gt;pelican content&lt;/code&gt;时遇到一个非常奇怪的错误。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  File &lt;span class="s2"&gt;&amp;quot;c:\users\...\workingon\pelican\pelican\utils.py&amp;quot;&lt;/span&gt;, line 111, in strftime
+&lt;div class="input"&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Thu, 05 Jan 2017 15:31:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-01-05:/pelican-and-jupyter-notebook-for-data-science.html</guid><category>quant</category></item><item><title>How to fix Python error: ValueError: embedded null byte</title><link>/how-to-fix-value-error-embedded-null-byte-error.html</link><description>&lt;p&gt;今天安装了&lt;a href="https://github.com/getpelican/pelican"&gt;Pelican&lt;/a&gt;，但在运行&lt;code&gt;pelican content&lt;/code&gt;时遇到一个非常奇怪的错误。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  File &lt;span class="s2"&gt;&amp;quot;c:\users\...\workingon\pelican\pelican\utils.py&amp;quot;&lt;/span&gt;, line &lt;span class="m"&gt;111&lt;/span&gt;, in strftime
     &lt;span class="k"&gt;return&lt;/span&gt; super&lt;span class="o"&gt;(&lt;/span&gt;SafeDatetime, self&lt;span class="o"&gt;)&lt;/span&gt;.strftime&lt;span class="o"&gt;(&lt;/span&gt;fmt&lt;span class="o"&gt;)&lt;/span&gt;
 ValueError: embedded null byte
 &lt;/pre&gt;&lt;/div&gt;
@@ -164,7 +195,7 @@ ValueError: embedded null byte
 
 
 &lt;h3&gt;解决方案&lt;/h3&gt;
-&lt;p&gt;出错的地方是&lt;code&gt;utils.py …&lt;/code&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Wed, 04 Jan 2017 16:25:00 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2017-01-04:/how-to-fix-value-error-embedded-null-byte-error.html</guid><category>bugs</category></item><item><title>Reading List</title><link>http://xingjian.me/2017-1-4-links.html</link><description>&lt;p&gt;&lt;strong&gt;Data Science&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;出错的地方是&lt;code&gt;utils.py …&lt;/code&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Wed, 04 Jan 2017 16:25:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-01-04:/how-to-fix-value-error-embedded-null-byte-error.html</guid><category>bugs</category></item><item><title>Reading List</title><link>/2017-1-4-links.html</link><description>&lt;p&gt;&lt;strong&gt;Data Science&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://chrisalbon.com/"&gt;Notes on Data Science, Machine Learning, &amp;amp; Artificial Intelligence&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://blog.udacity.com/2016/02/how-to-build-a-data-analysis-portfolio-that-will-get-you-hired.html"&gt;How To Build A Data Analysis Portfolio That Will Get You Hired&lt;/a&gt;&lt;/li&gt;
@@ -176,7 +207,7 @@ ValueError: embedded null byte
 &lt;p&gt;&lt;strong&gt;写作&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.cnfeat.com/"&gt;读立写生 - 陈素封&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.cnfeat.com/blog/2016/11/20/NabokovWriteStyle/"&gt;像纳博科夫一样写作：卡片创作法 …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Wed, 04 Jan 2017 15:54:00 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2017-01-04:/2017-1-4-links.html</guid><category>链接</category></item><item><title>信威集团媒体报道跟踪</title><link>http://xingjian.me/news-on-xin-wei-ji-tuan-600485.html</link><description>&lt;h1&gt;最新进展&lt;/h1&gt;
+&lt;li&gt;&lt;a href="http://www.cnfeat.com/blog/2016/11/20/NabokovWriteStyle/"&gt;像纳博科夫一样写作：卡片创作法 …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Wed, 04 Jan 2017 15:54:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-01-04:/2017-1-4-links.html</guid><category>链接</category></item><item><title>信威集团媒体报道跟踪</title><link>/news-on-xin-wei-ji-tuan-600485.html</link><description>&lt;h1&gt;最新进展&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;停牌开始日: 2016-12-26&lt;/li&gt;
 &lt;li&gt;停牌结束日: [未定]&lt;/li&gt;
@@ -205,7 +236,7 @@ ValueError: embedded null byte
 &lt;li&gt;&lt;strong&gt;新华网&lt;/strong&gt;转载北京青年报:&lt;a href="http://news.xinhuanet.com/fortune/2017-01/02/c_1120229527.htm"&gt;"隐匿巨额债务,神秘人套现离场" 信威为何能入围上证50&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;根据官网介绍，信威集团此前分别是上证180、上证50、沪深300 …&lt;/p&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Thu, 15 Dec 2016 22:23:00 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2016-12-15:/news-on-xin-wei-ji-tuan-600485.html</guid><category>信威集团</category></item><item><title>针对每个Virtualenv，创建独立的Jupyter Kernel (Windows 10)</title><link>http://xingjian.me/how-to-create-isolated-jupyter-kernel-for-virtualenv-windows.html</link><description>&lt;h3&gt;首先创建独立的运行环境&lt;/h3&gt;
+&lt;p&gt;根据官网介绍，信威集团此前分别是上证180、上证50、沪深300 …&lt;/p&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Thu, 15 Dec 2016 22:23:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-12-15:/news-on-xin-wei-ji-tuan-600485.html</guid><category>信威集团</category></item><item><title>针对每个Virtualenv，创建独立的Jupyter Kernel (Windows 10)</title><link>/how-to-create-isolated-jupyter-kernel-for-virtualenv-windows.html</link><description>&lt;h3&gt;首先创建独立的运行环境&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkvirtualenv scrapy
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -226,7 +257,7 @@ pip install ipykernel
     &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;:\&lt;/span&gt;&lt;span class="n"&gt;users&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;your_user_name&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;envs&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;scrapy&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;share&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;jupyter&lt;/span&gt;
     &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;:\&lt;/span&gt;&lt;span class="n"&gt;ProgramData&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;jupyter&lt;/span&gt;
 &lt;span class="n"&gt;runtime&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-    &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;:\&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;your_user_name&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;AppData …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Sun, 06 Nov 2016 22:35:00 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2016-11-06:/how-to-create-isolated-jupyter-kernel-for-virtualenv-windows.html</guid><category>jupyter</category><category>virtualenv</category></item><item><title>Reading List</title><link>http://xingjian.me/2015-7-28-links.html</link><description>&lt;p&gt;&lt;strong&gt;D3&lt;/strong&gt;:&lt;/p&gt;
+    &lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;:\&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;your_user_name&lt;/span&gt;&lt;span class="o"&gt;\&lt;/span&gt;&lt;span class="n"&gt;AppData …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Sun, 06 Nov 2016 22:35:00 +0800</pubDate><guid isPermaLink="false">tag:None,2016-11-06:/how-to-create-isolated-jupyter-kernel-for-virtualenv-windows.html</guid><category>jupyter</category><category>virtualenv</category></item><item><title>Reading List</title><link>/2015-7-28-links.html</link><description>&lt;p&gt;&lt;strong&gt;D3&lt;/strong&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/"&gt;A Visual Introduction to Machine Learning by R2D3&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://learnjsdata.com/read_data.html"&gt;Reading in Data&lt;/a&gt;&lt;/li&gt;
@@ -239,7 +270,7 @@ pip install ipykernel
 &lt;li&gt;&lt;a href="http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/"&gt;What IS CDOE?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://flowingdata.com/2009/03/13/27-visualizations-and-infographics-to-understand-the-financial-crisis/"&gt;27 Visualizations and Infographics to Understand the Financial Crisis&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://thefinishedbox.com/inspiration/web-interfaces/10-fantastic-money-and-finance-infographic-designs/"&gt;10 Fantastic Money and Finance Infographics Designs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://css-tricks.com/sublime-text-front-end-developers/"&gt;Sublime Text for Front …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Tue, 28 Jul 2015 21:09:19 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2015-07-28:/2015-7-28-links.html</guid><category>链接</category></item><item><title>Reading List</title><link>http://xingjian.me/2015-7-27-links.html</link><description>&lt;p&gt;&lt;strong&gt;Blogs&lt;/strong&gt;&lt;/p&gt;
+&lt;li&gt;&lt;a href="https://css-tricks.com/sublime-text-front-end-developers/"&gt;Sublime Text for Front …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Tue, 28 Jul 2015 21:09:19 +0800</pubDate><guid isPermaLink="false">tag:None,2015-07-28:/2015-7-28-links.html</guid><category>链接</category></item><item><title>Reading List</title><link>/2015-7-27-links.html</link><description>&lt;p&gt;&lt;strong&gt;Blogs&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://franklinta.com/"&gt;Franklin Ta's Blog&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -257,23 +288,23 @@ pip install ipykernel
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://hellomonday.com/projects"&gt;HelloMonday&lt;/a&gt;, a beautiful designed website.&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://learn.shayhowe.com/advanced-html-css/responsive-web-design/"&gt;Responsive Web Design&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://blog.templatemonster.com/2014/10/24/bootstrap-3-grid-system-guide/"&gt;Bootstrap 3: The Grid …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Mon, 27 Jul 2015 21:09:19 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2015-07-27:/2015-7-27-links.html</guid><category>链接</category></item><item><title>I do it because I can</title><link>http://xingjian.me/i-do-it-because-i-can.html</link><description>&lt;p&gt;I was delighted to find another backtesting framework wrote in Python，which is called &lt;a href="http://www.backtrader.com/"&gt;backtrader&lt;/a&gt;.&lt;/p&gt;
+&lt;li&gt;&lt;a href="http://blog.templatemonster.com/2014/10/24/bootstrap-3-grid-system-guide/"&gt;Bootstrap 3: The Grid …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Mon, 27 Jul 2015 21:09:19 +0800</pubDate><guid isPermaLink="false">tag:None,2015-07-27:/2015-7-27-links.html</guid><category>链接</category></item><item><title>I do it because I can</title><link>/i-do-it-because-i-can.html</link><description>&lt;p&gt;I was delighted to find another backtesting framework wrote in Python，which is called &lt;a href="http://www.backtrader.com/"&gt;backtrader&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I have tried a few backtesting frameworkds wrote in Python, but this project looks really impressive.&lt;/p&gt;
 &lt;p&gt;Author of the project has explained the reasons why he'd started this project -&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;One of the questions often asked …&lt;/p&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Sun, 26 Jul 2015 19:16:36 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2015-07-26:/i-do-it-because-i-can.html</guid><category>[quotes]</category></item><item><title>(译文)法国初创公司生态系统：处在引爆点上</title><link>http://xingjian.me/the-frence-startups-ecosystem-at-a-tipping-point-chinese.html</link><description>&lt;p&gt;[The French Startup Ecosystem: At a Tipping Point]&lt;sup id="fnref-1"&gt;&lt;a class="footnote-ref" href="#fn-1"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;One of the questions often asked …&lt;/p&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Sun, 26 Jul 2015 19:16:36 +0800</pubDate><guid isPermaLink="false">tag:None,2015-07-26:/i-do-it-because-i-can.html</guid><category>[quotes]</category></item><item><title>(译文)法国初创公司生态系统：处在引爆点上</title><link>/the-frence-startups-ecosystem-at-a-tipping-point-chinese.html</link><description>&lt;p&gt;[The French Startup Ecosystem: At a Tipping Point]&lt;sup id="fnref-1"&gt;&lt;a class="footnote-ref" href="#fn-1"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;原著 MATT TURCK 翻译 &lt;a href="http://xingjian.me"&gt;XINGJIAN PAN&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;转载请注明出处&lt;/p&gt;
 &lt;p&gt;我知道，当我们想到那些初创公司的热土时，头脑中跳出来大概不会是法国这个国家。 诚然，一些有意思的事情正在欧洲的技术圈发生 --- 伦敦，或者柏林（我曾在之前的博客中写道过），甚至芬兰。不过法国？随便问问美国的投资者和企业家们对法国的看法，或多或少你都会听到类似的评论：税负太高；解雇员工几乎是不可能的事情；政府干预过多；语言是个障碍；对失败抱有恐惧；各种罢工；那个法律规定一周工作35个小时，6点以后回复工作邮件算是违法行为的奇葩国家。&lt;/p&gt;
 &lt;p&gt;然而，在法国的科技初创公司之中，事情正朝着好的方向加速发展，尤其是在过去的两三年里。 最近，我很幸运地作为美国风投和媒体界的代表， 受邀来到法国巴黎，并有幸与当地的企业家、风投以及奥朗德总统和其他政府高级官员会面。 作为一个职业生涯基本上是在美国度过的法国人，我的态度可能比大多数人都更加偏向于批判法国的不足点。 但这次旅行却使我对于当前法国科技创业圈的巨大潜力产生了强烈的兴趣。&lt;/p&gt;
-&lt;p&gt;对于所有关注法国的初创公司生态系统的人来说，一个显而易见的结论是大家表面上看到的 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Mon, 14 Jul 2014 09:16:36 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2014-07-14:/the-frence-startups-ecosystem-at-a-tipping-point-chinese.html</guid><category>创业公司</category></item><item><title>(译文)有能力的人，应当创造</title><link>http://xingjian.me/smart-people-should-create-things-chinese.html</link><description>&lt;p&gt;[Smart People Should Create Things][^1]&lt;/p&gt;
+&lt;p&gt;对于所有关注法国的初创公司生态系统的人来说，一个显而易见的结论是大家表面上看到的 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Mon, 14 Jul 2014 09:16:36 +0800</pubDate><guid isPermaLink="false">tag:None,2014-07-14:/the-frence-startups-ecosystem-at-a-tipping-point-chinese.html</guid><category>创业公司</category></item><item><title>(译文)有能力的人，应当创造</title><link>/smart-people-should-create-things-chinese.html</link><description>&lt;p&gt;[Smart People Should Create Things][^1]&lt;/p&gt;
 &lt;p&gt;原著 James Clear 翻译 &lt;a href="http://xingjian.me"&gt;XINGJIAN PAN&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;转载请注明出处&lt;/p&gt;
 &lt;p&gt;那是1974年，亚瑟·弗莱(Art Fry)正利用周末的时间参加教堂唱诗班。 在这个特殊的周日，弗莱正被一个并不特别有趣的问题所困扰：他没办法固定住书签的位置。&lt;/p&gt;
 &lt;p&gt;为了更快的找到圣歌， 弗莱会把小纸条夹在书页之间。 然而有一个问题是，每次他站起来，这些小书签要么深深地滑到书页之中，要么直接从书页里掉出来。需要不断的重新放置书签让弗莱感到有些沮丧，因此他开始梦想一个更好的解决方案。&lt;/p&gt;
 &lt;p&gt;[“那是在听布道的时候”，弗莱说，“我突然有一个想法，‘我真正需要的是一种小型的有粘性的书签，能贴在书页上，但拿掉时不会连书页一起粘下来。‘”]&lt;sup id="fnref-daydream"&gt;&lt;a class="footnote-ref" href="#fn-daydream"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;有了这个想法，弗莱马上投入工作，寻找解决方案。 或许是运气， 弗莱恰巧工作在一个不能更合适的地方。他所在的公司是3M而他的一名同事，斯宾塞·希弗尔(Spencer Silver)，正好是粘合剂方面的专家。&lt;/p&gt;
-&lt;p&gt;接下来的几个月里， 弗莱和斯宾塞开始研发一种特殊的纸 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Thu, 03 Jul 2014 21:16:36 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2014-07-03:/smart-people-should-create-things-chinese.html</guid></item><item><title>Never complain, never explain.</title><link>http://xingjian.me/never-complain-never-explain.html</link><description>&lt;blockquote&gt;
+&lt;p&gt;接下来的几个月里， 弗莱和斯宾塞开始研发一种特殊的纸 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Thu, 03 Jul 2014 21:16:36 +0800</pubDate><guid isPermaLink="false">tag:None,2014-07-03:/smart-people-should-create-things-chinese.html</guid></item><item><title>Never complain, never explain.</title><link>/never-complain-never-explain.html</link><description>&lt;blockquote&gt;
 &lt;p&gt;Never complain, never explain. Resist the temptation to defend yourself or make excuses. ― Brian Tracy&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;翻译成中文大概是这个意思：&lt;/p&gt;
@@ -281,7 +312,7 @@ pip install ipykernel
 &lt;p&gt;不抱怨，不解释。抵制一切为自己辩解和找借口的诱惑和理由。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;今天偶然看到的，深以为然。回想之前工作中自己对一些琐碎事情的抱怨，真的是很惭愧。&lt;/p&gt;
-&lt;p&gt;同时为自己设一个挑战，接下来的30天里，争取每天做到&lt;strong&gt;零抱怨&lt;/strong&gt;。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Wed, 02 Jul 2014 21:16:36 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2014-07-02:/never-complain-never-explain.html</guid></item><item><title>(译文)大数据行业信息图以及一些思考</title><link>http://xingjian.me/state-of-big-date-in-2014-a-chart-chinese.html</link><description>&lt;p&gt;[更新]本文已发表在36Kr，&lt;a href="http://www.36kr.com/p/213424.html"&gt;链接&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;同时为自己设一个挑战，接下来的30天里，争取每天做到&lt;strong&gt;零抱怨&lt;/strong&gt;。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Wed, 02 Jul 2014 21:16:36 +0800</pubDate><guid isPermaLink="false">tag:None,2014-07-02:/never-complain-never-explain.html</guid></item><item><title>(译文)大数据行业信息图以及一些思考</title><link>/state-of-big-date-in-2014-a-chart-chinese.html</link><description>&lt;p&gt;[更新]本文已发表在36Kr，&lt;a href="http://www.36kr.com/p/213424.html"&gt;链接&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://mattturck.com/2014/05/11/the-state-of-big-data-in-2014-a-chart/"&gt;The State Of Big Data in 2014: a Chart&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;原著 MATT TURCK 翻译 &lt;a href="http://xingjian.me"&gt;XINGJIAN PAN&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;转载请注明出处&lt;/p&gt;
@@ -289,7 +320,7 @@ pip install ipykernel
 &lt;p&gt;&lt;img alt="img" src="https://raw.githubusercontent.com/xingjianpan/my_blog/master/source/_posts/big_data_map.png"&gt;&lt;/p&gt;
 &lt;p&gt;从VC的角度，我想谈谈对这张图以及大数据行业的一些想法：&lt;/p&gt;
 &lt;h2&gt;越来越拥挤&lt;/h2&gt;
-&lt;p&gt;创业者们蜂拥至这个行业， VC们将大笔的资金投资到看起来有机会成功的创业公司，其结果是，这个行业正变得越来越拥挤。 一些类别如数据库（不管是&lt;a href="http://en.wikipedia.org/wiki/NoSQL"&gt;NoSQL&lt;/a&gt;还是&lt;a href="http://en.wikipedia.org/wiki/NewSQL"&gt;NewSQL&lt;/a&gt;）和社交媒体数据分析正趋于成熟，且开始出现并购或者淘汰出局（Twitter对BlueFin&lt;sup id="fnref-BlueFin"&gt;&lt;a class="footnote-ref" href="#fn-BlueFin"&gt;1&lt;/a&gt;&lt;/sup&gt;和GNIP&lt;sup id="fnref-GNIP"&gt;&lt;a class="footnote-ref" href="#fn-GNIP"&gt;2&lt;/a&gt;&lt;/sup&gt;的收购可能意味着在社交媒体数据分析领域这种趋势早已经开始了）。 对于后来者来说， 虽然空间依然存在，但看起来早期的大笔风投资金都下注在基础设施（infrastructure）和分析（analytics）领域，导致成功的标准变得越来越高 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Tue, 01 Jul 2014 14:16:36 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2014-07-01:/state-of-big-date-in-2014-a-chart-chinese.html</guid><category>大数据</category></item><item><title>Notes on Running Lean (精益创业实践)</title><link>http://xingjian.me/notes-on-running-lean.html</link><description>&lt;p&gt;用两句话来概括本书的观点：&lt;/p&gt;
+&lt;p&gt;创业者们蜂拥至这个行业， VC们将大笔的资金投资到看起来有机会成功的创业公司，其结果是，这个行业正变得越来越拥挤。 一些类别如数据库（不管是&lt;a href="http://en.wikipedia.org/wiki/NoSQL"&gt;NoSQL&lt;/a&gt;还是&lt;a href="http://en.wikipedia.org/wiki/NewSQL"&gt;NewSQL&lt;/a&gt;）和社交媒体数据分析正趋于成熟，且开始出现并购或者淘汰出局（Twitter对BlueFin&lt;sup id="fnref-BlueFin"&gt;&lt;a class="footnote-ref" href="#fn-BlueFin"&gt;1&lt;/a&gt;&lt;/sup&gt;和GNIP&lt;sup id="fnref-GNIP"&gt;&lt;a class="footnote-ref" href="#fn-GNIP"&gt;2&lt;/a&gt;&lt;/sup&gt;的收购可能意味着在社交媒体数据分析领域这种趋势早已经开始了）。 对于后来者来说， 虽然空间依然存在，但看起来早期的大笔风投资金都下注在基础设施（infrastructure）和分析（analytics）领域，导致成功的标准变得越来越高 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Tue, 01 Jul 2014 14:16:36 +0800</pubDate><guid isPermaLink="false">tag:None,2014-07-01:/state-of-big-date-in-2014-a-chart-chinese.html</guid><category>大数据</category></item><item><title>Notes on Running Lean (精益创业实践)</title><link>/notes-on-running-lean.html</link><description>&lt;p&gt;用两句话来概括本书的观点：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;创业者做一切事的出发点都应当是客户需求。&lt;/li&gt;
 &lt;li&gt;创业本质上是风险管理。&lt;/li&gt;
@@ -312,7 +343,7 @@ pip install ipykernel
 &lt;li&gt;想法很便宜，但是实施想法并不便宜。&lt;/li&gt;
 &lt;li&gt;打造&lt;strong&gt;最小可行产品(MVP)&lt;/strong&gt;。&lt;/li&gt;
 &lt;li&gt;可以“与众不同”，只要这种“不同”是有意义的。&lt;/li&gt;
-&lt;li&gt;好的产品介绍标题 …&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Thu, 26 Jun 2014 21:16:36 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2014-06-26:/notes-on-running-lean.html</guid><category>创业</category></item><item><title>产业链数据可能是金融数据的下一个前沿</title><link>http://xingjian.me/chan-ye-lian-shu-ju-ke-neng-shi-jin-rong-shu-ju-de-xia-yi-ge-qian-yan.html</link><description>&lt;h3&gt;产业链数据，简单的说包含三个维度：&lt;/h3&gt;
+&lt;li&gt;好的产品介绍标题 …&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Thu, 26 Jun 2014 21:16:36 +0800</pubDate><guid isPermaLink="false">tag:None,2014-06-26:/notes-on-running-lean.html</guid><category>创业</category></item><item><title>产业链数据可能是金融数据的下一个前沿</title><link>/chan-ye-lian-shu-ju-ke-neng-shi-jin-rong-shu-ju-de-xia-yi-ge-qian-yan.html</link><description>&lt;h3&gt;产业链数据，简单的说包含三个维度：&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;有哪些公司是公司A的供应商&lt;/li&gt;
 &lt;li&gt;这些供应商供应什么样的产品、服务&lt;/li&gt;
@@ -329,12 +360,12 @@ pip install ipykernel
 &lt;p&gt;如果恰好三星公司的供应商不在泰国，不受洪水影响，那么它也许可以利用这次机会占领更多市场，扩大销售份儿，从而提高股价。同时，三星产品的销售也会带动其相关产业链上公司的销售额上升。&lt;/p&gt;
 &lt;p&gt;所以，一次发生在泰国的洪水，可能会对某些产业链上的公司产生不同程度的影响。 如果投资者和分析师能够准确的判断出那些产业、公司会受到影响，并定量的分析出这种影响的大小，那么就有可能利用这个事件进行相应的投资，获得收益，规避风险。&lt;/p&gt;
 &lt;h3&gt;产业链数据的现状&lt;/h3&gt;
-&lt;p&gt;目前据我所知 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Thu, 26 Jun 2014 18:22:30 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2014-06-26:/chan-ye-lian-shu-ju-ke-neng-shi-jin-rong-shu-ju-de-xia-yi-ge-qian-yan.html</guid></item><item><title>(译文)推倒彭博金融终端机？</title><link>http://xingjian.me/yi-wen-tui-dao-peng-bo-jin-rong-zhong-duan-ji.html</link><description>&lt;p&gt;[更新]本文已发表在36Kr，&lt;a href="http://www.36kr.com/p/213072.html"&gt;链接&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;目前据我所知 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Thu, 26 Jun 2014 18:22:30 +0800</pubDate><guid isPermaLink="false">tag:None,2014-06-26:/chan-ye-lian-shu-ju-ke-neng-shi-jin-rong-shu-ju-de-xia-yi-ge-qian-yan.html</guid></item><item><title>(译文)推倒彭博金融终端机？</title><link>/yi-wen-tui-dao-peng-bo-jin-rong-zhong-duan-ji.html</link><description>&lt;p&gt;[更新]本文已发表在36Kr，&lt;a href="http://www.36kr.com/p/213072.html"&gt;链接&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://mattturck.com/2014/03/19/can-the-bloomberg-terminal-be-toppled/"&gt;Can the Bloomberg Terminal be “Toppled”?&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;原著 MATT TURCK 翻译 &lt;a href="http://xingjian.me"&gt;XINGJIAN PAN&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;转载请注明出处&lt;/p&gt;
 &lt;p&gt;在一些企业家和投机资本家（VC）眼里，彭博的金融终端机多少是一个异类， 甚至是属于上个时代的产物。 当今时代，免费信息充斥互联网， 开源的大数据分析工具也不少，然而彭博的终端机业务却可以通过销售数据和数据分析工具，每年获得数十亿美元的收入， 且很多数据是彭博从第三方获得的。偶尔你可能会听到人们嘲讽它的操作界面让人回想起DOS时代的简陋。如今，各个行业都在加速细分和解绑(&lt;strong&gt;unbundling&lt;/strong&gt;)，金融服务业也并非例外，然而，彭博的的金融终端却毫不动摇的继续推进绑定(&lt;strong&gt;bundling&lt;/strong&gt;)策略：&lt;strong&gt;一个产品，一个价格&lt;/strong&gt;，这就意味着全球32万彭博终端用户中，虽然所有人都要支付每年2万美元的使用费，却仅仅会用到其3万多个产品功能中的很小一部分。&lt;/p&gt;
-&lt;p&gt;创业者们，如果这听起来像是一个“破坏性创新”完美机会，或者你觉得把彭博的终端产品“解绑”是个易如反掌的事情，那么，你不是唯一这么想的 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Sat, 21 Jun 2014 21:22:30 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2014-06-21:/yi-wen-tui-dao-peng-bo-jin-rong-zhong-duan-ji.html</guid><category>彭博</category><category>路透</category></item><item><title>跨文化管理，即使对于成熟的大公司也是难题。</title><link>http://xingjian.me/cross-culture-communcation.html</link><description>&lt;p&gt;工作关系，基本上每天都需要和不同国家、不同文化的同事通过邮件和聊天软件进行沟通和合作。遇到过一些波折，也遇到过很多惊喜和感动。总体而言，跨文化的沟通是十分困难的。这一点我深有体会。哈佛商业评论5月份有一篇文章是关于跨文化管理的。我觉的很有帮助。这里简单的摘录一下要点。应该能为跨文化沟通同提供一个框架，在沟通中有针对性的采取一些方法，提高沟通的效果。&lt;/p&gt;
+&lt;p&gt;创业者们，如果这听起来像是一个“破坏性创新”完美机会，或者你觉得把彭博的终端产品“解绑”是个易如反掌的事情，那么，你不是唯一这么想的 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Sat, 21 Jun 2014 21:22:30 +0800</pubDate><guid isPermaLink="false">tag:None,2014-06-21:/yi-wen-tui-dao-peng-bo-jin-rong-zhong-duan-ji.html</guid><category>彭博</category><category>路透</category></item><item><title>跨文化管理，即使对于成熟的大公司也是难题。</title><link>/cross-culture-communcation.html</link><description>&lt;p&gt;工作关系，基本上每天都需要和不同国家、不同文化的同事通过邮件和聊天软件进行沟通和合作。遇到过一些波折，也遇到过很多惊喜和感动。总体而言，跨文化的沟通是十分困难的。这一点我深有体会。哈佛商业评论5月份有一篇文章是关于跨文化管理的。我觉的很有帮助。这里简单的摘录一下要点。应该能为跨文化沟通同提供一个框架，在沟通中有针对性的采取一些方法，提高沟通的效果。&lt;/p&gt;
 &lt;h3&gt;文化地图&lt;/h3&gt;
 &lt;p&gt;&lt;img alt="以色列和俄罗斯的管理文化差异" src="https://raw.githubusercontent.com/xingjianpan/my_blog/master/source/_posts/culture.jpg"&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -360,7 +391,7 @@ pip install ipykernel
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;领导 …&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Tue, 10 Jun 2014 22:22:30 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2014-06-10:/cross-culture-communcation.html</guid></item><item><title>有些职业梯子（Career Ladder）看起来在那，其实并不在那</title><link>http://xingjian.me/be-aware-of-broken-career-ladder.html</link><description>&lt;p&gt;所谓职业梯子（Career  Ladder &lt;a href="http://en.wikipedia.org/wiki/Career_ladder"&gt;wiki&lt;/a&gt;）指的是一个人在职场上的上升通道和升值空间。 职业梯子为员工指明了发展道路和前进方向。尤其是大公司，往往会有比较明确的分工，同时对每个工作职位的发展路径也都会有很清晰的规划。即使没有这些，一个公司的组织框架图往往也就是每个职位的发展路线图。 一些职位，可能确实可以按着组织图或路线图前进，一直做到高层（典型的如销售）。&lt;/p&gt;
+&lt;p&gt;领导 …&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Tue, 10 Jun 2014 22:22:30 +0800</pubDate><guid isPermaLink="false">tag:None,2014-06-10:/cross-culture-communcation.html</guid></item><item><title>有些职业梯子（Career Ladder）看起来在那，其实并不在那</title><link>/be-aware-of-broken-career-ladder.html</link><description>&lt;p&gt;所谓职业梯子（Career  Ladder &lt;a href="http://en.wikipedia.org/wiki/Career_ladder"&gt;wiki&lt;/a&gt;）指的是一个人在职场上的上升通道和升值空间。 职业梯子为员工指明了发展道路和前进方向。尤其是大公司，往往会有比较明确的分工，同时对每个工作职位的发展路径也都会有很清晰的规划。即使没有这些，一个公司的组织框架图往往也就是每个职位的发展路线图。 一些职位，可能确实可以按着组织图或路线图前进，一直做到高层（典型的如销售）。&lt;/p&gt;
 &lt;p&gt;但可能更普遍的一种情况是，这些梯子只是一种虚构的梯子。就好像三根错开放置的火柴，侧面看仿佛是&lt;strong&gt;同一条&lt;/strong&gt;自上而下的长火柴，但正面看，则其实是&lt;strong&gt;三跟不同&lt;/strong&gt;的火柴。换到职场上，一个看起来连续的职业梯子，可能是几条错开放置的梯子。当一个人到达其中一个梯子的顶点时，抬起头看到的不是另一个梯子的尾巴，而是__Nothing__.&lt;/p&gt;
 &lt;p&gt;为什么会这样，原因可能有很多，比如：&lt;/p&gt;
 &lt;ul&gt;
@@ -372,7 +403,7 @@ pip install ipykernel
 &lt;/ul&gt;
 &lt;p&gt;那么如果遇到这种&lt;strong&gt;断裂&lt;/strong&gt;的职业梯子，该怎么做？我个人的观点是&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;首先 …&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Thu, 27 Mar 2014 10:22:30 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2014-03-27:/be-aware-of-broken-career-ladder.html</guid></item><item><title>Note on Project Management Lite</title><link>http://xingjian.me/notes-on-project-management-lite.html</link><description>&lt;p&gt;The book caught my attention when I was looking for a book that can get me started with just enough project management skills. I was working on an internal project at that time. After comparing a few books on project management, I think this one is the best one with …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Mon, 05 Aug 2013 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2013-08-05:/notes-on-project-management-lite.html</guid></item><item><title>How to install pymssql on Mac OS X Mountain Lion?</title><link>http://xingjian.me/how-to-install-pymssql-on-macosx-mountain-lion.html</link><description>&lt;h2&gt;Problem: When trying to install pymssql using pip, I got below error message&lt;/h2&gt;
+&lt;li&gt;首先 …&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Thu, 27 Mar 2014 10:22:30 +0800</pubDate><guid isPermaLink="false">tag:None,2014-03-27:/be-aware-of-broken-career-ladder.html</guid></item><item><title>Note on Project Management Lite</title><link>/notes-on-project-management-lite.html</link><description>&lt;p&gt;The book caught my attention when I was looking for a book that can get me started with just enough project management skills. I was working on an internal project at that time. After comparing a few books on project management, I think this one is the best one with …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Mon, 05 Aug 2013 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:None,2013-08-05:/notes-on-project-management-lite.html</guid></item><item><title>How to install pymssql on Mac OS X Mountain Lion?</title><link>/how-to-install-pymssql-on-macosx-mountain-lion.html</link><description>&lt;h2&gt;Problem: When trying to install pymssql using pip, I got below error message&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;_mssql.c:257:10: fatal error: &lt;span class="s1"&gt;&amp;#39;sqlfront.h&amp;#39;&lt;/span&gt; file not found
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -390,7 +421,7 @@ pip install ipykernel
 &lt;p&gt;&lt;code&gt;command&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;./configure --prefix=/usr/local/freetds --enable-msdblib
 make
-make install …&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Tue, 23 Jul 2013 21:16:36 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2013-07-23:/how-to-install-pymssql-on-macosx-mountain-lion.html</guid><category>Python</category><category>pymssql</category></item><item><title>Note on the power of habits</title><link>http://xingjian.me/notes-on-the-power-of-habits.html</link><description>&lt;h2&gt;What this book about?&lt;/h2&gt;
+make install …&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Tue, 23 Jul 2013 21:16:36 +0800</pubDate><guid isPermaLink="false">tag:None,2013-07-23:/how-to-install-pymssql-on-macosx-mountain-lion.html</guid><category>Python</category><category>pymssql</category></item><item><title>Note on the power of habits</title><link>/notes-on-the-power-of-habits.html</link><description>&lt;h2&gt;What this book about?&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;How habit works?&lt;/li&gt;
 &lt;li&gt;How to develop a new habit?&lt;/li&gt;
@@ -398,4 +429,4 @@ make install …&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;&lt;/ol&gt;</description><dc:
 &lt;/ol&gt;
 &lt;h2&gt;The first shock from this book.&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;People now get used to the habits of using toothpaste to brush their teeth, but this habit doesn't exist for majority people in …&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Sat, 20 Jul 2013 21:22:30 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2013-07-20:/notes-on-the-power-of-habits.html</guid><category>读书笔记</category></item><item><title>about</title><link>http://xingjian.me/about.html</link><description>&lt;p&gt;Hello There! Here is my personal blog.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Wed, 04 Jan 2012 22:42:00 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2012-01-04:/about.html</guid></item><item><title>contact</title><link>http://xingjian.me/contact.html</link><description>&lt;p&gt;Please send mail to i [at] xingjian.me.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Wed, 04 Jan 2012 22:42:00 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2012-01-04:/contact.html</guid></item><item><title>portfolio</title><link>http://xingjian.me/portfolio.html</link><description>&lt;p&gt;建设中&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Wed, 04 Jan 2012 22:42:00 +0800</pubDate><guid isPermaLink="false">tag:xingjian.me,2012-01-04:/portfolio.html</guid></item></channel></rss>
+&lt;li&gt;People now get used to the habits of using toothpaste to brush their teeth, but this habit doesn't exist for majority people in …&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Sat, 20 Jul 2013 21:22:30 +0800</pubDate><guid isPermaLink="false">tag:None,2013-07-20:/notes-on-the-power-of-habits.html</guid><category>读书笔记</category></item><item><title>about</title><link>/about.html</link><description>&lt;p&gt;Hello There! Here is my personal blog.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Wed, 04 Jan 2012 22:42:00 +0800</pubDate><guid isPermaLink="false">tag:None,2012-01-04:/about.html</guid></item><item><title>contact</title><link>/contact.html</link><description>&lt;p&gt;Please send mail to i [at] xingjian.me.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Wed, 04 Jan 2012 22:42:00 +0800</pubDate><guid isPermaLink="false">tag:None,2012-01-04:/contact.html</guid></item><item><title>portfolio</title><link>/portfolio.html</link><description>&lt;p&gt;建设中&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Wed, 04 Jan 2012 22:42:00 +0800</pubDate><guid isPermaLink="false">tag:None,2012-01-04:/portfolio.html</guid></item></channel></rss>
