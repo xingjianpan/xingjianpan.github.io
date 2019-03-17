@@ -2,7 +2,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
 
@@ -14,11 +20,6 @@
     <link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Xingjian Pan's Blog RSS">
 
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="" />
 
     <!-- Chrome, Firefox OS and Opera -->
     <meta name="theme-color" content="#333333">
@@ -27,10 +28,13 @@
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
 
 <meta name="author" content="xingjian" />
 <meta name="description" content="Intro to Backtesting Framework for Python - bt¶ 项目地址 文档 bt简介: bt是一个量化交易测回测框架，基于Python。 这个框架使用户能够方便的创建基于不同Alogs的回测策略。 用户可以用bt创造灵活的、可测试的、可重用的策略块。 bt的目标：免去quant重新造轮子的时间，使他们能够专注于策略的开发。bt的作者，也是ffn的作者。bt是目前我看到的唯一一个可以用于因子测试的开源项目。" />
 <meta name="keywords" content="bt, backtesting">
+
 <meta property="og:site_name" content="Xingjian Pan's Blog"/>
 <meta property="og:title" content="多因子模型回测框架bt简介"/>
 <meta property="og:description" content="Intro to Backtesting Framework for Python - bt¶ 项目地址 文档 bt简介: bt是一个量化交易测回测框架，基于Python。 这个框架使用户能够方便的创建基于不同Alogs的回测策略。 用户可以用bt创造灵活的、可测试的、可重用的策略块。 bt的目标：免去quant重新造轮子的时间，使他们能够专注于策略的开发。bt的作者，也是ffn的作者。bt是目前我看到的唯一一个可以用于因子测试的开源项目。"/>
@@ -60,17 +64,17 @@
       <nav>
         <ul class="list">
 
-          <li><a href="http://xingjian.me/" target="_blank">Xingjian Pan</a></li>
-          <li><a href="http://xingjian.me/about.html" target="_blank">about</a></li>
-          <li><a href="http://xingjian.me/contact.html" target="_blank">contact</a></li>
-          <li><a href="http://xingjian.me/portfolio.html" target="_blank">portfolio</a></li>
+          <li><a href="" target="_blank">Xingjian Pan</a></li>
+          <li><a href="" target="_blank">about</a></li>
+          <li><a href="" target="_blank">contact</a></li>
+          <li><a href="" target="_blank">portfolio</a></li>
         </ul>
       </nav>
 
       <ul class="social">
-        <li><a class="sc-linkedin" href="https://cn.linkedin.com/in/xingjian-pan-26635517" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-linkedin" href="" target="_blank"><i class="fa fa-linkedin"></i></a></li>
         <li><a class="sc-github" href="" target="_blank"><i class="fa fa-github"></i></a></li>
-        <li><a class="sc-rss" href="http://xingjian.me/feeds/all.rss.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+        <li><a class="sc-rss" href="" target="_blank"><i class="fa fa-rss"></i></a></li>
       </ul>
     </div>
 
@@ -81,9 +85,10 @@
 
 <article class="single">
   <header>
+      
     <h1 id="intro-to-backtesting-for-multi-factor-strategy-bt">多因子模型回测框架bt简介</h1>
     <p>
-          Posted on 周四 05 一月 2017 in <a href="/category/quant.html">quant</a>
+          Posted on Thu 05 January 2017 in <a href="/category/quant.html">quant</a>
 
 
     </p>
@@ -96,9 +101,124 @@
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI colors. */
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
 .ansibold {
   font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -177,12 +297,20 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  border-left-width: 1px;
-  padding-left: 5px;
-  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -195,27 +323,39 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected {
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
   border-color: #ababab;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
 }
 @media print {
-  div.cell.selected {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected.jupyter-soft-selected {
-  border-left-width: 0;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
-}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -411,7 +551,9 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  padding: 0.4em;
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -421,11 +563,24 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
-  /* .CodeMirror-lines */
-  padding: 0;
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
   border: 0;
   border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
 }
 /*
 
@@ -673,6 +828,9 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
+div.output_area .mglyph > img {
+  max-width: none;
+}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -711,7 +869,7 @@ div.output_area svg.unconfined {
 }
 div.output_area pre {
   margin: 0;
-  padding: 0;
+  padding: 1px 0 1px 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -833,6 +991,10 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
 
 
 
@@ -849,16 +1011,24 @@ div.output_unrecognized a:hover {
 }
 
 
+
+
+
 .rendered_html pre,
+
 
 
 
 .rendered_html tr,
 .rendered_html th,
 
-.rendered_html td,
 
-
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
 .rendered_html * + table {
   margin-top: 1em;
 }
@@ -874,6 +1044,11 @@ div.output_unrecognized a:hover {
 
 .rendered_html img.unconfined,
 
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
 div.text_cell {
   /* Old browsers */
   display: -webkit-box;
@@ -924,8 +1099,15 @@ h6:hover .anchor-link {
   display: none;
 }
 .text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
 .text_cell.unrendered .text_cell_render {
   display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -1062,10 +1244,9 @@ h6:hover .anchor-link {
 .ansi-white-intense-bg { background-color: #A1A6B2; }
 
 .ansi-bold { font-weight: bold; }
-</style>
+</style><body>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Intro-to-Backtesting-Framework-for-Python---bt">Intro to Backtesting Framework for Python - bt<a class="anchor-link" href="#Intro-to-Backtesting-Framework-for-Python---bt">&#182;</a></h2><ul>
 <li><a href="https://github.com/pmorissette/ffn">项目地址</a></li>
@@ -1085,7 +1266,7 @@ bt的目标：免去<strong>quant</strong>重新造轮子的时间，使他们�
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">bt</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1100,7 +1281,7 @@ bt的目标：免去<strong>quant</strong>重新造轮子的时间，使他们�
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1114,16 +1295,15 @@ bt的目标：免去<strong>quant</strong>重新造轮子的时间，使他们�
 <span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">color_codes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="创建一个简单的回测策略">&#21019;&#24314;&#19968;&#20010;&#31616;&#21333;&#30340;&#22238;&#27979;&#31574;&#30053;<a class="anchor-link" href="#创建一个简单的回测策略">&#182;</a></h2><ul>
+<h2 id="&#21019;&#24314;&#19968;&#20010;&#31616;&#21333;&#30340;&#22238;&#27979;&#31574;&#30053;">&#21019;&#24314;&#19968;&#20010;&#31616;&#21333;&#30340;&#22238;&#27979;&#31574;&#30053;<a class="anchor-link" href="#&#21019;&#24314;&#19968;&#20010;&#31616;&#21333;&#30340;&#22238;&#27979;&#31574;&#30053;">&#182;</a></h2><ul>
 <li>每月调仓(monthly rebalanced）</li>
 <li>只能做多(long-only)</li>
 <li>等权重 (equal weight)</li>
@@ -1143,7 +1323,7 @@ bt的目标：免去<strong>quant</strong>重新造轮子的时间，使他们�
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1153,7 +1333,7 @@ bt的目标：免去<strong>quant</strong>重新造轮子的时间，使他们�
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1184,7 +1364,7 @@ Date
                        <span class="n">bt</span><span class="o">.</span><span class="n">algos</span><span class="o">.</span><span class="n">Rebalance</span><span class="p">()])</span> <span class="c1">#执行调仓</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1199,7 +1379,7 @@ Date
 <span class="n">res</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1209,7 +1389,7 @@ Date
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -1234,7 +1414,7 @@ Total time elapsed: 00:00:00
 <span class="n">res</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1244,7 +1424,7 @@ Total time elapsed: 00:00:00
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -1952,7 +2132,8 @@ ABrM0KFDlZubW/Pax8dHoaGhGjZsmBITE9WiRQtJ0rx58/Thhx+quLhY7dq10+jRo/XFF1+oY8eO
 XwAAAAAAAHBZPPYIAAAAAAAAl0X4BQAAAAAAAJdF+AUAAAAAAACXRfgFAAAAAAAAl0X4BQAAAAAA
 AJdF+AUAAAAAAACXRfgFAAAAAAAAl0X4BQAAAAAAAJdF+AUAAAAAAACXRfgFAAAAAAAAl0X4BQAA
 AAAAAJdF+AUAAAAAAACX9f8BmXoGHUmhB/UAAAAASUVORK5CYII=
-">
+"
+>
 </div>
 
 </div>
@@ -1970,7 +2151,7 @@ AAAAAJdF+AUAAAAAAACX9f8BmXoGHUmhB/UAAAAASUVORK5CYII=
 <span class="n">res</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1980,7 +2161,7 @@ AAAAAJdF+AUAAAAAAACX9f8BmXoGHUmhB/UAAAAASUVORK5CYII=
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -2052,7 +2233,7 @@ Win 12m %            95.95%
 <span class="n">res</span><span class="o">.</span><span class="n">plot_security_weights</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2062,7 +2243,7 @@ Win 12m %            95.95%
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -2999,7 +3180,8 @@ uXJFqampeuihh3T06FHNnDlTW7Zs0dDQkNatW6eTJ09q/fr1Wr16tU6dOqV33nlHLpdLkZGRWrJk
 iV588UVNmzbNrOkCAACYhrILAAAAAAAAQYPTGAEAAAAAABA0KLsAAAAAAAAQNCi7AAAAAAAAEDQo
 uwAAAAAAABA0KLsAAAAAAAAQNCi7AAAAAAAAEDQouwAAAAAAABA0KLsAAAAAAAAQNCi7AAAAAAAA
 EDQouwAAAAAAABA0KLsAAAAAAAAQNCi7AAAAAAAAEDT+D0JBsOMT/dY7AAAAAElFTkSuQmCC
-">
+"
+>
 </div>
 
 </div>
@@ -3029,7 +3211,7 @@ EDQouwAAAAAAABA0KLsAAAAAAAAQNCi7AAAAAAAAEDT+D0JBsOMT/dY7AAAAAElFTkSuQmCC
 <span class="n">res2</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -3039,7 +3221,7 @@ EDQouwAAAAAAABA0KLsAAAAAAAAQNCi7AAAAAAAAEDT+D0JBsOMT/dY7AAAAAElFTkSuQmCC
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -3057,7 +3239,7 @@ Total time elapsed: 00:00:03
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -4018,7 +4200,8 @@ devWTc8995zq6uqUnJys9PR0zZkzR9OmTdOePXv00ksvyWq1ysfHRyNGjNBTTz2l4ODg5goXAACg
 2VD8AgAAAAAAgMvitkcAAAAAAAC4LIpfAAAAAAAAcFkUvwAAAAAAAOCyKH4BAAAAAADAZVH8AgAA
 AAAAgMui+AUAAAAAAACXRfELAAAAAAAALoviFwAAAAAAAFwWxS8AAAAAAAC4LIpfAAAAAAAAcFkU
 vwAAAAAAAOCyKH4BAAAAAADAZf0fMLC80w0+tYIAAAAASUVORK5CYII=
-">
+"
+>
 </div>
 
 </div>
@@ -4041,7 +4224,7 @@ vwAAAAAAAOCyKH4BAAAAAADAZf0fMLC80w0+tYIAAAAASUVORK5CYII=
 <span class="n">res2</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -4051,7 +4234,7 @@ vwAAAAAAAOCyKH4BAAAAAADAZf0fMLC80w0+tYIAAAAASUVORK5CYII=
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -4116,7 +4299,7 @@ Win 12m %            95.95%      94.59%
 </div>
  
 
-
+</body>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
@@ -4157,14 +4340,14 @@ Win 12m %            95.95%      94.59%
 
 
 
+
 </article>
 
     <footer>
-<p>&copy; Xingjian Pan </p>
+<p>&copy;  </p>
 <p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
 </p>    </footer>
   </main>
-
 
 
 
@@ -4179,5 +4362,6 @@ Win 12m %            95.95%      94.59%
   "description": "Xingjian Pan's Thoughts and Writings"
 }
 </script>
+
 </body>
 </html>

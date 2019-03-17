@@ -141,8 +141,7 @@
 &lt;td&gt;行业分类基准&lt;/td&gt;
 &lt;td&gt;道琼斯指数 …&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Thu, 05 Jan 2017 22:23:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-01-05:/quant-understand-industry-classification-data.html</guid><category>data</category></item><item><title>多因子模型回测框架bt简介</title><link>/intro-to-backtesting-for-multi-factor-strategy-bt.html</link><description>
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Intro-to-Backtesting-Framework-for-Python---bt"&gt;Intro to Backtesting Framework for Python - bt&lt;a class="anchor-link" href="#Intro-to-Backtesting-Framework-for-Python---bt"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/pmorissette/ffn"&gt;项目地址&lt;/a&gt;&lt;/li&gt;
@@ -157,8 +156,7 @@ bt的目标：免去&lt;strong&gt;quant&lt;/strong&gt;重新造轮子的时间�
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Thu, 05 Jan 2017 17:43:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-01-05:/intro-to-backtesting-for-multi-factor-strategy-bt.html</guid><category>bt</category><category>backtesting</category></item><item><title>金融分析包FFN简介</title><link>/intro-to-financial-functions-package-ffn.html</link><description>
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="金融分析包FFN简介"&gt;&amp;#37329;&amp;#34701;&amp;#20998;&amp;#26512;&amp;#21253;FFN&amp;#31616;&amp;#20171;&lt;a class="anchor-link" href="#金融分析包FFN简介"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/pmorissette/ffn"&gt;项目地址&lt;/a&gt;&lt;/li&gt;
@@ -171,8 +169,7 @@ bt的目标：免去&lt;strong&gt;quant&lt;/strong&gt;重新造轮子的时间�
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xingjian</dc:creator><pubDate>Thu, 05 Jan 2017 17:09:00 +0800</pubDate><guid isPermaLink="false">tag:None,2017-01-05:/intro-to-financial-functions-package-ffn.html</guid><category>ffn</category></item><item><title>使用Pelican发布Jupyter Notebook</title><link>/pelican-and-jupyter-notebook-for-data-science.html</link><description>
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="这是一个Markdown标题"&gt;&amp;#36825;&amp;#26159;&amp;#19968;&amp;#20010;Markdown&amp;#26631;&amp;#39064;&lt;a class="anchor-link" href="#这是一个Markdown标题"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
@@ -292,7 +289,7 @@ pip install ipykernel
 &lt;p&gt;I have tried a few backtesting frameworkds wrote in Python, but this project looks really impressive.&lt;/p&gt;
 &lt;p&gt;Author of the project has explained the reasons why he'd started this project -&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;One of the questions often asked …&lt;/p&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Sun, 26 Jul 2015 19:16:36 +0800</pubDate><guid isPermaLink="false">tag:None,2015-07-26:/i-do-it-because-i-can.html</guid><category>[quotes]</category></item><item><title>(译文)法国初创公司生态系统：处在引爆点上</title><link>/the-frence-startups-ecosystem-at-a-tipping-point-chinese.html</link><description>&lt;p&gt;[The French Startup Ecosystem: At a Tipping Point]&lt;sup id="fnref-1"&gt;&lt;a class="footnote-ref" href="#fn-1"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;One of the questions often asked …&lt;/p&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Sun, 26 Jul 2015 19:16:36 +0800</pubDate><guid isPermaLink="false">tag:None,2015-07-26:/i-do-it-because-i-can.html</guid><category>[quotes]</category></item><item><title>(译文)法国初创公司生态系统：处在引爆点上</title><link>/the-frence-startups-ecosystem-at-a-tipping-point-chinese.html</link><description>&lt;p&gt;[The French Startup Ecosystem: At a Tipping Point]&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;原著 MATT TURCK 翻译 &lt;a href="http://xingjian.me"&gt;XINGJIAN PAN&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;转载请注明出处&lt;/p&gt;
 &lt;p&gt;我知道，当我们想到那些初创公司的热土时，头脑中跳出来大概不会是法国这个国家。 诚然，一些有意思的事情正在欧洲的技术圈发生 --- 伦敦，或者柏林（我曾在之前的博客中写道过），甚至芬兰。不过法国？随便问问美国的投资者和企业家们对法国的看法，或多或少你都会听到类似的评论：税负太高；解雇员工几乎是不可能的事情；政府干预过多；语言是个障碍；对失败抱有恐惧；各种罢工；那个法律规定一周工作35个小时，6点以后回复工作邮件算是违法行为的奇葩国家。&lt;/p&gt;
@@ -302,7 +299,7 @@ pip install ipykernel
 &lt;p&gt;转载请注明出处&lt;/p&gt;
 &lt;p&gt;那是1974年，亚瑟·弗莱(Art Fry)正利用周末的时间参加教堂唱诗班。 在这个特殊的周日，弗莱正被一个并不特别有趣的问题所困扰：他没办法固定住书签的位置。&lt;/p&gt;
 &lt;p&gt;为了更快的找到圣歌， 弗莱会把小纸条夹在书页之间。 然而有一个问题是，每次他站起来，这些小书签要么深深地滑到书页之中，要么直接从书页里掉出来。需要不断的重新放置书签让弗莱感到有些沮丧，因此他开始梦想一个更好的解决方案。&lt;/p&gt;
-&lt;p&gt;[“那是在听布道的时候”，弗莱说，“我突然有一个想法，‘我真正需要的是一种小型的有粘性的书签，能贴在书页上，但拿掉时不会连书页一起粘下来。‘”]&lt;sup id="fnref-daydream"&gt;&lt;a class="footnote-ref" href="#fn-daydream"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;[“那是在听布道的时候”，弗莱说，“我突然有一个想法，‘我真正需要的是一种小型的有粘性的书签，能贴在书页上，但拿掉时不会连书页一起粘下来。‘”]&lt;sup id="fnref:daydream"&gt;&lt;a class="footnote-ref" href="#fn:daydream" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;有了这个想法，弗莱马上投入工作，寻找解决方案。 或许是运气， 弗莱恰巧工作在一个不能更合适的地方。他所在的公司是3M而他的一名同事，斯宾塞·希弗尔(Spencer Silver)，正好是粘合剂方面的专家。&lt;/p&gt;
 &lt;p&gt;接下来的几个月里， 弗莱和斯宾塞开始研发一种特殊的纸 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Thu, 03 Jul 2014 21:16:36 +0800</pubDate><guid isPermaLink="false">tag:None,2014-07-03:/smart-people-should-create-things-chinese.html</guid></item><item><title>Never complain, never explain.</title><link>/never-complain-never-explain.html</link><description>&lt;blockquote&gt;
 &lt;p&gt;Never complain, never explain. Resist the temptation to defend yourself or make excuses. ― Brian Tracy&lt;/p&gt;
@@ -320,7 +317,7 @@ pip install ipykernel
 &lt;p&gt;&lt;img alt="img" src="https://raw.githubusercontent.com/xingjianpan/my_blog/master/source/_posts/big_data_map.png"&gt;&lt;/p&gt;
 &lt;p&gt;从VC的角度，我想谈谈对这张图以及大数据行业的一些想法：&lt;/p&gt;
 &lt;h2&gt;越来越拥挤&lt;/h2&gt;
-&lt;p&gt;创业者们蜂拥至这个行业， VC们将大笔的资金投资到看起来有机会成功的创业公司，其结果是，这个行业正变得越来越拥挤。 一些类别如数据库（不管是&lt;a href="http://en.wikipedia.org/wiki/NoSQL"&gt;NoSQL&lt;/a&gt;还是&lt;a href="http://en.wikipedia.org/wiki/NewSQL"&gt;NewSQL&lt;/a&gt;）和社交媒体数据分析正趋于成熟，且开始出现并购或者淘汰出局（Twitter对BlueFin&lt;sup id="fnref-BlueFin"&gt;&lt;a class="footnote-ref" href="#fn-BlueFin"&gt;1&lt;/a&gt;&lt;/sup&gt;和GNIP&lt;sup id="fnref-GNIP"&gt;&lt;a class="footnote-ref" href="#fn-GNIP"&gt;2&lt;/a&gt;&lt;/sup&gt;的收购可能意味着在社交媒体数据分析领域这种趋势早已经开始了）。 对于后来者来说， 虽然空间依然存在，但看起来早期的大笔风投资金都下注在基础设施（infrastructure）和分析（analytics）领域，导致成功的标准变得越来越高 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Tue, 01 Jul 2014 14:16:36 +0800</pubDate><guid isPermaLink="false">tag:None,2014-07-01:/state-of-big-date-in-2014-a-chart-chinese.html</guid><category>大数据</category></item><item><title>Notes on Running Lean (精益创业实践)</title><link>/notes-on-running-lean.html</link><description>&lt;p&gt;用两句话来概括本书的观点：&lt;/p&gt;
+&lt;p&gt;创业者们蜂拥至这个行业， VC们将大笔的资金投资到看起来有机会成功的创业公司，其结果是，这个行业正变得越来越拥挤。 一些类别如数据库（不管是&lt;a href="http://en.wikipedia.org/wiki/NoSQL"&gt;NoSQL&lt;/a&gt;还是&lt;a href="http://en.wikipedia.org/wiki/NewSQL"&gt;NewSQL&lt;/a&gt;）和社交媒体数据分析正趋于成熟，且开始出现并购或者淘汰出局（Twitter对BlueFin&lt;sup id="fnref:BlueFin"&gt;&lt;a class="footnote-ref" href="#fn:BlueFin" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;和GNIP&lt;sup id="fnref:GNIP"&gt;&lt;a class="footnote-ref" href="#fn:GNIP" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt;的收购可能意味着在社交媒体数据分析领域这种趋势早已经开始了）。 对于后来者来说， 虽然空间依然存在，但看起来早期的大笔风投资金都下注在基础设施（infrastructure）和分析（analytics）领域，导致成功的标准变得越来越高 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Xingjian Pan</dc:creator><pubDate>Tue, 01 Jul 2014 14:16:36 +0800</pubDate><guid isPermaLink="false">tag:None,2014-07-01:/state-of-big-date-in-2014-a-chart-chinese.html</guid><category>大数据</category></item><item><title>Notes on Running Lean (精益创业实践)</title><link>/notes-on-running-lean.html</link><description>&lt;p&gt;用两句话来概括本书的观点：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;创业者做一切事的出发点都应当是客户需求。&lt;/li&gt;
 &lt;li&gt;创业本质上是风险管理。&lt;/li&gt;

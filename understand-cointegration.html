@@ -2,7 +2,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
 
@@ -14,11 +20,6 @@
     <link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Xingjian Pan's Blog RSS">
 
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="" />
 
     <!-- Chrome, Firefox OS and Opera -->
     <meta name="theme-color" content="#333333">
@@ -27,10 +28,13 @@
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
 
 <meta name="author" content="xingjian" />
 <meta name="description" content="什么是协整(cointegration ) 一种情况，假设有两个醉鬼走在路上(two random walks)且这两个人彼此互不认识(Independent variable)， 那么这两个人的路径之间不存在有意义的关系。 另一种情况，假设一个醉鬼和他的狗走在路上，那么这次狗和醉鬼之间存在着某种关系。虽然醉鬼和狗各自走的是不可预测的随机路线，但是根据其中一个的位置（醉鬼或者狗),我们能够推测出另一个的位置，换句话说：醉鬼和狗之间的距离是可以预测的。如果狗离开主人的距离过远，就会倾向于朝着主人的方向移动，以免跟丢。醉鬼和狗之组成了一个协整对。 协整性的例子： 个人收入和消费支出 城市的警察数量和犯罪活动的数量 进入一个商场的人数和走出商场的人数 协整性的应用： 协整性的一个重要应用是用于配对交易。 为什么不简单的使用相关性？ 对于平稳(stationary)的X和Y，通常我们用R方表示X和Y之间的相关性。 然而对于不平稳(non-stationary)的X和Y， 利用通常的回归分析(standard regression analysis)可能导致伪回归(spurious regressions)结论：即认为实际上不存在相关性的X和Y存在相关性。 协整性检测 import statsmodels …" />
 <meta name="keywords" content="trading">
+
 <meta property="og:site_name" content="Xingjian Pan's Blog"/>
 <meta property="og:title" content="理解协整性"/>
 <meta property="og:description" content="什么是协整(cointegration ) 一种情况，假设有两个醉鬼走在路上(two random walks)且这两个人彼此互不认识(Independent variable)， 那么这两个人的路径之间不存在有意义的关系。 另一种情况，假设一个醉鬼和他的狗走在路上，那么这次狗和醉鬼之间存在着某种关系。虽然醉鬼和狗各自走的是不可预测的随机路线，但是根据其中一个的位置（醉鬼或者狗),我们能够推测出另一个的位置，换句话说：醉鬼和狗之间的距离是可以预测的。如果狗离开主人的距离过远，就会倾向于朝着主人的方向移动，以免跟丢。醉鬼和狗之组成了一个协整对。 协整性的例子： 个人收入和消费支出 城市的警察数量和犯罪活动的数量 进入一个商场的人数和走出商场的人数 协整性的应用： 协整性的一个重要应用是用于配对交易。 为什么不简单的使用相关性？ 对于平稳(stationary)的X和Y，通常我们用R方表示X和Y之间的相关性。 然而对于不平稳(non-stationary)的X和Y， 利用通常的回归分析(standard regression analysis)可能导致伪回归(spurious regressions)结论：即认为实际上不存在相关性的X和Y存在相关性。 协整性检测 import statsmodels …"/>
@@ -59,17 +63,17 @@
       <nav>
         <ul class="list">
 
-          <li><a href="http://xingjian.me/" target="_blank">Xingjian Pan</a></li>
-          <li><a href="http://xingjian.me/about.html" target="_blank">about</a></li>
-          <li><a href="http://xingjian.me/contact.html" target="_blank">contact</a></li>
-          <li><a href="http://xingjian.me/portfolio.html" target="_blank">portfolio</a></li>
+          <li><a href="" target="_blank">Xingjian Pan</a></li>
+          <li><a href="" target="_blank">about</a></li>
+          <li><a href="" target="_blank">contact</a></li>
+          <li><a href="" target="_blank">portfolio</a></li>
         </ul>
       </nav>
 
       <ul class="social">
-        <li><a class="sc-linkedin" href="https://cn.linkedin.com/in/xingjian-pan-26635517" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-linkedin" href="" target="_blank"><i class="fa fa-linkedin"></i></a></li>
         <li><a class="sc-github" href="" target="_blank"><i class="fa fa-github"></i></a></li>
-        <li><a class="sc-rss" href="http://xingjian.me/feeds/all.rss.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+        <li><a class="sc-rss" href="" target="_blank"><i class="fa fa-rss"></i></a></li>
       </ul>
     </div>
 
@@ -80,9 +84,10 @@
 
 <article class="single">
   <header>
+      
     <h1 id="understand-cointegration">理解协整性</h1>
     <p>
-          Posted on 周二 11 四月 2017 in <a href="/category/quant.html">quant</a>
+          Posted on Tue 11 April 2017 in <a href="/category/quant.html">quant</a>
 
 
     </p>
@@ -129,14 +134,14 @@
 
 
 
+
 </article>
 
     <footer>
-<p>&copy; Xingjian Pan </p>
+<p>&copy;  </p>
 <p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
 </p>    </footer>
   </main>
-
 
 
 
@@ -151,5 +156,6 @@
   "description": "Xingjian Pan's Thoughts and Writings"
 }
 </script>
+
 </body>
 </html>
